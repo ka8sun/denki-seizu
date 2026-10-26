@@ -229,7 +229,9 @@ html.lite .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!impor
 .month-tile>.month-card{flex:1 1 auto}
 .month-tile .month-card{width:100%;height:auto;flex:1 1 auto}
 .month-practical-link{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:11px 13px;border:2px solid #2563eb;border-radius:13px;background:#eff6ff;color:#1e40af;font-size:13px;font-weight:900;text-decoration:none;overflow-wrap:anywhere}
-.month-practical-link:hover,.month-practical-link:focus-visible{background:#1d4ed8;color:#fff}
+.month-practical-link.current{background:var(--primary-soft);border-color:var(--primary);color:#1e40af}
+.month-practical-link:not(.current){background:#fff;border-color:var(--line);color:#475569}
+.month-practical-link:hover,.month-practical-link:focus-visible{background:#1d4ed8;color:#fff;border-color:#1d4ed8}
 .month-practical-link:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
 .practical-first-reminder{padding:16px 18px;margin:12px 0;border:1px solid #bfdbfe;background:#eff6ff;border-radius:16px}
 .practical-first-heading{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
@@ -437,9 +439,12 @@ function applyCurrentStage(){
   const order=[10,11,12,1];
   const idx=order.indexOf(cur);
   cards.forEach((card,i)=>{
-    card.classList.toggle("current",Number(card.dataset.month)===cur);
+    const isCurrent=Number(card.dataset.month)===cur;
+    card.classList.toggle("current",isCurrent);
     card.classList.toggle("past",i<idx);
     card.classList.toggle("future",i>idx);
+    const practicalLink=card.closest(".month-tile")?.querySelector(".month-practical-link");
+    if(practicalLink) practicalLink.classList.toggle("current",isCurrent);
   });
 }
 applyCurrentStage();
