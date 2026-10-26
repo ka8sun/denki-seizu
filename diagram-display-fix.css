@@ -1,0 +1,73 @@
+/* 回路図の表示欠けを防止するレイアウト調整 (2026-10-26) */
+/* SVGの横幅と解説欄の横幅を無理に二分しない。図面を優先して1列表示。 */
+#modeldrawings .model-grid,
+#door-detailed .model-grid,
+#complete-models .v10-grid,
+#pro-models .v9-panel[data-v9panel="scheme"] > .v9-grid {
+  grid-template-columns:minmax(0,1fr);
+  gap:14px;
+}
+#modeldrawings .model-grid > *,
+#door-detailed .model-grid > *,
+#complete-models .v10-grid > *,
+#pro-models .v9-grid > * { min-width:0; }
+#modeldrawings .model-figure,
+#door-detailed .model-figure,
+#complete-models .v10-figure,
+#pro-models .v9-figure {
+  width:100%;
+  min-width:0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+#modeldrawings .model-figure svg,
+#door-detailed .model-figure svg,
+#complete-models .v10-figure svg,
+#pro-models .v9-figure svg {
+  display:block;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  height:auto;
+}
+#modeldrawings .model-figure svg,
+#door-detailed .model-figure svg {overflow:hidden;}
+.model-figure-caption {
+  margin:8px 4px 3px;
+  font-size:14px;
+  line-height:1.65;
+  color:#475569;
+  overflow-wrap:anywhere;
+}
+/* 小画面は文字を極端に小さく縮小しない。水平スクロールで図全体を閲覧可能に。 */
+@media(max-width:680px) {
+  #modeldrawings .model-figure svg,
+  #door-detailed .model-figure svg,
+  #complete-models .v10-figure svg,
+  #pro-models .v9-figure svg {
+    width:730px;
+    min-width:730px;
+    max-width:none;
+  }
+  #modeldrawings .model-figure::before,
+  #door-detailed .model-figure::before,
+  #complete-models .v10-figure::before,
+  #pro-models .v9-figure::before {
+    content:"図面は左右にスクロールして全体を確認できます →";
+    display:block;
+    margin:0 3px 9px;
+    font-size:12px;
+    font-weight:700;
+    color:#1e40af;
+  }
+}
+@media print {
+  #modeldrawings .model-grid,
+  #door-detailed .model-grid,
+  #complete-models .v10-grid,
+  #pro-models .v9-grid {grid-template-columns:minmax(0,1fr)}
+  #modeldrawings .model-figure svg,
+  #door-detailed .model-figure svg,
+  #complete-models .v10-figure svg,
+  #pro-models .v9-figure svg {width:100%;min-width:0;max-width:100%}
+}

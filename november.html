@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="技能検定2級電気製図・11月版：60問、重要用語15語、実技の部分練習3テーマを収録。正解理由・誤答理由・実技との関連を学ぶ。" name="description"/>
+<title>2級電気製図｜11月 過去問を理解（60問教材版）</title>
+<style>
+:root{
+  --bg:#f6f8fb;--card:#fff;--text:#172033;--muted:#667085;--line:#e4e7ec;
+  --navy:#0f172a;--blue:#2563eb;--blue2:#eff6ff;--green:#15803d;--green2:#f0fdf4;
+  --red:#b42318;--red2:#fff1f2;--amber:#a16207;--amber2:#fffbeb;--purple:#6d28d9;--purple2:#f5f3ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--text)}
+button,input{font:inherit}
+header{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+header .head-inner{max-width:820px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+header h1{font-size:17px;margin:0;line-height:1.35}
+header p{font-size:11px;color:#cbd5e1;margin:3px 0 0}
+.header-chip{font-size:11px;font-weight:800;background:#1e293b;border:1px solid #334155;border-radius:999px;padding:6px 9px;white-space:nowrap}
+main{max-width:820px;margin:auto;padding:14px 14px 92px}
+section{display:none}
+section.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:13px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.hero{background:linear-gradient(135deg,#eff6ff,#ecfeff)}
+.notice{background:var(--amber2);border-color:#fde68a}
+.exam-card{background:linear-gradient(135deg,#f8fafc,#eef2ff)}
+h2{font-size:19px;margin:0 0 10px;line-height:1.45}
+h3{font-size:16px;margin:16px 0 8px}
+p,li{line-height:1.7}
+.small{font-size:12.5px;color:var(--muted)}
+.mini{font-size:11px;color:var(--muted)}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;background:#e0e7ff;color:#3730a3}
+.badge.green{background:#dcfce7;color:#166534}.badge.amber{background:#fef3c7;color:#92400e}.badge.purple{background:#ede9fe;color:#5b21b6}
+.progressbar{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden}
+.progressbar>div{height:100%;background:var(--blue);width:0%;transition:.25s}
+.btn{border:0;border-radius:11px;padding:11px 14px;font-size:14px;font-weight:800;cursor:pointer;touch-action:manipulation}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-primary{background:var(--blue);color:#fff}.btn-soft{background:var(--blue2);color:#1d4ed8}.btn-green{background:#dcfce7;color:#166534}.btn-red{background:#fee2e2;color:#991b1b}.btn-dark{background:var(--navy);color:#fff}.btn-purple{background:var(--purple2);color:var(--purple)}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap}
+.btn-row .btn{flex:0 0 auto}
+.grid{display:grid;grid-template-columns:1fr;gap:9px}
+.topic{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
+.topic b{display:block;margin-bottom:5px}
+.topic-score{margin-top:8px;font-size:12px;color:var(--muted)}
+
+.muted{color:var(--muted)}
+.practical-overview-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.practical-overview-card{border:1px solid #cfe0ff;border-radius:16px;padding:16px;background:linear-gradient(180deg,#ffffff,#f8fbff)}
+.practical-overview-card h3{margin:6px 0 8px;font-size:17px;line-height:1.45}
+.practical-overview-card p{margin:0}
+.practical-overview-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.step-chip,.goal-chip,.jump-chip{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;line-height:1.2}
+.step-chip{background:#dbeafe;color:#1d4ed8}
+.goal-chip{background:#e0f2fe;color:#075985}
+.jump-chip{background:#eef2ff;color:#4338ca}
+.practical-points{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:12px 0}
+.practical-points li{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700;color:#334155}
+.practical-meta{font-size:12.5px;color:var(--muted);margin:0 0 10px}
+.practical-action{margin-top:10px}
+.practical-action .btn{transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .12s ease;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.practical-action .btn-soft{background:var(--blue2);color:#1d4ed8;border:1px solid #dbeafe}
+.practical-action .btn-soft:hover,.practical-action .btn-soft:focus-visible,.practical-action .btn-soft:active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 2px 8px rgba(37,99,235,.16)}
+
+.practical-anchor-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.practical-anchor-links a{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:999px;border:1px solid #cfe0ff;background:#fff;color:#1d4ed8;font-size:12px;font-weight:800;text-decoration:none}
+.practical-anchor-links a:hover{background:#eff6ff}
+.practical-detail-card{scroll-margin-top:88px}
+.practical-guide-note{margin-top:10px;padding:10px 12px;border-radius:12px;background:#f8fafc;border:1px solid var(--line);font-size:13px;color:#475467}
+@media(min-width:680px){.practical-overview-grid{grid-template-columns:1fr 1fr}}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.info-box{padding:12px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.info-box strong{display:block;font-size:20px;margin-top:3px}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{padding:10px 6px;border-radius:11px;background:#f8fafc;text-align:center}.stat strong{display:block;font-size:20px}.stat span{font-size:11px;color:var(--muted)}
+.mode-grid{display:grid;grid-template-columns:1fr;gap:9px}
+.mode{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
+.question-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.question-no{font-size:12px;color:var(--muted)}
+.timer{font-variant-numeric:tabular-nums;font-size:13px;font-weight:800;background:#f1f5f9;border-radius:999px;padding:5px 9px}
+.question{font-size:19px;font-weight:800;line-height:1.55;margin:8px 0 14px}
+.choice{display:block;width:100%;text-align:left;padding:14px 13px;border:1px solid var(--line);border-radius:11px;background:#fff;color:#172033 !important;-webkit-text-fill-color:#172033 !important;margin:8px 0;font-size:15px;font-weight:600;line-height:1.55;cursor:pointer;appearance:none;-webkit-appearance:none;opacity:1}
+.choice b,.choice .choice-label{color:#0f172a !important;-webkit-text-fill-color:#0f172a !important;display:inline-block;min-width:2.1em;font-weight:900}
+.choice:hover{border-color:#bfdbfe;background:#f8fbff;color:#172033 !important;-webkit-text-fill-color:#172033 !important}
+.choice.correct{background:var(--green2);border-color:#86efac;color:#166534 !important;-webkit-text-fill-color:#166534 !important;font-weight:700}
+.choice.correct b,.choice.correct .choice-label{color:#166534 !important;-webkit-text-fill-color:#166534 !important}
+.choice.wrong{background:var(--red2);border-color:#fda4af;color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important;font-weight:700}
+.choice.wrong b,.choice.wrong .choice-label{color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important}
+.choice.dim{opacity:.62}
+.choice:disabled{cursor:default;opacity:1;color:#172033 !important;-webkit-text-fill-color:#172033 !important}
+.choice.dim:disabled{opacity:.62}
+.choice.correct:disabled{color:#166534 !important;-webkit-text-fill-color:#166534 !important}
+.choice.wrong:disabled{color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important}
+
+.tf-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}
+.tf-choices .choice{margin:0;text-align:center;font-size:20px;font-weight:800;padding:16px 10px;min-height:60px}
+.tf-choices .choice-label{min-width:auto!important;margin-right:.35em;font-size:15px;vertical-align:2px}
+ruby{ruby-align:center;ruby-position:over}
+rt{font-size:.53em;font-weight:600;color:#667085;letter-spacing:.02em}
+.question rt{font-size:.5em;color:#475467}
+.choice rt{font-size:.52em}
+.explain rt,.term rt,.bridge rt,.memory rt{font-size:.58em}
+.explain{margin-top:14px;border-radius:13px;padding:13px;display:none}.explain.ok{display:block;background:var(--green2);border:1px solid #bbf7d0}.explain.ng{display:block;background:var(--red2);border:1px solid #fecdd3}
+.why{margin-top:10px;background:#fff;border-radius:10px;padding:11px;border:1px solid var(--line)}
+.memory{margin-top:10px;background:var(--amber2);border-left:4px solid #f59e0b;border-radius:8px;padding:10px 12px}
+.bridge{margin-top:10px;background:var(--purple2);border-left:4px solid #8b5cf6;border-radius:8px;padding:10px 12px}
+.filter{display:flex;gap:7px;overflow:auto;padding-bottom:5px;margin-bottom:10px;scrollbar-width:none}.filter::-webkit-scrollbar{display:none}.filter button{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 10px;font-size:12px}.filter button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.term{padding:12px 0;border-bottom:1px solid var(--line)}.term b{font-size:16px}
+input.search{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;font-size:16px;background:#fff}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0;background:#fff}summary{font-weight:800;cursor:pointer}
+.diagram{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0f172a;color:#e2e8f0;border-radius:12px;padding:13px;white-space:pre-wrap;line-height:1.7;overflow:auto;font-size:13px}
+.steps{counter-reset:step;list-style:none;padding:0;margin:0}.steps li{counter-increment:step;position:relative;padding:10px 10px 10px 43px;border-bottom:1px solid var(--line)}.steps li:before{content:counter(step);position:absolute;left:7px;top:10px;width:25px;height:25px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px}.steps li:last-child{border-bottom:0}
+.result-score{font-size:42px;font-weight:900;text-align:center;line-height:1}.result-sub{text-align:center;color:var(--muted);margin-top:7px}
+.weak-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:9px 0}.weak-row:last-child{border-bottom:0}
+.source{font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:12px;padding-top:10px}
+nav{position:fixed;left:50%;right:auto;bottom:0;transform:translateX(-50%);z-index:40;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);width:100%;max-width:920px;padding-bottom:env(safe-area-inset-bottom)}
+nav button,nav a{border:0;background:#fff;padding:10px 1px 11px;font-size:10px;color:#475467;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center}nav button.active{color:var(--blue);font-weight:900}
+nav .nav-practical{position:relative;flex-direction:column;background:linear-gradient(180deg,#eff6ff 0%,#dbeafe 100%);color:#1d4ed8;border-top:3px solid #2563eb;font-weight:900;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+nav .nav-practical .nav-main{display:block;font-size:12px;line-height:1.1}
+nav .nav-practical .nav-sub{display:block;font-size:9px;line-height:1.15;color:#1d4ed8;opacity:.9;margin-top:2px}
+nav .nav-practical.active{background:linear-gradient(180deg,#2563eb 0%,#1d4ed8 100%);color:#fff!important}
+nav .nav-practical.active .nav-sub,nav .nav-practical.active .nav-main{color:#fff!important}
+
+
+.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#111827;color:#fff;border-radius:999px;padding:9px 13px;font-size:12px;z-index:60;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
+@media(min-width:680px){.grid,.mode-grid{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:repeat(4,1fr)}nav button{font-size:11px}}
+
+
+/* ===== v2.4 完全レスポンシブ調整（PC / Android） ===== */
+html,body{max-width:100%;overflow-x:hidden}
+body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+header .head-inner>div:first-child{min-width:0}
+header h1,header p,h2,h3,p,li,.small,.mini,.question,.choice,.term,.why,.memory,.bridge{overflow-wrap:anywhere;word-break:normal}
+main{width:100%;max-width:920px;padding-bottom:calc(94px + env(safe-area-inset-bottom))}
+.small{font-size:13.5px}
+.mini{font-size:12.5px}
+.source{font-size:12.5px}
+.topic-score,.question-no{font-size:13px}
+.btn{min-height:44px;padding:11px 14px}
+.choice{min-height:52px}
+.filter{-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+.filter button{min-height:42px;font-size:13px;touch-action:manipulation;
+  color:#172033 !important;-webkit-text-fill-color:#172033 !important;
+  background:#fff;border-color:#d0d5dd;
+  transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .12s ease;
+}
+.filter button:hover{
+  background:#eff6ff;border-color:#93c5fd;
+  color:#1d4ed8 !important;-webkit-text-fill-color:#1d4ed8 !important;
+  box-shadow:0 2px 8px rgba(37,99,235,.10);
+}
+.filter button.active{
+  background:var(--navy);border-color:var(--navy);
+  color:#fff !important;-webkit-text-fill-color:#fff !important;font-weight:800;
+}
+.filter button.active:hover{
+  background:#1e293b;border-color:#334155;
+  color:#fff !important;-webkit-text-fill-color:#fff !important;
+}
+.filter button:focus-visible{outline:3px solid #bfdbfe;outline-offset:2px}
+.filter button:active{transform:translateY(1px)}
+.diagram{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.info-box,.topic,.mode,.stat{min-width:0}
+nav{width:100%;max-width:920px;box-shadow:0 -4px 16px rgba(15,23,42,.06)}
+nav button,nav a{min-width:0;min-height:48px;font-size:11.5px;line-height:1.2;touch-action:manipulation}
+nav .nav-practical{padding-top:7px}
+.toast{max-width:calc(100vw - 28px);text-align:center;white-space:normal}
+
+@media (max-width:479px){
+  header{padding:10px 12px}
+  header .head-inner{gap:7px;align-items:flex-start;flex-wrap:wrap}
+  header h1{font-size:16px}
+  header p{font-size:12px;line-height:1.4}
+  .header-chip{font-size:10.5px;padding:5px 8px}
+  main{padding:12px 12px calc(94px + env(safe-area-inset-bottom))}
+  .card{padding:14px;border-radius:14px}
+  h2{font-size:18px}
+  h3{font-size:16px}
+  .question{font-size:18px;line-height:1.55}
+  .choice{font-size:15px;padding:14px 12px}
+  .btn-row .btn{flex:1 1 100%;width:100%}
+  nav button,nav a{font-size:11px;padding:10px 0 9px}
+  nav .nav-practical .nav-main{font-size:11.5px}
+  nav .nav-practical .nav-sub{font-size:8.5px}
+}
+
+@media (max-width:359px){
+  header .head-inner{display:block}
+  .header-chip{display:inline-flex;margin-top:7px}
+  .info-grid{grid-template-columns:1fr}
+  .statgrid{gap:5px}
+  .stat{padding:9px 3px}
+  .stat strong{font-size:18px}
+  .stat span{font-size:10.5px}
+  .tf-choices{gap:7px}
+  nav button,nav a{font-size:10.5px}
+  nav .nav-practical:after{display:none}
+}
+
+@media (min-width:680px){
+  main{padding:20px 20px 100px}
+  .card{padding:20px;margin-bottom:16px}
+  header{padding:13px 20px}
+  header h1{font-size:18px}
+  header p{font-size:12px}
+  .small{font-size:14px}
+  .mini{font-size:13px}
+  nav button,nav a{font-size:12px;min-height:52px}
+}
+
+@media (min-width:1000px){
+  main{padding-top:24px}
+  .card{border-radius:18px}
+  nav{border-left:1px solid var(--line);border-right:1px solid var(--line);border-radius:14px 14px 0 0;overflow:hidden}
+}
+
+@media (hover:none),(pointer:coarse){
+  .choice:hover{border-color:var(--line);background:#fff;color:#172033 !important;-webkit-text-fill-color:#172033 !important}
+  .choice.correct:hover{background:var(--green2);border-color:#86efac;color:#166534 !important;-webkit-text-fill-color:#166534 !important}
+  .choice.wrong:hover{background:var(--red2);border-color:#fda4af;color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important}
+}
+
+
+/* 下部メニューは画面最下部に常時固定表示 */
+
+/* ===== スマホ低速回線・省電力向け軽量化 ===== */
+section:not(.active){content-visibility:hidden}
+@media (max-width:679px){
+  html{scroll-behavior:auto}
+  .card{box-shadow:none}
+  .hero,.exam-card{background:#fff}
+  .progressbar>div,.toast{transition:none}
+  .card,.topic,.mode,.info-box,details{content-visibility:auto;contain-intrinsic-size:1px 220px}
+  nav{box-shadow:none}
+}
+html.lite *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.lite .card,html.lite nav{box-shadow:none!important}
+html.lite .hero,html.lite .exam-card{background:#fff!important}
+
+
+
+/* November additions, preserving October's design tokens and layout */
+.nov-hero{background:linear-gradient(135deg,#eff6ff,#f0fdfa)}
+.go-home{display:inline-block;color:#dbeafe;font-size:12px;text-decoration:none;margin-top:4px}
+.go-home:hover{text-decoration:underline}
+.nov-goal{border-left:4px solid var(--blue);background:#fff;border-radius:10px;padding:12px 14px;margin:12px 0}
+.subheading{font-size:13px;color:var(--muted);margin:8px 0 13px}
+.domain-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+.domain-row strong{display:block;font-size:14px}
+.domain-row span{font-size:12px;color:var(--muted)}
+.formrow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:10px 0}
+.formrow label{font-size:13px;font-weight:800}
+.formrow select{font:inherit;font-size:14px;border:1px solid #d0d5dd;background:#fff;border-radius:10px;padding:10px;min-height:44px;max-width:100%;color:var(--text)}
+.understand{margin:12px 0 4px;border-radius:12px;background:#fff;border:1px solid #dbeafe;padding:12px}
+.understand-label{font-size:13px;font-weight:900;margin-bottom:9px}
+.understand-buttons{display:flex;gap:7px;flex-wrap:wrap}
+.understand-buttons button{background:#fff;border:1px solid #cbd5e1;padding:10px 12px;border-radius:9px;min-height:44px;color:#334155;cursor:pointer;font-weight:800}
+.understand-buttons button.selected{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}
+.choice.selected-pending{border-color:#2563eb;background:#eff6ff}
+.explain{display:block}
+.explain strong{font-weight:900}
+.mistake-row{border-bottom:1px solid #edf1f5;padding:8px 0;line-height:1.65}
+.mistake-row:last-child{border-bottom:0}
+.correct-row{color:#166534;font-weight:900}
+.source-links{display:flex;flex-direction:column;gap:7px;margin-top:7px}
+.source-links a{font-size:12px;color:#1d4ed8;overflow-wrap:anywhere}
+.nov-error{background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;padding:14px;color:#9f1239}
+.nov-ok{background:#effdf5;border:1px solid #a7f3d0;border-radius:12px;padding:14px;color:#065f46}
+.nov-empty{background:#f8fafc;border-radius:12px;padding:14px;color:#475467}
+.choices-buttons{margin:12px 0}
+.list-actions{display:flex;gap:8px;flex-wrap:wrap}
+.list-actions .btn{flex:1 1 175px}
+.difficulty{display:inline-block;border:1px solid #cbd5e1;border-radius:6px;padding:2px 6px;font-size:11px;color:#475467}
+.quizmeta{display:flex;justify-content:space-between;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.questions-summary{display:flex;gap:7px;flex-wrap:wrap}
+.questions-summary span{border:1px solid #dbe3ee;border-radius:100px;padding:5px 9px;color:#52617a;font-size:12px}
+.step-text{line-height:1.75}
+#quizBox{scroll-margin-top:96px}
+.btn-outline{border:1px solid #cbd5e1;background:#fff;color:#334155}
+/* 少数のカードはオフスクリーンでもプレースホルダー化せず表示する */
+.card,.topic,.mode,.info-box,details{content-visibility:visible;contain-intrinsic-size:auto}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+@media(max-width:479px){.nov-hero{background:#fff}.domain-row{align-items:start}.understand-buttons button{flex:1 1 100%}.formrow select{width:100%}}
+
+/* November 60 questions / glossary / partial practice */
+nav{grid-template-columns:repeat(6,minmax(0,1fr))}
+nav button,nav a{font-size:10.5px}
+  nav .nav-practical:after{display:none}
+.searchlabel{font-size:13px;display:block;margin:10px 0 6px;font-weight:850}
+.practice-detail{margin:12px 0;border-radius:14px;overflow:hidden;background:#fff}
+.practice-detail>summary{display:flex;gap:10px;align-items:center;padding:9px 2px;font-size:16px;line-height:1.6}
+.practice-detail[open]>summary{border-bottom:1px solid var(--line)}
+.practice-tag{background:var(--blue2);color:#1d4ed8;border-radius:8px;padding:4px 8px;font-size:11px;white-space:nowrap}
+.practice-body{padding:6px 0 14px}
+.goal-text{background:#eff6ff;border-radius:10px;padding:10px 12px;margin:12px 0;line-height:1.7}
+.partial-steps{padding-left:25px;line-height:1.8}.partial-steps li{margin-bottom:8px}
+.partial-checks{padding-left:23px;line-height:1.8}
+.answer-reveal{border:1px solid #c7d2fe;background:#eff6ff}.answer-reveal summary{color:#1d4ed8}
+.inline-term summary{font-size:13px;color:#1d4ed8}.inline-term p{margin:8px 0;font-size:13px}
+#termList .term p{margin:6px 0 9px}
+@media(max-width:359px){nav button{font-size:9.5px;padding:10px 0}}
+
+.figure-wrap{margin:14px 0 10px}
+.diagram-note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.circuit-figure,.panel-figure{width:100%;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;overflow:auto;-webkit-overflow-scrolling:touch}
+.circuit-figure svg,.panel-figure svg{width:100%;height:auto;display:block;min-width:760px;overflow:visible}
+.svg-label{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;fill:#172033;font-weight:700;paint-order:stroke;stroke:rgba(255,255,255,.94);stroke-width:4px;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.svg-small{font-size:12.5px}
+.svg-mid{font-size:13.5px;font-weight:700}
+.svg-title{font-size:14px;font-weight:800}
+.figure-caption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.7}
+
+
+.mock-figure{margin:12px 0 16px;max-width:100%}
+.mock-figure .circuit-figure{background:#fff}
+.mock-figure svg{width:100%;min-width:720px;max-height:none;object-fit:contain}
+@media(max-width:479px){.mock-figure .circuit-figure{padding:5px}}
+/* 模擬学科：既存スタイルと同一トーン */
+.mock-toolbar{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0}
+.mock-clock{font-variant-numeric:tabular-nums;font-weight:900;font-size:20px;color:var(--navy)}
+.mock-clock.low{color:var(--red)}
+.mock-palette{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;margin:13px 0}
+.mock-palette button{border:1px solid #cbd5e1;background:#fff;border-radius:8px;min-height:39px;font-weight:700;font-size:12px;color:var(--text)}
+.mock-palette button.done{background:#dbeafe;border-color:#93c5fd}
+.mock-palette button.current{outline:3px solid var(--blue);outline-offset:1px}
+.mock-palette button:focus-visible,.mock-actions button:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.mock-choice{display:block;width:100%;margin:9px 0;padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff;cursor:pointer;text-align:left;line-height:1.65;color:var(--text)}
+.mock-choice.chosen{border:2px solid var(--blue);background:var(--blue2);font-weight:800}
+.mock-choice:focus-visible{outline:3px solid #93c5fd}
+.mock-result-row{padding:11px 0;border-bottom:1px solid var(--line)}
+.mock-correct{color:var(--green)}.mock-wrong{color:var(--red)}
+@media(max-width:479px){.mock-palette{grid-template-columns:repeat(5,minmax(0,1fr))}.mock-palette button{min-height:44px}}
+
+/* v18: total question bank vs one session */
+.bank-counts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 12px}
+.bank-count{padding:13px 15px;border:1px solid #cbdcf6;border-radius:13px;background:#fff}
+.bank-count span{display:block;font-size:12px;color:#475569;font-weight:700}
+.bank-count strong{display:block;margin-top:3px;font-size:25px;color:#0f172a;line-height:1.2}
+.bank-guide{font-size:13px;color:#475569;margin:7px 0 15px;line-height:1.65}
+@media(max-width:380px){.bank-counts{gap:7px}.bank-count{padding:12px 10px}.bank-count strong{font-size:23px}}
+</style>
+<link rel="stylesheet" href="layout-fix-v22.css">
+<link rel="stylesheet" href="practical-priority-v28.css">
+</head>
+<body>
+<header>
+<div class="head-inner">
+<div><h1>2級電気製図｜11月 過去問を理解</h1><p>配電盤・制御盤製図作業｜「なぜ」を説明できるようになる</p><a class="go-home" href="index.html">← サイトのトップページへ戻る</a></div>
+<div class="header-chip">11月｜60問教材版</div>
+</div>
+</header>
+<main>
+<section class="active" id="home">
+<div class="card nov-hero">
+<span class="badge">11月のゴール</span>
+<h2 style="margin-top:8px">正解だけでなく、理由・誤答・図面とのつながりまで理解する</h2>
+<p>10月の基礎を使い、答えを選んだあとに「ほかの選択肢はなぜ違うか」まで確認します。</p>
+<div class="nov-goal">1日30分の目安：用語5分 → 問題5問と解説20分 → 復習5分</div>
+<div class="bank-counts" aria-label="11月の問題数"><div class="bank-count"><span>問題バンク全体</span><strong>60問</strong></div><div class="bank-count"><span>1回の学習</span><strong>5問</strong></div></div>
+<div aria-label="回答済み問題の割合" class="progressbar"><div id="progressFill"></div></div>
+<p class="small">全60問の学習状況｜初回回答済み：<b id="progressText">0/60</b>｜理解済み：<b id="masterText">0/60</b></p>
+<p class="bank-guide">毎日の学習は60問から5問ずつ出題します。「問題演習」タブでは○×30問・4択30問・全60問セットも選べます。50問模擬試験は別の練習モードです。</p>
+<button class="btn btn-primary" id="dailyStart" type="button">今日の5問を始める</button>
+</div>
+<div class="card practical-priority-card" aria-labelledby="nov-practical-priority-heading">
+<span class="practical-priority-eyebrow">実技試験が先｜11月は毎週作図</span>
+<h2 id="nov-practical-priority-heading">週別の実技メニューへ進む</h2>
+<p>筆記問題で理解した自己保持・インターロック・インバータ・扉配置を、実際に図を描く練習につなげます。</p>
+<div class="practical-priority-links">
+<button type="button" class="practical-priority-main" data-tab="bridge">11月の実技メニューを開く →</button>
+<a class="practical-priority-secondary" href="practical.html#weekly">実技の4週間を直接開く →</a>
+</div>
+<p class="practical-priority-habit"><b>学習のつなげ方：</b> 平日は理由を理解 → 週末は該当する週の図を描き、見本と照らして検図する。</p>
+</div>
+<div class="card">
+<h2>学習状況</h2>
+<div class="statgrid">
+<div class="stat"><strong id="statAnswered">0</strong><span>累計回答</span></div>
+<div class="stat"><strong id="statRate">—</strong><span>正答率</span></div>
+<div class="stat"><strong id="statReview">0</strong><span>要復習</span></div>
+</div>
+<p class="small">このページの学習履歴は端末内に保存。10月の記録とは別管理で、上書きしません。</p>
+</div>
+<div class="card" id="diagramJapaneseLegend"><h2>図面に出てくる略号の読み方</h2><p class="small">回路図の機器記号は試験対策上そのまま残し、日本語で意味を確認できるようにしています。</p><div class="grid"><div class="topic"><b>MC：電磁接触器</b><span class="small">コイルで接点を開閉する機器です。</span></div><div class="topic"><b>THR：サーマルリレー（熱動形過負荷継電器）</b><span class="small">電動機の過負荷を検出する機器です。</span></div><div class="topic"><b>PB：押しボタン</b><span class="small">運転用はa接点、停止用はb接点が一般的です。</span></div><div class="topic"><b>SW：切替スイッチ</b><span class="small">操作位置に応じて接点を切り替えます。</span></div><div class="topic"><b>F／R：正転／逆転</b><span class="small">相互インターロック回路の動作方向を表します。</span></div><div class="topic"><b>L／N：制御電源の両端（図面上の仮表記）</b><span class="small">この教材図では左側と右側の電源端子を区別するために使用。実際の電源方式は図面の指定に従ってください。</span></div></div></div>
+
+
+<div class="card"><h2>6分野の学習状況</h2><div class="grid" id="domainProgress"></div></div>
+<div class="card notice"><h2>試作版の範囲</h2><p>現在は11月向けオリジナル問題60問（○×30問・4択30問）です。公式過去問そのものの転載ではありません。50問模擬は、全6分野をひと通り学んだ後の総合確認として活用できます。</p><p style="margin-bottom:0">実技の学習は週末に、回路図や扉正面図の部分練習と組み合わせてください。安全上の実機操作手順を指示する教材ではありません。</p></div>
+</section>
+<section id="practice">
+<div class="card">
+<span class="badge green">問題演習</span><h2 style="margin-top:8px">練習方法を選ぶ</h2>
+<div class="mode-grid">
+<div class="mode"><span class="badge">基礎確認</span><h3>○×ドリル</h3><p class="small">30問。用語・考え方を判断します。</p><button class="btn btn-soft" data-start="tf">○×30問を解く</button></div>
+<div class="mode"><span class="badge green">理由まで理解</span><h3>4択ドリル</h3><p class="small">30問。誤答の理由まで確認します。</p><button class="btn btn-green" data-start="mcq">4択30問を解く</button></div>
+<div class="mode"><span class="badge purple">全範囲</span><h3>11月の60問セット</h3><p class="small">全6分野・初級から応用まで。</p><button class="btn btn-purple" data-start="all">全60問に挑戦</button></div>
+<div class="mode"><span class="badge amber">弱点</span><h3>要復習ドリル</h3><p class="small">不正解・理解が曖昧・未理解の問題。</p><button class="btn btn-red" data-start="review">復習する</button></div>
+</div>
+</div>
+<div class="card">
+<span class="badge purple">分野別・難易度別</span><h2 style="margin-top:8px">目的を決めて解く</h2>
+<div class="formrow"><label for="domainSelect">分野</label><select id="domainSelect"></select></div>
+<div class="formrow"><label for="levelSelect">難易度</label><select id="levelSelect"><option value="all">すべて</option><option value="1">初級</option><option value="2">標準</option><option value="3">応用</option></select></div>
+<p class="small" id="filterCount" role="status"></p>
+<button class="btn btn-dark" id="filteredStart">選んだ条件で練習</button>
+</div>
+<div class="card"><span class="badge purple">模擬学科</span><h2 style="margin-top:8px">50問 模擬学科試験</h2><p class="small">○×25問＋4択25問。100分の学習用タイマーで本番に近い通し練習。試験中は正誤と解説を表示せず、終了後に分野別分析と復習ができます。</p><p class="small">※本試験の公式問題・配点・出題比率を再現したものではありません。制限時間100分は本サイトの練習設定です。</p><button class="btn btn-primary" id="openMock" type="button">模擬試験へ進む</button></div>
+</section>
+<section id="mock">
+<div class="card"><span class="badge purple">50問 模擬学科</span><h2 style="margin-top:8px">時間を意識して解く</h2>
+<p class="small">25問の○×に続いて25問の4択を出題。開始後100分で自動採点します。途中回答はこの端末内に自動保存します。選択した回答は終了まで変更可能です。</p>
+<div aria-live="polite" id="mockApp"></div>
+</div>
+</section>
+<section id="quiz">
+<div class="card"><div id="quizBox"></div><div class="btn-row" id="quizButtons" style="margin-top:14px"></div></div>
+</section>
+<section id="review">
+<div class="card"><h2>要復習の問題</h2><p class="small">不正解、または解説後に「曖昧・未理解」と判断した問題が対象です。</p><div id="reviewBox"></div><div class="list-actions"><button class="btn btn-primary" id="reviewStart">要復習を解く</button><button class="btn btn-red" id="clearReview">要復習だけ解除</button></div></div>
+<div class="card"><h2>学習記録の管理</h2><p class="small">11月の学習履歴のみ初期化します。10月の保存データには触れません。</p><button class="btn btn-red" id="clearAll">11月の履歴をリセット</button></div>
+</section>
+<section id="bridge"><div class="card" id="nov-practical-weeks" style="border:2px solid #93c5fd;background:#f8fbff"><span class="badge">11月の実技</span><h2 style="margin-top:8px">下段の「実技」から、週別の実技問題へ進みます</h2><p class="practical-guide-note" style="margin:10px 0 12px"><b>おすすめ：</b>迷ったら第1週から順に進めてください。急ぎのときは、今つまずいている項目のカードを1つ選ぶだけでも大丈夫です。</p><p>11月の実技学習はこちらから進めます。第1週から「読む → 動作を考える → 白紙に描く → 解答で検図」を実施してください。各リンクは実技専用ページの対応教材へ移動します。</p><div class="practical-anchor-links" aria-label="11月 実技の入口"><a href="practical.html#week1">第1週</a><a href="practical.html#week2">第2週</a><a href="practical.html#week3">第3週</a><a href="practical.html#week4">第4週</a><a href="practical.html#final-assignment">総合課題</a><a href="practical.html#examFocusV11">実技力診断</a></div><div class="practical-overview-grid">
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第1週</span><span class="goal-chip">基礎確認</span></div><h3>図記号と通電経路</h3><p class="small">a接点・b接点、コイル、主回路／制御回路を読み分けます。</p><ul class="practical-points"><li>図記号</li><li>接点追跡</li><li>誤配線発見</li></ul><p class="practical-meta">こんな時に選ぶ：接点の読み方や、通電の流れがまだ曖昧なとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week1">第1週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第2週</span><span class="goal-chip">動作理解</span></div><h3>自己保持と相互インターロック</h3><p class="small">既存の4段階図解を使い、起動・停止・逆転禁止を確認します。</p><ul class="practical-points"><li>自己保持</li><li>インターロック</li><li>正転・逆転</li></ul><p class="practical-meta">こんな時に選ぶ：回路がなぜ保持されるか、なぜ同時動作しないかを説明したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week2">第2週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第3週</span><span class="goal-chip">作図強化</span></div><h3>CWD方式・インバータ改造</h3><p class="small">改造前後の比較図、図記号付きSVG見本、改造前後の比較と検図に挑戦します。</p><ul class="practical-points"><li>CWD方式</li><li>改造前後比較</li><li>検図</li></ul><p class="practical-meta">こんな時に選ぶ：11月の中心課題である展開接続図を重点的に進めたいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week3">第3週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第4週</span><span class="goal-chip">扉正面図</span></div><h3>扉正面図・総合確認</h3><p class="small">外形、中心線、機器配置、寸法を照合し、寸法演習と詳細見本でも確認します。</p><ul class="practical-points"><li>外形</li><li>機器配置</li><li>寸法記入</li></ul><p class="practical-meta">こんな時に選ぶ：扉正面図の配置や寸法で迷いやすいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week4">第4週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">総合</span><span class="goal-chip">本番想定</span></div><h3>総合実技課題</h3><p class="small">ポンプ改造と扉正面図を、一連の課題として作図・検図します。</p><ul class="practical-points"><li>総合作図</li><li>検図</li><li>仕上げ確認</li></ul><p class="practical-meta">こんな時に選ぶ：週別学習を終えて、本番に近い流れで確認したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#final-assignment">総合実技課題を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">診断</span><span class="goal-chip">弱点発見</span></div><h3>回路図検図・実技力診断</h3><p class="small">CWD寄り参考図、回路図監査、時間付き作図、100点満点の独自自己採点と弱点復習を確認します。</p><ul class="practical-points"><li>検図</li><li>時間計測</li><li>自己採点</li></ul><p class="practical-meta">こんな時に選ぶ：今の実力と弱点をまとめて確認したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#examFocusV11">回路図検図・実技力診断を開く</a></div></article></div><div class="practical-guide-note">おすすめの進め方：第1週 → 第2週 → 第3週 → 第4週 → 総合実技課題 → 実技力診断 の順です。時間がない日は「今つまずいている項目」のカードだけ選んでも大丈夫です。</div></div>
+<div aria-hidden="true" hidden="" id="practicalList"></div>
+</section>
+<section id="glossary">
+<div class="card"><span class="badge">その場で調べる</span><h2 style="margin-top:8px">11月の重要用語15語</h2>
+<p class="small">知らない用語はここで検索できます。問題の解説内にも関連用語の簡単な説明が表示されます。</p><p class="small">略号は「MC＝電磁接触器」「CT＝計器用変流器」「MCCB＝配線用遮断器」「THR＝サーマルリレー」のように日本語名とセットで覚えましょう。</p>
+<label class="searchlabel" for="termSearch">用語を検索</label><input autocomplete="off" class="search" id="termSearch" placeholder="例：MC、自己保持、扉正面図" type="search"/>
+<p class="small" id="termCount" role="status"></p><div id="termList"></div></div>
+</section>
+</main>
+<nav aria-label="11月の学習メニュー">
+<button class="active" data-tab="home">学習ホーム</button><button data-tab="practice">問題演習</button><button data-tab="review">復習</button><button class="nav-practical" data-tab="bridge" aria-label="実技"><span class="nav-main">実技</span></button><button data-tab="glossary">用語</button><a aria-label="サイトのトップページへ戻る" class="nav-overview" href="index.html">⌂ トップへ</a>
+</nav>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script id="questionBank" type="application/json">{"schemaVersion":"1.1.0-expanded","title":"技能検定2級 電気製図 11月理解問題60問","description":"11月版の独自教材60問。過去問そのものの転載ではありません。","basedOn":"https://licencekeiko.netlify.app/","counts":{"total":60,"true_false":30,"choice4":30,"easy":15,"standard":30,"applied":15},"questions":[{"id":"NOV-A-001","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"計器用変流器（CT）は、主回路の電流を計器や保護継電器で扱いやすい二次電流に変成するために用いられる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"CTは主回路の大きな電流を、電流計や保護継電器に適した二次電流に変成する計器用機器である。","incorrectOptions":{"1":"「誤り」ではない。CTは電流計測・保護用の計器用変流器であり、VT（計器用変圧器）のように電圧を変成する装置ではない。"},"practicalLink":"主回路図・単線接続図でCTの設置箇所と、電流計・保護継電器につながる計測回路を確認する。","keyPoint":"CT＝電流を計測・保護用の二次電流に変える。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：変流器の構造と動作","url":"https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0220/cha_2/02020004.html","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-002","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"一次側に電流が流れている計器用変流器（CT）の二次側について、最も適切な説明はどれか。","options":["測定器を外したら、二次側は開放したままにする。","二次側を開放すると、高電圧が生じるおそれがある。","計測中も二次側を常に短絡したままにする。","一次側に電流が流れていても、二次側の開放は安全である。"],"answerIndex":1,"explanation":{"correctReason":"一次側に電流が流れるCTで二次側を開放すると、二次側に危険な高電圧が発生し、感電や絶縁破壊につながるおそれがある。","incorrectOptions":{"0":"測定器を取り外す際に二次側を開放したままにするのは危険。適切な停止・短絡措置など所定の手順が必要。","2":"二次側を常時短絡すると計測器に必要な電流が流れず、通常の計測ができない。短絡は保守時等の適切な条件・手順で行う。","3":"一次電流が流れているときの二次側開放こそ危険となるため、誤り。"},"practicalLink":"CTを含む計測回路を図面で追う際は、二次側の接続が途切れていないか、保守用短絡端子などがどう扱われるかを確認する。","keyPoint":"CT二次側は一次通電中に開放しない。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"富士電機テクニカ：計器用変流器(CT)の二次側をオープンにすると何故いけないのですか？","url":"https://www.fujielectric.co.jp/technica/products/instrument-transformers/faq/instrument-transformers/03.html","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":"安全上の注意：実機の操作手順を示す教材ではない。保守作業は資格・手順に従う。"},"diagramId":null},{"id":"NOV-A-003","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"電磁接触器（MC）の補助a接点は、コイルが励磁されると閉じる接点であり、自己保持回路に用いられることが多い。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"補助a接点は機器が動作すると閉じる接点であり、運転押しボタンと並列に入れて自己保持に使われることが多い。","incorrectOptions":{"1":"「誤り」ではない。自己保持回路では、MCコイルが励磁したときに閉じる補助a接点を用いるのが基本である。"},"practicalLink":"展開接続図で、MCコイルと同じ記号の補助a接点がどこに入っているかを探す練習につながる。","keyPoint":"補助a接点＝動作時に閉、自己保持でよく使う。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-004","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"サーマルリレー（THR）の主な役割として最も適切なものはどれか。","options":["電動機の過負荷を検出し、制御回路側で停止させる","短絡電流を主回路で直接遮断する","回転速度を連続的に変化させる","計器用に電圧を変成する"],"answerIndex":0,"explanation":{"correctReason":"サーマルリレーは電動機の過負荷による電流・発熱を検知し、通常は補助接点を介して接触器のコイルを切り、運転を停止させる。短絡電流を直接遮断する機器ではない。","incorrectOptions":{"1":"短絡保護の主役はMCCBやヒューズなどであり、THRではない。","2":"速度制御を行うのは主にインバータである。","3":"電圧を変成する機器はVT（計器用変圧器）である。"},"practicalLink":"制御回路の停止条件の列で、THRのb接点が直列に入る理由を説明できるようにする。","keyPoint":"THR＝過負荷保護。短絡保護や速度制御ではない。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-005","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"一般的な制御回路のb接点は、操作前（非動作）の通常状態で閉じ、操作・動作すると開く接点である。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"b接点は通常閉（NC）であり、コイルの励磁や操作により動作すると開く。","incorrectOptions":{"1":"「誤り」ではない。通常状態での接点状態を基準に、a接点とb接点を区別する。"},"practicalLink":"停止ボタンや異常停止条件でb接点が使われる理由を理解する基礎になる。","keyPoint":"b接点＝通常閉、動作で開。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-006","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"制御回路図で「停止押しボタン」「過負荷保護接点」「MCコイル」が直列に描かれている。停止押しボタンに最も適切な接点種別はどれか。","options":["通常時は開いており、押すと閉じるa接点","通常時は閉じており、押すと開くb接点","動作したときだけ閉じるMC補助a接点","常時導通した配線（接点なし）"],"answerIndex":1,"explanation":{"correctReason":"停止押しボタンは、通常時に通電経路を維持し、押したときに開いてMCコイルへの給電を切る必要があるため、b接点を選ぶ。","incorrectOptions":{"0":"a接点は通常時に開いているため、通常の停止回路ではMCコイルの通電経路を維持できない。","2":"MC補助a接点は自己保持などに用いる。停止押しボタンの接点としては適切でない。","3":"接点なしでは停止操作によって回路を遮断できない。"},"practicalLink":"押しボタンの役割から接点を逆算する練習は、展開接続図の読み取りに直結する。","keyPoint":"停止押しボタン＝通常閉で押すと開くb接点。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":"切換接点b側と停止用b接点が重複する旧選択肢を明確化した。"},"diagramId":null},{"id":"NOV-A-007","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"一般に、補助a接点は機器が無励磁の通常状態では開いており、機器が動作すると閉じる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"補助a接点はNO（常開）接点であり、機器やコイルが動作すると閉じる。自己保持や信号取り出しによく用いられる。","incorrectOptions":{"1":"「誤り」ではない。a接点は通常開で、動作時に閉じるのが基本である。"},"practicalLink":"接点記号を読むときは、通常状態と動作後の変化を区別して考える。MCの補助a接点が自己保持に使われる場面を回路図で確認する。","keyPoint":"a接点＝通常開、動作で閉。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：変流器の構造と動作","url":"https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0220/cha_2/02020004.html","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-008","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"MCCB（配線用遮断器）の役割として最も適切なものはどれか。","options":["低圧回路の過負荷や短絡を保護する。","電動機の回転速度を調整する。","電磁接触器の自己保持を行う。","CTの二次電流を電圧に変換する。"],"answerIndex":0,"explanation":{"correctReason":"MCCBは低圧回路で過負荷や短絡から配線・機器を保護するための遮断器である。","incorrectOptions":{"1":"回転速度調整はインバータの役割であり、MCCBの役割ではない。","2":"自己保持は制御回路の接点構成で行う。MCCBが自己保持機能を担うわけではない。","3":"CTは電流を変成する機器であり、MCCBが変換を行うわけではない。"},"practicalLink":"単線接続図や主回路図で、MCCBが電源側に配置されている意味を理解する基礎になる。","keyPoint":"MCCB＝保護、MC＝開閉。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：変流器の構造と動作","url":"https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0220/cha_2/02020004.html","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-009","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"MC（電磁接触器）は短絡事故が起きたときに、それ自体の機能だけで回路を安全に保護することを主目的とする機器である。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"MCの主な役割は回路や電動機の遠隔開閉であり、短絡保護そのものを主目的とする機器ではない。短絡保護はMCCBやヒューズなどで行う。","incorrectOptions":{"0":"「正しい」ではない。MCは開閉用機器であり、保護機器とは役割が異なる。"},"practicalLink":"主回路図では、保護機器と開閉機器を区別して読むことが重要である。","keyPoint":"MCは開閉、短絡保護は別の保護機器。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：変流器の構造と動作","url":"https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0220/cha_2/02020004.html","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-A-010","month":"2026-11","domain":"A","domainLabel":"機器・図記号","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"電磁接触器（MC）を使用する一般的な電動機始動回路で、サーマルリレー（THR）の補助b接点を制御回路に入れる目的として最も適切なものはどれか。","options":["過負荷時に制御回路を開いて、電動機を停止させるため。","主回路の短絡電流を直接遮断するため。","CTの二次側を短絡するため。","インバータの出力周波数を上げるため。"],"answerIndex":0,"explanation":{"correctReason":"過負荷を検出してTHRが動作すると、制御回路に直列の補助b接点が開く。これによってMCコイルが消磁し、MCの主接点が開いて電動機への給電が切れる。THRそのものが主回路の短絡電流を遮断する仕組みではない。","incorrectOptions":{"1":"短絡電流の遮断はMCCBやヒューズなどの役割であり、THRの主目的ではない。","2":"CT二次側の短絡とは無関係である。","3":"出力周波数の制御はインバータの役割である。"},"practicalLink":"自己保持回路では、THRのb接点が停止条件として直列に入る理由を説明できるようにする。","keyPoint":"THRのb接点は、過負荷時に開いて止める。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：変流器の構造と動作","url":"https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0220/cha_2/02020004.html","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"quality_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-B-001","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"一般的な自己保持回路では、MC（電磁接触器）の補助a接点を運転押しボタンと直列に接続することで、ボタンを離してもMCコイルの励磁を保持できる。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"一般的な自己保持回路では、MCの補助a接点は運転押しボタンの「並列」に接続する。ボタンを離した後は、閉じた補助a接点がコイルへの給電経路になる。","incorrectOptions":{"0":"「直列」が誤り。補助a接点を運転ボタンと単純に直列に入れただけでは、運転ボタンを離すと給電経路が切れてしまう。"},"practicalLink":"展開接続図で運転押しボタンとMC補助a接点が並列になっているか、停止b接点が両経路の共通部分にあるかを確認する。","keyPoint":"自己保持の補助a接点は、運転押しボタンと並列。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-B-002","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"2台の電動機をそれぞれMC1・MC2で運転し、通常の運転指令では同時運転しないよう「電気的相互インターロック」を設けたい。基本的な接点配置はどれか。","options":["MC1コイル回路にMC2の補助b接点を直列、MC2コイル回路にMC1の補助b接点を直列に入れる。","MC1コイル回路にMC2の補助a接点を直列、MC2コイル回路にMC1の補助a接点を直列に入れる。","MC1・MC2の各補助a接点を、それぞれのコイルに直列に入れるだけにする。","MC1・MC2のコイルを同一の運転押しボタンに並列接続する。"],"answerIndex":0,"explanation":{"correctReason":"一方のMCが励磁されると、その補助b接点が開き他方のコイルへの給電を妨げる。互いのb接点を相手側のコイル回路に直列挿入するのが基本。ただし補助接点の応答遅れ・同時指令・接点故障を含む完全な同時投入防止策ではなく、必要に応じ機械的インターロックなどを併用する。","incorrectOptions":{"1":"相手側のa接点は相手が励磁すると閉じる。相互禁止ではなく、相手側の動作を許可する方向になってしまう。","2":"自分自身のa接点を単に直列に入れても、他方が動作中かどうかを判定できない。","3":"同じ運転ボタンで両方のコイルを励磁する構成は、同時運転禁止に反する。"},"practicalLink":"展開接続図で「MC1がONのときMC2を禁止する」という条件を、MC2コイル回路に直列のMC1補助b接点として表せるか確認する。","keyPoint":"相互禁止は、相手側のb接点を自分のコイル回路へ直列。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":"一般的な制御回路の演習。2026年度後期実技課題の2台のポンプに相互禁止条件が指定されているという意味ではない。安全上の最終措置が必要な場合は機械的インターロック等も別途検討。"},"diagramId":null},{"id":"NOV-B-003","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"自己保持回路では、運転押しボタンから手を離した後もMCコイルへ電流が流れる別経路が必要である。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"自己保持は、押しボタンを離しても補助a接点などの別経路でMCコイルへ通電を続ける考え方である。","incorrectOptions":{"1":"「誤り」ではない。別経路がなければ押しボタンを離した瞬間にコイルは消磁する。"},"practicalLink":"運転時と運転ボタンを離した後の2つの通電経路を描き分けて考える練習になる。","keyPoint":"自己保持＝押した後も残る通電経路が必要。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"self_hold_basic"},{"id":"NOV-B-004","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"自己保持回路で、停止押しボタンを押したときに電動機が停止する直接の理由として最も適切なものはどれか。","options":["MCの補助a接点が閉じるから","停止b接点が開き、MCコイルへの通電が途切れるから","THRのヒータが加熱されるから","電動機から逆起電力が発生するから"],"answerIndex":1,"explanation":{"correctReason":"停止押しボタンは通常閉のb接点であり、押すと開いてMCコイルへの通電が切れるため、主接点も開いて停止する。","incorrectOptions":{"0":"補助a接点が閉じるのは自己保持を継続するためで、停止の直接理由ではない。","2":"THRのヒータ加熱は過負荷保護の文脈であり、停止押しボタンを押した瞬間の停止理由ではない。","3":"逆起電力はここでの制御回路の停止理由ではない。"},"practicalLink":"停止ボタン操作時に、どの接点が状態変化し、何が消磁するのかを口頭で説明する練習に使える。","keyPoint":"停止ボタンで開くのはb接点、切れるのはMCコイルの通電。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"self_hold_basic"},{"id":"NOV-B-005","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"一般的な電気的相互インターロックは、相手側接触器の補助b接点を各コイル回路に直列に入れ、通常の動作では2つの接触器の同時励磁を防ぐために用いられる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"相手側の補助b接点をそれぞれのコイル回路に直列接続することで、一方が励磁している間は他方のコイルに通電しにくくなる。ただし接点溶着、接触器の動作時間差、同時操作などを含むあらゆる故障・操作条件で同時投入を防げるとは限らない。必要に応じ機械的インターロック等を併用する。","incorrectOptions":{"1":"「誤り」ではない。同時動作禁止がインターロックの中心目的である。"},"practicalLink":"正転・逆転回路や2台の系統切替えを読む際の基本概念になる。","keyPoint":"電気的インターロックは基本的な相互禁止。故障時・同時操作時の安全は別途検討する。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"},{"title":"日本電気技術者協会：リレーシーケンスの基礎（インターロック）","url":"https://www.jeea.or.jp/course/contents/09107/","type":"technical_explanation"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"interlock_basic"},{"id":"NOV-B-006","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"正逆運転回路で、正転用接触器Fのb接点が逆転用接触器Rのコイル回路に直列に入っている。この接点の目的として最も適切なものはどれか。","options":["Fが入っている間はRが入れないようにする","Rが入るとFの主回路電流を測定する","Fの運転中だけRの速度を上げる","FとRを同時に入れやすくする"],"answerIndex":0,"explanation":{"correctReason":"正転用Fの励磁中はFの補助b接点が開き、逆転用Rのコイル回路を遮断する。これは通常運転における相互禁止の基本であり、安全確保のためには適切な機械的インターロック等も検討する。","incorrectOptions":{"1":"電流測定は接点の目的ではない。","2":"速度制御は接点ではなくインバータなどで行う。","3":"インターロックは同時投入を防ぐための回路であり、逆の意味になる。"},"practicalLink":"相互インターロック回路の一部を作図する際、どのb接点をどこに入れるかを判断する練習になる。","keyPoint":"相手のb接点を直列に入れて、同時励磁を防ぐ。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"interlock_basic"},{"id":"NOV-B-007","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"一般的な制御回路では、停止押しボタンは通常閉のb接点として用いられることが多い。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"停止押しボタンは通常時に閉で、押すと開くb接点として用いるのが一般的である。押した瞬間に回路を遮断して停止できる。","incorrectOptions":{"1":"「誤り」ではない。停止押しボタンは、通常閉のb接点とするのが基本である。"},"practicalLink":"回路図で停止PBが運転回路の直列部分に入っている理由を考える。","keyPoint":"停止PBは通常閉、押すと開く。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-B-008","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"自己保持回路が正常に動作中のとき、停止押しボタンを押した場合の説明として最も適切なものはどれか。","options":["停止b接点が開き、MCコイルが消磁して主接点と補助a接点が元に戻る。","運転a接点が閉じ続けるため、MCコイルは励磁を続ける。","THRの動作がなければ、停止押しボタンでは停止しない。","停止押しボタンを押すと自己保持接点だけが閉じる。"],"answerIndex":0,"explanation":{"correctReason":"停止押しボタンを押すと停止b接点が開き、コイルへの給電が切れる。MCコイルが消磁すると主接点と補助a接点は通常状態へ戻る。","incorrectOptions":{"1":"停止b接点が開くので、運転a接点や自己保持回路があっても給電経路は切れる。","2":"停止押しボタンはTHRと無関係に通常の停止操作として機能する。","3":"停止押しボタンを押して閉じるわけではなく、b接点が開く。"},"practicalLink":"自己保持回路を読むときは、「停止PBは全経路の共通直列部分にある」と説明できるようにする。","keyPoint":"停止PBで共通直列部分を切る。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-B-009","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"主回路の電動機へ電力を供給する主接点と、自己保持やインターロックに使う補助接点は、役割が異なる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"主接点は主回路の電力を開閉し、補助接点は制御回路の自己保持・状態検出・インターロックなどに使う。役割を区別して理解する必要がある。","incorrectOptions":{"1":"「誤り」ではない。主接点と補助接点は用途も扱う回路も異なる。"},"practicalLink":"MCの記号を見つけたとき、主接点と補助接点を同じ機器として関連付けて読めるようにする。","keyPoint":"主接点は電力、補助接点は制御。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-B-010","month":"2026-11","domain":"B","domainLabel":"主回路・制御回路","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"MCで開閉する一般的な電動機の自己保持回路が運転中に、THRが過負荷で動作して制御回路のb接点が開いた。最も適切な説明はどれか。","options":["MCコイルが消磁し、電動機は停止する。","運転押しボタンを押し続ければ、そのまま運転を継続できる。","MCCBが必ず同時に遮断する。","THRのb接点が閉じるので自己保持が強くなる。"],"answerIndex":0,"explanation":{"correctReason":"THRのb接点が開くと、制御回路の直列経路が切れるためMCコイルが消磁し、主接点が開いて電動機は停止する。","incorrectOptions":{"1":"THRのb接点が開いているため、運転押しボタンを押してもコイルへ給電できない。","2":"過負荷動作とMCCBの遮断は別の保護動作であり、必ず同時とは限らない。","3":"b接点は過負荷時に開くので、自己保持が強くなることはない。"},"practicalLink":"停止原因を「どの直列接点が開いたか」で説明する練習になる。","keyPoint":"THR動作時はb接点が開き、運転停止。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"quality_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-C-001","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"展開接続図では、同じ電磁接触器のコイルと補助接点を、必ず同じ場所にまとめて描かなければならない。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"展開接続図は回路の機能や電流経路を追いやすく配置する。コイルと補助接点は別の位置に描かれることがあり、機器識別記号や端子番号などで対応関係を確認する。","incorrectOptions":{"0":"「必ず同じ場所」が誤り。コイルと接点が離れていても、同じ機器に属することを記号等で対応付けられる。"},"practicalLink":"CWD方式の展開接続図では、MCコイルを見つけたら離れた位置のMC補助接点も探し、動作を追跡する。","keyPoint":"展開接続図は「配置」より「対応と動作」を読む。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":"厳密な図面の書式は指定課題・JEM 1404等による。"},"diagramId":null},{"id":"NOV-C-002","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"次の自己保持回路を考える。停止b接点と過負荷保護b接点は閉じている。運転押しボタンa接点とMC補助a接点は並列で、MCコイルに接続されている。ここでMC補助a接点側の枝線だけが断線した。運転押しボタンを押してから離すと、どうなるか。","options":["押している間もMCコイルは励磁しない。","ボタンを離してもMCコイルは正常に励磁を続ける。","過負荷保護b接点が必ず開くため、MCコイルは停止する。","押している間はMCコイルが励磁し、離すと消磁する。"],"answerIndex":3,"explanation":{"correctReason":"運転押しボタン側の経路は正常なので、押下中はMCコイルが励磁する。しかし並列の自己保持用枝線が断線しているため、ボタンを離すとコイルへの給電経路がなくなり消磁する。","incorrectOptions":{"0":"断線したのは補助a接点の枝線だけ。運転押しボタン側の電路は残っているので押下中は励磁する。","1":"ボタンを離した後の自己保持経路が断線しているため、励磁状態は維持できない。","2":"過負荷保護b接点は閉じているという前提。保護回路の作動を勝手に仮定してはいけない。"},"practicalLink":"展開接続図の各枝線を実際に指で追い、押下中の通電経路と、ボタンを離した後の通電経路を分けて検図する。","keyPoint":"「押している間」と「離した後」で給電経路を追い直す。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"self_hold_basic"},{"id":"NOV-C-003","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"展開接続図では、同じ機器に属するコイルと補助接点が離れた位置に描かれていても、記号や番号で対応付けて読む。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"展開接続図では機能や読みやすさを優先して離して描くため、記号や接点番号を対応させて読む必要がある。","incorrectOptions":{"1":"「誤り」ではない。物理的位置よりも回路の論理関係を追う図である。"},"practicalLink":"MCコイルを見つけたら、同じ記号の補助接点を図中から探す練習に直結する。","keyPoint":"離れていても同じ記号なら同じ機器の要素。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"cwd_basic"},{"id":"NOV-C-004","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"展開接続図を読む最初の手順として、最も適切なものはどれか。","options":["色が多い部分から先に読む","主回路と制御回路の電源の流れを確認する","接点番号だけを先に暗記する","寸法記入の位置から確認する"],"answerIndex":1,"explanation":{"correctReason":"回路を読むときは、まず電源から負荷・コイルへどう流れるかの大筋を確認すると、各接点の役割を理解しやすい。","incorrectOptions":{"0":"色が多いかどうかは本質ではない。","2":"暗記だけでは接点の役割が分からず、読み間違いにつながる。","3":"展開接続図では寸法より通電経路の理解が優先である。"},"practicalLink":"電源→停止条件→運転条件→コイル→負荷という順に声に出して追う習慣を作る。","keyPoint":"展開接続図はまず通電経路から読む。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"cwd_basic"},{"id":"NOV-C-005","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"展開接続図でコイルが無励磁のとき、対応するa接点は通常開、b接点は通常閉として読む。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"接点記号は通常状態で描かれるため、コイルが無励磁のときのa接点は開、b接点は閉である。","incorrectOptions":{"1":"「誤り」ではない。通常状態を基準にしないと接点の読み方が逆転してしまう。"},"practicalLink":"動作前・動作後の接点状態を比較しながら図を読む基本になる。","keyPoint":"接点は通常状態で読む。aは開、bは閉。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"cwd_basic"},{"id":"NOV-C-006","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"自己保持回路の展開接続図で、運転押しボタンのa接点が故障して常時開のままになった。最も起こりやすい現象はどれか。","options":["停止できなくなる","一度だけ起動して自己保持される","運転指令を与えてもMCコイルが励磁しない","過負荷時だけ停止する"],"answerIndex":2,"explanation":{"correctReason":"運転押しボタンのa接点が閉じなければ、最初の起動通電経路ができず、自己保持回路も成立しないためMCコイルは励磁しない。","incorrectOptions":{"0":"停止不能の原因ではない。","1":"最初の起動経路ができないため、一度だけ起動することもない。","3":"過負荷時だけの停止とは無関係である。"},"practicalLink":"故障時の動作を考えることで、正常時の電流経路を逆に確認できる。","keyPoint":"起動の最初の1回は運転a接点が作る。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"self_hold_basic"},{"id":"NOV-C-007","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"展開接続図の接点記号は、原則として機器が無励磁・非動作の通常状態を基準に表す。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"接点記号は通常、コイルが無励磁で機器が動作していない状態を基準に描かれる。これを前提にa接点・b接点を読む。","incorrectOptions":{"1":"「誤り」ではない。通常状態を基準に接点の開閉を判断する。"},"practicalLink":"展開接続図でa接点・b接点を読むときの出発点になる。","keyPoint":"接点記号は通常状態基準。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-C-008","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"展開接続図で、離れた場所に描かれている補助接点がどのコイルに対応するかを判断する手掛かりとして最も重要なものはどれか。","options":["線の太さ","機器の識別記号や接点記号","紙の中央に近い位置","押しボタンの色"],"answerIndex":1,"explanation":{"correctReason":"展開接続図では、機器の識別記号や接点記号によって、離れた位置にあるコイルと補助接点の対応関係を判断する。","incorrectOptions":{"0":"線の太さは対応関係を示す主な手掛かりではない。","2":"紙面上の位置だけでは同一機器か判断できない。","3":"押しボタンの色は展開接続図上の対応判断の根拠ではない。"},"practicalLink":"コイル記号を見つけたら、同じ記号を持つ接点を探して動作を追う練習をする。","keyPoint":"対応付けは機器記号で行う。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-C-009","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"展開接続図では、線が交差していれば、必ずその場所で電気的に接続されていると判断してよい。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"線の交差だけでは接続とは限らない。図の表し方や接続点の表記を確認し、交差と接続を区別して読む必要がある。","incorrectOptions":{"0":"「正しい」ではない。交差＝接続とは限らないため、表記法を確認する必要がある。"},"practicalLink":"図面を読むときは、思い込みではなく接続表現を丁寧に確認する習慣をつける。","keyPoint":"交差と接続は別。記号を確認する。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-C-010","month":"2026-11","domain":"C","domainLabel":"展開接続図","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"停止b接点とTHRのb接点が閉じ、運転a接点とMC補助a接点が並列になった一般的な自己保持回路を考える。初めにMCは無励磁とする。運転押しボタンを押した直後からの流れとして、最も適切なものはどれか。","options":["運転a接点が閉じてMCコイルが励磁し、その後MC補助a接点が閉じて自己保持が成立する。","停止b接点が閉じ直してからMCコイルが励磁する。","THRのb接点が先に開いてから自己保持が成立する。","MCコイルが励磁する前に主接点だけが自動的に閉じる。"],"answerIndex":0,"explanation":{"correctReason":"停止b接点とTHRのb接点が閉じた状態で運転a接点を押すとMCコイルが励磁する。これに連動して並列のMC補助a接点が閉じ、運転ボタンを離した後もコイルに電流が流れる自己保持経路が成立する。","incorrectOptions":{"1":"停止b接点は通常時すでに閉じており、起動操作で閉じ直すものではない。","2":"THRのb接点は正常時には閉じており、起動時に先に開くわけではない。","3":"主接点はMCコイルが励磁した結果として閉じる。コイル励磁より先には動かない。"},"practicalLink":"「押した瞬間」と「自己保持が成立した後」を分けて通電経路を説明する練習になる。","keyPoint":"起動時はまず運転a接点でコイルを励磁する。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：リレーシーケンスの基礎","url":"https://jeea.or.jp/course/contents/09107/index.html","type":"technical_explanation"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"quality_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-001","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"一般に、インバータの出力周波数を変えることで、三相誘導電動機の回転速度を制御できる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"三相誘導電動機の同期速度は電源周波数と極数で決まり、出力周波数を変化させるインバータを用いて回転速度を制御できる。実際の回転速度はすべり等の影響を受ける。","incorrectOptions":{"1":"「誤り」ではない。インバータの重要な用途は可変周波数による速度制御である。ただし実速度が同期速度と完全一致するとは限らない。"},"practicalLink":"ポンプ用電動機にインバータを追加する展開接続図では、インバータへの運転指令と周波数指令、電動機への出力を区別して読む。","keyPoint":"周波数を変えると誘導電動機の回転速度を変えられる。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：同期回転速度の求め方","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/19091?site_domain=default","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-002","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"4極の三相誘導電動機に40 Hzの交流を供給するとき、同期速度は何 min⁻¹（rpm）か。実際の回転速度ではなく同期速度を答えよ。","options":["600 min⁻¹","1,000 min⁻¹","1,200 min⁻¹","1,500 min⁻¹"],"answerIndex":2,"explanation":{"correctReason":"同期速度は nₛ＝120f/P（f：周波数［Hz］、P：極数）より、120×40÷4＝1,200 min⁻¹である。実際の誘導電動機の回転速度は、通常すべりのためこれよりやや低い。","incorrectOptions":{"0":"600 min⁻¹は、この条件の同期速度の半分であり誤り。","1":"1,000 min⁻¹は与えられた40 Hz・4極の式に一致しない。","3":"1,500 min⁻¹は4極・50 Hzの同期速度に相当し、今回は40 Hzなので誤り。"},"practicalLink":"インバータ改造の課題を理解するとき、周波数指令が変わると電動機の基準となる同期速度がどう変わるか説明する。","keyPoint":"同期速度 Ns=120f/P。40Hz・4極なら1200 min⁻¹。実回転数はすべりにより異なる。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：同期回転速度の求め方","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/19091?site_domain=default","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-003","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"インバータは、交流電動機に与える周波数を変化させることで回転速度を制御できる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"誘導電動機の回転速度は電源周波数と関係が深いため、インバータは周波数制御によって速度調整を行う。","incorrectOptions":{"1":"「誤り」ではない。周波数制御はインバータの代表的な役割である。"},"practicalLink":"実技概要のインバータ付きポンプ改造課題を理解する前提知識になる。","keyPoint":"インバータ＝周波数を変えて速度制御。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-004","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"三相かご形誘導電動機について、最も適切な説明はどれか。","options":["直流でのみ運転する電動機である","回転子に整流子を用いる電動機である","構造が比較的簡単で、配電盤・制御盤の制御対象としてよく用いられる","必ず低速運転専用である"],"answerIndex":2,"explanation":{"correctReason":"三相かご形誘導電動機は構造が比較的簡単で堅牢であり、ポンプなど各種負荷の駆動に広く用いられる。","incorrectOptions":{"0":"交流で使用される代表的な電動機であり、直流専用ではない。","1":"整流子を用いる説明としては不適切である。","3":"用途や周波数によって速度は変わり、低速専用ではない。"},"practicalLink":"実技概要のポンプ用三相かご形誘導電動機の意味を理解する土台になる。","keyPoint":"三相かご形誘導電動機＝現場で広く使う標準的な交流電動機。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-005","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"4極・50Hzの誘導電動機の同期速度は1500 min⁻¹である。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"同期速度は 120×周波数÷極数 で求められるため、120×50÷4=1500 となる。","incorrectOptions":{"1":"「誤り」ではない。4極・50Hzの同期速度は1500 min⁻¹である。"},"practicalLink":"極数や周波数と速度の関係を知ると、インバータ制御の意味が理解しやすくなる。","keyPoint":"同期速度 ns = 120f / P。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-006","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"三相誘導電動機1台を一般的なインバータで駆動する場合、電源側保護機器の位置を含めた主回路の基本的な機器順序として最も適切なものはどれか。","options":["電源→インバータ→保護機器→電動機","電源→保護機器→インバータ→電動機","インバータ→電源→電動機→保護機器","電動機→保護機器→インバータ→電源"],"answerIndex":1,"explanation":{"correctReason":"基本例では電源側に適切な遮断器などの保護機器を配置し、インバータを経由して電動機へ接続する。ただし、モータの過負荷保護や複数台運転の追加保護は条件によって異なる。インバータ出力側に遮断器等を安易に挿入してよいという意味ではない。実設備ではメーカーの配線・保護指示に従う。","incorrectOptions":{"0":"一般的な電源側の保護機器の配置を示せていない。なお出力側の保護・開閉機器の要否は別途メーカー仕様を確認する。","2":"電源とインバータの位置関係が不適切。","3":"電源から負荷への接続順が逆である。"},"practicalLink":"主回路図を見たとき、保護・制御・負荷の順を整理する練習になる。","keyPoint":"基本例は 電源→電源側保護機器→インバータ→電動機。具体的な保護は機器仕様に従う。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"},{"title":"三菱電機FA FAQ：インバータ二次側への遮断器設置に関する注意","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/12673?site_domain=default","type":"manufacturer_technical"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-007","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"三相誘導電動機の同期速度は、電源周波数と極数によって決まる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"同期速度は周波数と極数で決まり、一般式 Ns=120f/P で表される。","incorrectOptions":{"1":"「誤り」ではない。周波数と極数が同期速度の基本要素である。"},"practicalLink":"周波数や極数が変わると回転速度の考え方がどう変わるかを整理する基礎になる。","keyPoint":"同期速度は周波数と極数で決まる。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：同期回転速度の求め方","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/19091?site_domain=default","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-008","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"同じ極数の三相誘導電動機をインバータで運転するとき、出力周波数を下げた場合の説明として最も適切なものはどれか。","options":["同期速度は上がる。","同期速度は下がる。","同期速度は変わらない。","必ず逆回転になる。"],"answerIndex":1,"explanation":{"correctReason":"同じ極数なら、同期速度は周波数に比例して変化するため、出力周波数を下げると同期速度も下がる。","incorrectOptions":{"0":"周波数を下げているので同期速度は上がらない。","2":"同期速度は周波数の影響を受けるため、変わらないというのは誤り。","3":"周波数を下げただけで必ず逆回転になるわけではない。"},"practicalLink":"インバータの役割を、電圧調整ではなく「周波数による速度制御」として理解するのに役立つ。","keyPoint":"周波数↓なら同期速度↓。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：同期回転速度の求め方","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/19091?site_domain=default","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-009","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"インバータの速度制御ではなく、出力側の配線を頻繁に開閉することが、電動機の速度を調整する基本的な方法である。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"一般的なインバータ駆動では、電動機の速度はインバータ出力の周波数などを制御して調整する。出力側配線を頻繁に開閉して速度を調整する方法は基本ではなく、メーカーの指定条件を守らない出力側開閉はインバータ故障の原因になり得る。","incorrectOptions":{"0":"「正しい」ではない。速度制御の基本は周波数制御であり、出力側開閉ではない。"},"practicalLink":"主回路図と制御回路図を読む際に、開閉機能と速度制御機能を区別する習慣をつける。","keyPoint":"速度制御の基本は周波数制御。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：同期回転速度の求め方","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/19091?site_domain=default","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"quality_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-D-010","month":"2026-11","domain":"D","domainLabel":"電動機・インバータ","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"2極の三相誘導電動機に50 Hzを加えるとき、同期速度は何 min⁻¹（rpm）か。","options":["1500","3000","6000","750"],"answerIndex":1,"explanation":{"correctReason":"同期速度 Ns=120f/P より、120×50÷2=3000 min⁻¹ となる。","incorrectOptions":{"0":"1500 min⁻¹ になるのは4極・50 Hzの場合である。","2":"6000 min⁻¹ は計算結果として大きすぎる。","3":"750 min⁻¹ は8極・50 Hzの場合である。"},"practicalLink":"電動機・インバータ分野では、同期速度の計算と実回転速度との違いを整理しておく。","keyPoint":"Ns=120f/P を使う。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"三菱電機FA：同期回転速度の求め方","url":"https://fa-faq.mitsubishielectric.co.jp/faq/show/19091?site_domain=default","type":"manufacturer_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-E-001","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"閉鎖配電盤の「扉正面図」では、主に扉面に取り付ける表示器・操作器などの位置、外形、寸法を分かるように表す。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"扉正面図は扉を正面から見た配置を示す図面で、表示灯、計器、押しボタンなどの扉面機器の配置や取り付け位置の判断に用いる。内部の端子間配線を示す接続図とは目的が異なる。","incorrectOptions":{"1":"内部の配線経路を主に表す図面ではない。配線関係の詳細は接続図等で確認する。"},"practicalLink":"扉正面図を練習するときは、機器名称・外形・中心位置・取り付け間隔を先に読み、指定寸法へ落とし込む。","keyPoint":"扉正面図＝扉面の機器配置を表す図面。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-E-002","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"扉に取り付ける表示灯2個の実際の中心間隔は400 mmである。尺度1:2で紙に描くとき、紙面上の中心間隔と寸法数値の組合せとして適切なのはどれか。なお、CADのモデル空間ではなく紙上の図形を考える。","options":["紙面上400 mm、寸法数値400","紙面上200 mm、寸法数値400","紙面上200 mm、寸法数値200","紙面上800 mm、寸法数値400"],"answerIndex":1,"explanation":{"correctReason":"縮尺1:2では紙面上の長さは実寸の半分なので400÷2＝200 mm。一方、寸法数値は対象物の実際の寸法を表すため「400」と記入する。","incorrectOptions":{"0":"実寸400 mmを紙面上でも400 mmにすると1:1（現尺）であり、指定の1:2ではない。","2":"紙面上200 mmは正しいが、寸法数値を200にすると実際の中心間隔を誤って伝えてしまう。","3":"紙面上800 mmは実寸400 mmの2倍で、1:2ではなく2:1に相当する。"},"practicalLink":"扉正面図の作図・検図で、指定された実寸と印刷尺度を区別して扱い、機器の中心間隔を正しく記入する。","keyPoint":"尺度1:2なら紙面上の長さは1/2、寸法数値は実寸。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本規格協会：JIS Z 8314:1998 製図―尺度（規格情報）","url":"https://webdesk.jsa.or.jp/books/W11M0090/?bunsyo_id=JIS+Z+8314%3A1998","type":"standard_metadata"},{"title":"日本規格協会：JIS Z 8317-1（規格の公開プレビュー）","url":"https://webdesk.jsa.or.jp/preview/pre_jis_z_08317_001_000_2008_j_ed10_ch.pdf","type":"standard_preview"},{"title":"国土交通省：CAD製図基準（尺度の解説）","url":"https://www.mlit.go.jp/sogoseisaku/kensetsusekou/news/denshinouhin/cad-m3.pdf","type":"government_technical"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":"CADのモデル空間は原寸で作図することが多い。ここでは問題文どおり紙面上での長さを問う。"},"diagramId":null},{"id":"NOV-E-003","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"扉正面図では、盤の扉面に配置される計器・表示灯・操作器などの位置関係を分かるように表す。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"扉正面図は、盤の扉面にどの機器がどこに配置されるかを示すための図である。","incorrectOptions":{"1":"「誤り」ではない。内部配線ではなく、正面から見える機器配置が中心である。"},"practicalLink":"実技作業1の扉正面図で、配置・中心・文字の表現を考える基本になる。","keyPoint":"扉正面図＝正面から見える配置を表す図。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"door_front_basic"},{"id":"NOV-E-004","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"製図で寸法数値を記入する目的として最も適切なものはどれか。","options":["線を多くして見栄えを良くするため","実際の大きさ・位置を正確に伝えるため","盤の色を指定するため","接点の論理動作を示すため"],"answerIndex":1,"explanation":{"correctReason":"寸法記入は、図面から実際の大きさや位置関係を正確に読み取れるようにするために行う。","incorrectOptions":{"0":"見栄えではなく情報伝達が目的である。","2":"色指定は寸法記入の目的ではない。","3":"接点の論理動作は主に回路図で表す。"},"practicalLink":"扉正面図で、計器や操作器の取り付け位置を正しく示すための基本になる。","keyPoint":"寸法記入＝製作・配置に必要な数値情報。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"door_front_basic"},{"id":"NOV-E-005","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"尺度1:2の図で、実物の長さが100 mmであれば、図上の長さは50 mmになる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"尺度1:2では紙面上の図形長さは実物の半分となるため、実物100 mmは図上50 mmになる。ただし寸法線に記入する寸法数値は、原則として実物の100 mmを示す。","incorrectOptions":{"1":"「誤り」ではない。縮尺の意味を正しく理解すると図上寸法を判断できる。"},"practicalLink":"扉正面図や部品配置図を描く際、尺度と寸法数値の関係を取り違えないために必要である。","keyPoint":"1:2＝図は半分の大きさ。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-E-006","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"扉正面図を描くとき、機器を配置する前に最初に意識すべき内容として最も適切なものはどれか。","options":["盤内配線の色分け","盤外ケーブルの長さ","基準となる外形・中心・配置範囲","モータの同期速度"],"answerIndex":2,"explanation":{"correctReason":"扉正面図では、まず盤の外形、中心線、機器を配置できる範囲を押さえることが重要である。","incorrectOptions":{"0":"色分けは扉正面図の最初の検討事項ではない。","1":"盤外ケーブル長は扉正面図の中心課題ではない。","3":"同期速度は電動機の知識であり、扉正面図の最初の検討事項ではない。"},"practicalLink":"描き始める前に外形・中心・配置基準を押さえる習慣は、製図のミスを減らす。","keyPoint":"扉正面図はまず外形と配置基準から。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":"door_front_basic"},{"id":"NOV-E-007","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"扉正面図では、扉の表面から見えない盤内配線の引き回しを詳細に描くことが中心になる。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"扉正面図は、扉の正面から見える機器の配置、寸法、表示などを示す図であり、盤内配線の引き回しを詳しく示すことが中心ではない。内部の取付・配線を表す図は用途に応じて別に作成する。","incorrectOptions":{"0":"「正しい」ではない。内部配線の詳細は扉正面図の中心テーマではない。"},"practicalLink":"扉正面図と展開接続図の役割の違いを整理することが大切である。","keyPoint":"扉正面図は正面配置を表す。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"quality_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-E-008","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"扉正面図で中心線を引く主な目的として最も適切なものはどれか。","options":["配線の許容電流を求めるため","左右の位置決めや対称配置の基準にするため","回路の自己保持を示すため","周波数を計算するため"],"answerIndex":1,"explanation":{"correctReason":"中心線は、機器を左右対称に配置したり、位置決めの基準を明確にしたりするために用いる。","incorrectOptions":{"0":"許容電流の計算は中心線の目的ではない。","2":"自己保持は制御回路の内容であり、中心線の役割ではない。","3":"周波数計算とは無関係である。"},"practicalLink":"配置図で見やすく整ったレイアウトを考える際の基本になる。","keyPoint":"中心線は配置基準。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-E-009","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"尺度を用いた図面でも、寸法線に記入する寸法数値は、原則として実物の寸法を示す。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"図面は尺度で縮小・拡大して描くことがあるが、寸法線に記入する数値は原則として実物の寸法を示す。","incorrectOptions":{"1":"「誤り」ではない。図上で測った長さそのものを寸法数値にするわけではない。"},"practicalLink":"尺度と寸法数値を混同しないことは、扉正面図の寸法記入で重要である。","keyPoint":"寸法数値は実寸法。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-E-010","month":"2026-11","domain":"E","domainLabel":"配電盤・製図規格","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"扉正面図で、中心線をはさんで左右に2個の表示灯を対称に配置したい。最も適切な考え方はどれか。","options":["左右で中心線からの距離を等しくする。","左側だけ中心線に近づける。","表示灯の直径が同じなら、位置は任意でよい。","左右対称にしたい場合でも中心線は使わない。"],"answerIndex":0,"explanation":{"correctReason":"対称配置では、中心線から各機器までの距離を等しくするのが基本である。","incorrectOptions":{"1":"片側だけ近づけると対称配置にならない。","2":"直径が同じでも、位置関係を基準線でそろえなければ対称にはならない。","3":"左右対称の基準として中心線は有効である。"},"practicalLink":"実技作業1で扉正面図の整列や対称性を考えるときの基本になる。","keyPoint":"対称配置は中心線から等距離。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"JAVADA：令和8年度（後期）実技試験問題の概要（B62 電気製図）","url":"https://www.javada.or.jp/jigyou/gino/giken/pdf/R08_kouki_jitsugi1.pdf","type":"official_practical_overview"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":"door_front_basic"},{"id":"NOV-F-001","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"同じ材質・同じ断面積の導体では、温度が一定なら、長さが2倍になると電気抵抗は約半分になる。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"導体の抵抗は R＝ρL/A（ρ：抵抗率、L：長さ、A：断面積）。材質・温度・断面積が同じなら、長さLに比例するので長さを2倍にすると抵抗も2倍になる。","incorrectOptions":{"0":"長さが増えるほど抵抗は増えるので「約半分」は誤り。半分になるのは、ほかの条件が同じで断面積を2倍にした場合。"},"practicalLink":"制御盤の配線設計や電圧降下の概念を学ぶ際、導体が長いほど抵抗が増えることを踏まえて考える。","keyPoint":"導体抵抗は長さに比例し、断面積に反比例。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：比例式、指数関数の意味と使い方（導体抵抗と長さ）","url":"https://jeea.or.jp/course/contents/12140/","type":"technical_explanation"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-002","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"直流24 Vの電源に抵抗120 Ωの負荷を1つだけ接続した。配線抵抗などを無視すると、負荷に流れる電流は何 Aか。","options":["0.2 A","0.02 A","2 A","5 A"],"answerIndex":0,"explanation":{"correctReason":"オームの法則 I＝V/R より、24÷120＝0.2 A。単位をそろえて割り算する。","incorrectOptions":{"1":"0.02 Aでは抵抗が1,200 Ωのときの値に相当し、0が一つ多い。","2":"2 Aでは抵抗が12 Ωのときの値に相当し、桁が一つ違う。","3":"5 Aは120÷24と逆に割った結果であり、I＝V/R の式と逆。"},"practicalLink":"制御回路の電源電圧と負荷抵抗の関係を読む際、直流電流の概算チェックに用いる。実際のコイルやインバータ入力は必ずしも純抵抗負荷ではない。","keyPoint":"直流の抵抗負荷は I＝V÷R。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"技術評論社：電気回路の基礎（オームの法則、公開見本）","url":"https://gihyo.jp/assets/files/book/2016/978-4-7741-8533-0/9784774185330-01.pdf","type":"textbook_excerpt"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":"純抵抗の負荷を仮定。実際のコイル負荷はインダクタンスや過渡現象があり、単純な抵抗負荷と同一視しない。"},"diagramId":null},{"id":"NOV-F-003","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"同じ材質・同じ断面積の導体では、長さが長いほど抵抗は大きくなる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"導体抵抗は長さに比例し、断面積に反比例するため、長いほど抵抗は大きくなる。","incorrectOptions":{"1":"「誤り」ではない。材質と断面積が同じなら、長さが長いほど抵抗は増える。"},"practicalLink":"配線や材料の基礎理解として、導体条件が電気的性質に影響することを押さえる。","keyPoint":"抵抗は 長さ↑で増える、断面積↑で減る。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-004","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"直流回路で電圧24V、抵抗12Ωの負荷に流れる電流はどれか。","options":["2A","12A","24A","288A"],"answerIndex":0,"explanation":{"correctReason":"オームの法則 I=V/R より、24÷12=2A となる。","incorrectOptions":{"1":"12Aではない。24÷12 を正しく計算すると2Aである。","2":"24Aは計算結果として誤りである。","3":"288AはV×Rとしてしまった誤りである。"},"practicalLink":"制御回路の基礎理解として、電圧・電流・抵抗の関係を押さえる。","keyPoint":"オームの法則 I=V/R。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-005","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"銅は電気伝導性が高く、配線用導体として広く用いられる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"銅は導電性が高く加工もしやすいため、電線や母線など多くの導体材料に用いられる。","incorrectOptions":{"1":"「誤り」ではない。銅は代表的な導体材料である。"},"practicalLink":"盤や制御回路の配線材・導体材料を理解する基礎知識になる。","keyPoint":"銅＝代表的な高導電性材料。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-006","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"絶縁材料に期待される性質として最も適切なものはどれか。","options":["電流を流しやすいこと","電気を通しにくいこと","磁力を強く発生すること","回転速度を高めること"],"answerIndex":1,"explanation":{"correctReason":"絶縁材料は、不要な電流が流れないように電気を通しにくい性質が求められる。","incorrectOptions":{"0":"電流を流しやすいのは導体の性質である。","2":"磁力発生は絶縁材料の主目的ではない。","3":"回転速度向上は絶縁材料の性質ではない。"},"practicalLink":"配線や機器の安全を考える際、導体と絶縁体の役割を区別する基礎になる。","keyPoint":"絶縁材料＝電気を通しにくい。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"content_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-007","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":1,"difficultyLabel":"初級","type":"true_false","question":"直流回路の電力Pは、電圧Vと電流Iの積 P=VI で求められる。","options":["正しい","誤り"],"answerIndex":0,"explanation":{"correctReason":"直流回路の基本式として、電力Pは電圧Vと電流Iの積で表される。","incorrectOptions":{"1":"「誤り」ではない。P=VI は電力計算の基本式である。"},"practicalLink":"電源容量や負荷の基礎理解として、電圧・電流・電力の関係を押さえる。","keyPoint":"電力の基本は P=VI。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：比例式、指数関数の意味と使い方（導体抵抗と長さ）","url":"https://jeea.or.jp/course/contents/12140/","type":"technical_explanation"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-008","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":2,"difficultyLabel":"標準","type":"choice4","question":"直流回路で電圧24V、電流2Aのとき、負荷の電力はどれか。","options":["12W","24W","48W","96W"],"answerIndex":2,"explanation":{"correctReason":"電力P=VI より、24×2=48W となる。","incorrectOptions":{"0":"12Wではない。24×2 を正しく計算すると48Wになる。","1":"24Wは一方の値だけを見た誤りである。","3":"96Wは計算結果として大きすぎる。"},"practicalLink":"電力計算は、機器仕様や負荷の理解に役立つ基礎である。","keyPoint":"24V×2A=48W。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：比例式、指数関数の意味と使い方（導体抵抗と長さ）","url":"https://jeea.or.jp/course/contents/12140/","type":"technical_explanation"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-009","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":2,"difficultyLabel":"標準","type":"true_false","question":"一般に、銅よりアルミニウムのほうが電気伝導性は高く、同条件なら導体抵抗は小さい。","options":["正しい","誤り"],"answerIndex":1,"explanation":{"correctReason":"一般に銅はアルミニウムより電気伝導性が高い代表的な導体材料であり、同条件なら銅のほうが抵抗は小さい。","incorrectOptions":{"0":"「正しい」ではない。アルミニウムも用いられるが、導電性は一般に銅のほうが高い。"},"practicalLink":"導体材料の特性を把握し、配線材料の基礎知識として整理する。","keyPoint":"導電性は一般に銅＞アルミ。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：比例式、指数関数の意味と使い方（導体抵抗と長さ）","url":"https://jeea.or.jp/course/contents/12140/","type":"technical_explanation"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null},{"id":"NOV-F-010","month":"2026-11","domain":"F","domainLabel":"電気・材料の基礎","difficulty":3,"difficultyLabel":"応用","type":"choice4","question":"6Ωの抵抗2個を直列接続したとき、合成抵抗はどれか。","options":["3Ω","6Ω","9Ω","12Ω"],"answerIndex":3,"explanation":{"correctReason":"直列接続では抵抗値を加えるので、6Ω+6Ω=12Ω となる。","incorrectOptions":{"0":"3Ωになるのは並列接続時の誤解に近い。","1":"直列では2個分を加えるので6Ωのままではない。","2":"9Ωは計算誤りである。"},"practicalLink":"直並列の基礎理解は、電気回路を読む土台になる。","keyPoint":"直列抵抗は足し算。"},"sources":[{"title":"厚生労働省：2級電気製図技能検定試験の試験科目及びその範囲（令和2年2月）","url":"https://www.mhlw.go.jp/content/11800000/001168013.pdf","type":"official_scope"},{"title":"日本電気技術者協会：比例式、指数関数の意味と使い方（導体抵抗と長さ）","url":"https://jeea.or.jp/course/contents/12140/","type":"technical_explanation"}],"authoring":{"origin":"original","isOfficialPastQuestion":false,"reviewStatus":"expanded_reviewed_2026_10_26","notes":""},"diagramId":null}]}</script>
+<script id="glossaryBank" type="application/json">{"schemaVersion":"1.0","title":"11月用語集15語","description":"11月学習ページ向けの用語集。","terms":[{"term":"自己保持","reading":"じこほじ","definition":"運転押しボタンを離した後も、補助a接点などの別経路でコイルへの通電を維持する回路の考え方。","point":"「押している間だけ」ではなく「離しても続く」ことが特徴。","relatedDomains":["B","C"]},{"term":"インターロック","reading":"いんたーろっく","definition":"2つの機器や状態が同時に成立しないように制限する仕組み。","point":"正逆運転などで接触器の同時励磁を防ぐ。","relatedDomains":["B","C"]},{"term":"励磁","reading":"れいじ","definition":"コイルに電流が流れて磁気作用を生じている状態。","point":"MCコイルが励磁すると主接点や補助接点が切り替わる。","relatedDomains":["A","B","C"]},{"term":"無励磁","reading":"むれいじ","definition":"コイルに電流が流れておらず、動作していない通常状態。","point":"接点記号は通常この状態を基準に読む。","relatedDomains":["A","C"]},{"term":"補助a接点","reading":"ほじょえーせってん","definition":"機器が動作すると閉じる補助接点。通常状態では開。","point":"自己保持回路でよく使う。","relatedDomains":["A","B","C"]},{"term":"補助b接点","reading":"ほじょびーせってん","definition":"機器が動作すると開く補助接点。通常状態では閉。","point":"インターロックや停止条件でよく使う。","relatedDomains":["A","B","C"]},{"term":"展開接続図","reading":"てんかいせつぞくず","definition":"回路の接続関係や動作を分かりやすくするため、機器を論理的に展開して表した図。","point":"物理配置よりも通電経路の理解を優先する。","relatedDomains":["C"]},{"term":"扉正面図","reading":"とびらしょうめんず","definition":"配電盤や制御盤の扉面に見える機器配置を正面から表した図。","point":"計器・表示灯・操作器の配置、寸法、中心が重要。","relatedDomains":["E"]},{"term":"CT","reading":"しーてぃー / へんりゅうき","definition":"計器用変流器。主回路の大電流を、計器や保護継電器で扱える二次電流に変成する。","point":"二次側開放は危険。","relatedDomains":["A"]},{"term":"THR","reading":"てぃーえいちあーる / さーまるりれー","definition":"過負荷保護に用いる熱動形継電器。過負荷を検出すると制御回路を切って停止させる。","point":"短絡保護ではなく過負荷保護。","relatedDomains":["A","B","D"]},{"term":"インバータ","reading":"いんばーた","definition":"交流の周波数や電圧を制御し、主に電動機の回転速度を調整する装置。","point":"11月実技学習ではポンプ制御との関係が重要。","relatedDomains":["D"]},{"term":"フィーダ","reading":"ふぃーだ","definition":"受電点や母線から各負荷・回路へ電力を送り出す回路やその系統。","point":"盤の構成や単線接続図の理解に関わる。","relatedDomains":["E"]},{"term":"MCCB","reading":"えむしーしーびー / はいせんようしゃだんき","definition":"低圧回路の過負荷・短絡などを保護する配線用遮断器。","point":"保護機器の代表。MCとは役割が異なる。","relatedDomains":["A","D"]},{"term":"MC","reading":"えむしー / でんじせっしょくき","definition":"コイルの励磁・無励磁で主接点を開閉する機器。モータの運転停止などに用いる。","point":"開閉が役割。短絡保護はしない。","relatedDomains":["A","B","C"]},{"term":"尺度","reading":"しゃくど","definition":"図面上の長さと実物の長さの比。1:2なら図は実物の半分。","point":"寸法数値と図の見た目の大きさを混同しない。","relatedDomains":["E"]}]}</script>
+<script id="practicalBank" type="application/json">{"schemaVersion":"1.0","title":"11月 実技の部分練習3テーマ","description":"11月ページの実技ミニ教材。","themes":[{"id":"P-01","title":"自己保持回路を読む","targetDomains":["B","C"],"goal":"運転ボタンを押した瞬間と、離した後の2つの通電経路を説明できる。","steps":["停止b接点・THRのb接点・運転a接点・MCコイルの直列関係を見る。","運転ボタンを押している間、どこを通ってMCコイルが励磁するかを追う。","MCが励磁した後、補助a接点が閉じて自己保持経路になることを確認する。","停止ボタンを押したときに、どの接点が開いて何が止まるかを説明する。"],"miniQuestion":"MC補助a接点の枝線が断線しているとき、運転ボタンを押してから離すとどうなるか。","miniAnswer":"押している間だけ励磁し、離すと自己保持できず停止する。","checkpoints":["通電経路を2段階で追えているか","停止の直接理由を「b接点が開く」で説明できるか"],"diagramText":"制御電源 → 停止b → THR b → (運転a || MC補助a) → MCコイル"},{"id":"P-02","title":"相互インターロック回路を読む","targetDomains":["B","C"],"goal":"2つの接触器が同時に励磁しない理由を、相手側b接点の働きで説明できる。","steps":["正転用Fコイル回路と逆転用Rコイル回路を上下に分けて見る。","F回路にRのb接点、R回路にFのb接点が入っていることを確認する。","Fが入ったときRのb接点がどうなるか、Rが入ったときFのb接点がどうなるかを整理する。","片方が先に励磁した後、相手側の起動が阻止されることを説明する。同時指令や故障時の安全保証とは区別する。"],"miniQuestion":"Fが励磁中にRの起動ボタンを押してもRが入らない主な理由は何か。","miniAnswer":"Fのb接点がRコイル回路で開いており、Rコイルに通電できないから。","checkpoints":["「相手側のb接点」と「起動PBに並列の自己保持a接点」を正しく見つけられるか","同時励磁防止を言葉で説明できるか"],"diagramText":"F回路：…→ Rのb接点 → Fコイル\nR回路：…→ Fのb接点 → Rコイル"},{"id":"P-03","title":"扉正面図の配置を考える","targetDomains":["E"],"goal":"扉面に見える機器を、外形・中心線・配置範囲を意識して並べる考え方を説明できる。","steps":["盤の外形寸法と中心線を先に確認する。","計器・表示灯・操作器など、正面から見える機器だけを抽出する。","上段・中段・下段などの配置バランスを考える。","機器中心や左右の整列を意識し、寸法記入に必要な基準を決める。"],"miniQuestion":"扉正面図を描く前に最初に押さえるべき情報は何か。","miniAnswer":"盤の外形、中心線、機器を配置できる範囲。","checkpoints":["扉面に見える機器と内部機器を区別できるか","外形と中心を先に考える習慣があるか"],"diagramText":"外形枠 → 中心線 → 計器・表示灯・操作器の配置位置 → 寸法記入"}]}</script>
+<script>
+(() => {
+'use strict';
+const doc = JSON.parse(document.getElementById('questionBank').textContent);
+const Q = doc.questions;
+const TERMS = JSON.parse(document.getElementById('glossaryBank').textContent).terms;
+const PRACTICAL = JSON.parse(document.getElementById('practicalBank').textContent).themes;
+const DOMAINS = [...new Map(Q.map(q => [q.domain, q.domainLabel])).entries()];
+const STORE = 'denki2_nov_2026_v1'; // Leave denki2_oct_state intact.
+const VERSION = 1;
+const LEVELS = {1:'初級',2:'標準',3:'応用'};
+const get = id => document.getElementById(id);
+const html = x => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle = list => { const a = [...list]; for (let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+const defaultState = () => ({version:VERSION, stats:{}, totalAnswered:0,totalCorrect:0});
+function load() {
+ try {
+  const s = JSON.parse(localStorage.getItem(STORE) || 'null');
+  if (s && s.stats && typeof s.stats === 'object') {
+   return {version:VERSION, stats:s.stats, totalAnswered:Number(s.totalAnswered)||0,totalCorrect:Number(s.totalCorrect)||0};
+  }
+ } catch(e) { console.warn('11月の学習履歴を読み込めませんでした',e); }
+ return defaultState();
+}
+let state=load(),session=[],pos=0,sessionCorrect=0,locked=false,selected=null,mode='';
+const stat = id => state.stats[id] || {attempts:0,correct:0,last:null,understanding:null};
+const mutableStat = id => state.stats[id] ||= {attempts:0,correct:0,last:null,understanding:null};
+function save() { try {localStorage.setItem(STORE,JSON.stringify(state))}catch(e){toast('端末に学習履歴を保存できません。ブラウザーの設定をご確認ください。')} }
+window.addEventListener('denki-nov-review-updated',()=>{state=load();renderHome();renderReview();});
+function needsReview(q) {const s=stat(q.id);return s.last==='wrong'||s.understanding==='uncertain'||s.understanding==='retry';}
+function learned(q) {return stat(q.id).understanding==='clear';}
+function toast(message) {const t=get('toast');t.textContent=message;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2200)}
+function showTab(id) {
+ if(id==='index'){window.location.href='/';return}
+ document.querySelectorAll('main section').forEach(el=>el.classList.toggle('active',el.id===id));
+ document.querySelectorAll('nav button[data-tab]').forEach(el=>{el.classList.toggle('active',el.dataset.tab===id);el.setAttribute('aria-current',el.dataset.tab===id?'page':'false')});
+ if(id==='home')renderHome();
+ if(id==='review')renderReview();
+ if(id==='practice')renderCount();
+ if(id==='glossary')renderGlossary();
+ window.scrollTo(0,0);
+}
+
+function renderGlossary(){
+ const term=(get('termSearch').value||'').trim().toLocaleLowerCase('ja-JP');
+ const matches=TERMS.filter(t=>(t.term+' '+t.reading+' '+t.definition+' '+t.point).toLocaleLowerCase('ja-JP').includes(term));
+ get('termCount').textContent=matches.length+' / '+TERMS.length+'語';
+ get('termList').innerHTML=matches.length?matches.map(t=>'<article class="term" aria-label="'+html(t.term)+'"><b>'+html(t.term)+'</b><span class="small">（'+html(t.reading)+'）</span><p>'+html(t.definition)+'</p><div class="memory"><b>ポイント：</b>'+html(t.point)+'</div></article>').join(''):'<div class="nov-empty">該当する用語がありません。</div>';
+}
+
+function practicalFigure(id){
+ if(id==='P-01') return selfHoldSVG();
+ if(id==='P-02') return interlockSVG();
+ if(id==='P-03') return doorFrontSVG();
+ return '';
+}
+
+// 回路図は導通する配線を線分で、接点の開路部分を接点記号で明示する。
+// 各枝の間には接点を迂回する配線を描かない。
+function wire(x1,y1,x2,y2){return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>`}
+function splitSvgLabel(name){const m=name.match(/^(.*?)(（.*）)$/);let base=name,suffix='';if(m){base=m[1];suffix=m[2]}if(base.includes('補助'))return [base.replace('補助',''),'補助'+suffix].filter(Boolean);if(base.includes('起動'))return [base.replace('起動',''),'起動'+suffix].filter(Boolean);if(suffix)return [base,suffix];return [name]}
+function svgTextLines(x,y,lines,cls='svg-label svg-small',gap=15){const arr=Array.isArray(lines)?lines:[lines];const start=y-((arr.length-1)*gap/2);return `<text x="${x}" y="${start}" text-anchor="middle" class="${cls}">`+arr.map((line,i)=>`<tspan x="${x}" y="${start+i*gap}">${line}</tspan>`).join('')+`</text>`}
+function contact(x,y,name,nc=false){
+ return `${wire(x-16,y-14,x-16,y+14)}${wire(x+16,y-14,x+16,y+14)}${nc?wire(x-21,y+18,x+21,y-18):''}${svgTextLines(x,y-40,splitSvgLabel(name))}`;
+}
+function coil(x,y,name){return `<ellipse cx="${x}" cy="${y}" rx="30" ry="19" fill="none" stroke="#0f172a" stroke-width="3"/>${svgTextLines(x,y+5,[name])}`}
+function circuitFrame(w,h,title){return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${title}"><text x="20" y="29" class="svg-label svg-title">${title}</text>${wire(70,70,70,h-55)}${wire(w-70,70,w-70,h-55)}<text x="57" y="61" class="svg-label svg-small">L</text><text x="${w-75}" y="61" class="svg-label svg-small">N</text>`}
+function selfHoldSVG(){
+ let d=circuitFrame(850,330,'自己保持回路（学習用簡略図）');
+ d+=wire(70,128,120,128)+contact(152,128,'停止PB（b）',true)+wire(168,128,208,128)+contact(240,128,'THR（b）',true)+wire(256,128,318,128)+wire(318,128,370,128)+contact(402,128,'運転PB（a）')+wire(418,128,510,128)+wire(510,128,690,128)+coil(745,128,'MC')+wire(775,128,780,128)+wire(780,128,780,128)+wire(780,128,915,128);
+ d+=wire(318,128,318,225)+wire(318,225,370,225)+contact(402,225,'MC補助（a）')+wire(418,225,510,225)+wire(510,225,510,128)+`<circle cx="318" cy="128" r="4" fill="#0f172a"/><circle cx="510" cy="128" r="4" fill="#0f172a"/>`;
+ d+=svgTextLines(425,300,['運転PBとMC補助a接点は並列','停止PB・THRは共通直列']);
+ d+='</svg>';
+ return `<div class="figure-wrap"><div class="circuit-figure">${d}</div><p class="figure-caption">初期状態では停止PB・THRのb接点は閉、運転PB・MC補助a接点は開。運転PBを押すとMCが励磁し、MC補助a接点が閉じて運転PBを離しても通電が続きます。停止押しボタンまたは過負荷継電器のb接点が開くと、コイルが消磁します。</p></div>`;
+}
+function interlockSVG(){
+ let d=circuitFrame(850,400,'正転・逆転の相互インターロック（学習用簡略図）');
+ function branch(y,selfName,otherName){
+  let s=wire(70,y,120,y)+contact(152,y,'停止PB（b）',true)+wire(168,y,208,y)+contact(240,y,'THR（b）',true)+wire(256,y,298,y)+contact(330,y,otherName+'補助（b）',true)+wire(346,y,390,y)+contact(422,y,selfName+'起動（a）')+wire(438,y,530,y)+wire(530,y,690,y)+coil(745,y,selfName)+wire(775,y,780,y)+wire(780,y,915,y);
+  s+=wire(390,y,390,y+76)+wire(390,y+76,442,y+76)+contact(474,y+76,selfName+'補助（a）')+wire(490,y+76,530,y+76)+wire(530,y+76,530,y)+`<circle cx="390" cy="${y}" r="4" fill="#0f172a"/><circle cx="530" cy="${y}" r="4" fill="#0f172a"/>`;
+  return s;
+ }
+ d+=branch(128,'MC-F','MC-R');
+ d+=branch(278,'MC-R','MC-F');
+ d+=svgTextLines(425,370,['自分の補助a接点で自己保持','相手側の補助b接点で同時励磁を防止']);
+ d+='</svg>';
+ return `<div class="figure-wrap"><div class="circuit-figure">${d}</div><p class="figure-caption">各起動押しボタンと同じ接触器の補助a接点を並列にして自己保持し、その合流後に相手側接触器の補助b接点を直列に設けます。Fが励磁中はR回路のF補助b接点が開き、Rの起動を阻止します（逆も同じ）。この図は電気的インターロックの原理説明であり、同時押し・接点溶着などの故障を含む安全保証ではありません。実機には適切な機械的インターロック等の別途対策が必要です。</p></div>`;
+}
+
+function doorFrontSVG(){
+ return `<div class="figure-wrap"><div class="panel-figure" aria-label="扉正面図の配置イメージ"><svg viewBox="0 0 860 500" role="img">
+ <text x="20" y="28" class="svg-label svg-title">扉正面図（学習用配置イメージ）</text>
+ <rect x="120" y="60" width="620" height="390" rx="8" ry="8" fill="#f8fafc" stroke="#0f172a" stroke-width="4"/>
+ <line x1="430" y1="60" x2="430" y2="450" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 6"/>
+ <line x1="120" y1="255" x2="740" y2="255" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 6"/>
+ <text x="440" y="82" class="svg-label svg-small">中心線</text>
+ <rect x="205" y="120" width="95" height="58" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+ <text x="221" y="152" class="svg-label svg-mid">電流計</text>
+ <rect x="560" y="120" width="95" height="58" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+ <text x="574" y="152" class="svg-label svg-mid">電圧計</text>
+ <circle cx="250" cy="245" r="20" fill="#fee2e2" stroke="#0f172a" stroke-width="3"/>
+ <text x="233" y="282" class="svg-label svg-small">異常灯</text>
+ <circle cx="430" cy="245" r="20" fill="#dcfce7" stroke="#0f172a" stroke-width="3"/>
+ <text x="414" y="282" class="svg-label svg-small">運転灯</text>
+ <circle cx="610" cy="245" r="20" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+ <text x="594" y="282" class="svg-label svg-small">電源灯</text>
+ <circle cx="250" cy="355" r="28" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+ <text x="226" y="360" class="svg-label svg-small">切替器</text>
+ <circle cx="430" cy="355" r="22" fill="#dcfce7" stroke="#0f172a" stroke-width="3"/>
+ <text x="412" y="401" class="svg-label svg-small">運転ボタン</text>
+ <circle cx="610" cy="355" r="22" fill="#fee2e2" stroke="#0f172a" stroke-width="3"/>
+ <text x="592" y="401" class="svg-label svg-small">停止ボタン</text>
+ <line x1="120" y1="468" x2="740" y2="468" stroke="#0f172a" stroke-width="2"/>
+ <line x1="120" y1="460" x2="120" y2="476" stroke="#0f172a" stroke-width="2"/><line x1="740" y1="460" x2="740" y2="476" stroke="#0f172a" stroke-width="2"/>
+ <text x="384" y="490" class="svg-label svg-small">外形幅・配置基準寸法</text>
+ </svg></div><p class="figure-caption">扉正面図では、まず外形・中心線・機器を配置できる範囲を押さえ、その上で計器、表示灯、押しボタン、切替スイッチなどの位置関係を整理します。学習時は「何をどこに置くか」を説明できることを優先しましょう。</p></div>`;
+}
+
+// 模擬試験用：既存SVGから解説文を外し、設問に必要な図だけ共有する。
+window.novemberQuestionFigure = function(diagramId){
+ const figures={self_hold_basic:selfHoldSVG,interlock_basic:interlockSVG,door_front_basic:doorFrontSVG};
+ if(!Object.prototype.hasOwnProperty.call(figures,diagramId))return '';
+ const output=figures[diagramId]();
+ const match=output.match(/<svg\b[\s\S]*?<\/svg>/);
+ if(!match)return '';
+ let svg=match[0];
+ // 自己保持の解説文は試験中に提示しない。
+ if(diagramId==='self_hold_basic')svg=svg.replace(/<text x="425" y="303"[\s\S]*?<\/text>/,'');
+ return '<figure class="mock-figure"><div class="circuit-figure">'+svg+'</div><figcaption class="diagram-note">学習用簡略図（無操作・無励磁の状態）。配線の接続関係を読み取って解答してください。</figcaption></figure>';
+};
+function renderPractical(){
+ get('practicalList').innerHTML=PRACTICAL.map((p,i)=>{
+  const steps=(p.steps||[]).map(s=>'<li>'+html(s)+'</li>').join('');
+  const checks=(p.checkpoints||[]).map(s=>'<li>'+html(s)+'</li>').join('');
+  const figure=practicalFigure(p.id);
+  return '<details class="practice-detail"><summary><span class="practice-tag">テーマ '+(i+1)+'</span>'+html(p.title)+'</summary><div class="practice-body"><div class="goal-text"><b>目標：</b>'+html(p.goal)+'</div><h3>回路図・配置図で確認する</h3><p class="small">以下は11月学習用の簡略図です。通電経路・接点の役割・配置の考え方を理解するために使ってください。</p>'+figure+'<div class="diagram-note">補足メモ：'+html(p.diagramText)+'</div><h3>練習手順</h3><ol class="partial-steps">'+steps+'</ol><div class="why"><b>確認問題</b><p>'+html(p.miniQuestion)+'</p><details class="answer-reveal"><summary>解答・解説を表示</summary><p>'+html(p.miniAnswer)+'</p></details></div><h3>自分でチェック</h3><ul class="partial-checks">'+checks+'</ul></div></details>';
+ }).join('');
+}
+function relevantTerms(q){
+ const text=(q.question+' '+q.explanation.correctReason+' '+q.explanation.practicalLink);
+ const matches=TERMS.map(t=>({t,score:(q.question.includes(t.term)?5:0)+(q.explanation.correctReason.includes(t.term)?2:0)+(q.explanation.practicalLink.includes(t.term)?1:0)+(t.relatedDomains||[]).includes(q.domain)}))
+  .filter(x=>x.score>1).sort((a,b)=>b.score-a.score).slice(0,4).map(x=>x.t);
+ if(!matches.length)return '';
+ return '<div class="why"><b>⑥ この問題の関連用語</b><p class="small">開くと説明を確認できます。</p>'+matches.map(t=>'<details class="inline-term"><summary>'+html(t.term)+'</summary><p>'+html(t.definition)+'</p><p class="small">'+html(t.point)+'</p></details>').join('')+'</div>';
+}
+
+function renderHome() {
+ const seen=Q.filter(q=>stat(q.id).attempts>0).length, mastered=Q.filter(learned).length;
+ const review=Q.filter(needsReview).length;
+ get('progressFill').style.width=(seen/Q.length*100)+'%';
+ get('progressText').textContent=seen+'/'+Q.length;
+ get('masterText').textContent=mastered+'/'+Q.length;
+ get('statAnswered').textContent=state.totalAnswered;
+ get('statRate').textContent=state.totalAnswered?Math.round(state.totalCorrect/state.totalAnswered*100)+'%':'—';
+ get('statReview').textContent=review;
+ get('domainProgress').innerHTML=DOMAINS.map(([key,label])=>{
+  const list=Q.filter(q=>q.domain===key),done=list.filter(q=>stat(q.id).attempts>0).length, clear=list.filter(learned).length;
+  return '<div class="topic"><b>'+html(key)+'. '+html(label)+'</b><span class="small">'+done+'/'+list.length+'問 回答済み｜理解済み '+clear+'問</span></div>';
+ }).join('');
+}
+function renderCount() {
+ const domain=get('domainSelect').value, level=get('levelSelect').value;
+ const found=Q.filter(q=>(domain==='all'||q.domain===domain)&&(level==='all'||String(q.difficulty)===level));
+ get('filterCount').textContent='対象：'+found.length+'問（条件に一致する問題だけ出題します）';
+ get('filteredStart').disabled=!found.length;
+}
+function startSession(pool,label) {
+ if(!pool.length){toast('条件に一致する問題はありません');return}
+ session=shuffle(pool);pos=0;sessionCorrect=0;locked=false;selected=null;mode=label;
+ showTab('quiz');renderQuestion();
+}
+function startMode(type) {
+ const pool = type==='daily' ? selectDaily() : type==='tf' ? Q.filter(q=>q.type==='true_false') : type==='mcq' ? Q.filter(q=>q.type==='choice4') : type==='review'? Q.filter(needsReview) : Q;
+ startSession(pool,type);
+}
+function selectDaily(){
+ const review=shuffle(Q.filter(needsReview));
+ const unseen=shuffle(Q.filter(q=>stat(q.id).attempts===0 && !needsReview(q)));
+ const seen=shuffle(Q.filter(q=>stat(q.id).attempts>0 && !needsReview(q)));
+ return [...review,...unseen,...seen].slice(0,5);
+}
+function renderQuestion() {
+ if(pos>=session.length){finish();return}
+ selected=null;locked=false;
+ const q=session[pos];
+ const isTF=q.type==='true_false';
+ let out='<div class="quizmeta"><span class="question-no">'+html(q.id)+'｜'+html(q.domainLabel)+'</span><span class="difficulty">'+html(LEVELS[q.difficulty])+'｜'+(isTF?'○×':'4択')+'</span></div>';
+ out+='<div class="question-no">'+(pos+1)+' / '+session.length+'問</div><div class="progressbar"><div style="width:'+((pos/session.length)*100)+'%"></div></div>';
+ out+='<div class="question">'+html(q.question)+'</div>';
+ out+='<div class="choices-buttons'+(isTF?' tf-choices':'')+'">';
+ out+=q.options.map((opt,i)=>'<button type="button" class="choice" data-answer="'+i+'"><span class="choice-label">'+(isTF?(i===0?'○':'×'):String.fromCharCode(65+i)+'.')+'</span><span>'+html(opt)+'</span></button>').join('');
+ out+='</div><div id="answerDetail" aria-live="polite"></div>';
+ get('quizBox').innerHTML=out;
+ get('quizButtons').innerHTML='<button class="btn btn-primary" id="submitAnswer" disabled>解答する</button><button class="btn btn-outline" id="quitQuiz">演習を終了</button>';
+ get('quizBox').scrollIntoView({block:'start',behavior:'instant'});
+}
+function selectChoice(i) {
+ if(locked)return;
+ selected=i;
+ document.querySelectorAll('[data-answer]').forEach(btn=>{
+  btn.classList.toggle('selected-pending',Number(btn.dataset.answer)===i);
+  btn.setAttribute('aria-pressed',Number(btn.dataset.answer)===i?'true':'false');
+ });
+ get('submitAnswer').disabled=false;
+}
+function submitAnswer() {
+ if(locked||selected===null)return;
+ locked=true;
+ const q=session[pos],ok=selected===q.answerIndex, s=mutableStat(q.id);
+ s.attempts=(Number(s.attempts)||0)+1;
+ if(ok){s.correct=(Number(s.correct)||0)+1;state.totalCorrect++;sessionCorrect++}
+ s.last=ok?'correct':'wrong';
+ if(!ok) s.understanding='retry';
+ state.totalAnswered++;
+ save();
+ document.querySelectorAll('[data-answer]').forEach(btn=>{
+  const i=Number(btn.dataset.answer);btn.disabled=true;btn.classList.remove('selected-pending');
+  btn.classList.add(i===q.answerIndex?'correct':i===selected?'wrong':'dim');
+ });
+ get('submitAnswer').remove();
+ const items=Object.entries(q.explanation.incorrectOptions).sort((a,b)=>Number(a[0])-Number(b[0]));
+ const errors=items.map(([k,v])=>'<div class="mistake-row"><b>'+html(q.options[Number(k)])+'</b><br>'+html(v)+'</div>').join('');
+ const sources=(q.sources||[]).map(s=>{
+  // URLs are source data, restricted to HTTPS before insertion.
+  const valid=/^https:\/\/[a-z0-9.-]+\//i.test(s.url||'');
+  return valid?'<a target="_blank" rel="noopener noreferrer" href="'+html(s.url)+'">'+html(s.title)+'</a>':'';
+ }).join('');
+ const detail='<div class="explain '+(ok?'ok':'ng')+'"><strong>'+(ok?'○ 正解':'× 不正解')+'</strong><div class="why"><b>正解：'+html(q.options[q.answerIndex])+'</b></div>'+
+ '<div class="why"><b>① 正解の理由</b><p>'+html(q.explanation.correctReason)+'</p></div>'+
+ '<div class="why"><b>② 他の選択肢が違う理由</b>'+errors+'</div>'+
+ '<div class="bridge"><b>③ 実技との関連</b><p>'+html(q.explanation.practicalLink)+'</p></div>'+
+ '<div class="memory"><b>④ 覚えるポイント</b><p>'+html(q.explanation.keyPoint)+'</p></div>'+
+ '<div class="source"><b>⑤ 参考資料</b><div class="source-links">'+sources+'</div><p>この問題は独自に作成した教材であり、公式過去問の転載ではありません。</p></div>'+relevantTerms(q)+
+ '<div class="understand"><div class="understand-label">解説を読んだあと、自分の理解度を選択</div><div class="understand-buttons"><button type="button" data-understanding="clear">理由を説明できる</button><button type="button" data-understanding="uncertain">少し曖昧</button><button type="button" data-understanding="retry">まだ理解できない</button></div><p class="small" id="understandingStatus" aria-live="polite">選択すると次回の復習に反映されます。</p></div></div>';
+ get('answerDetail').innerHTML=detail;
+ const next=pos===session.length-1?'結果を見る':'次の問題へ';
+ get('quizButtons').insertAdjacentHTML('afterbegin','<button type="button" class="btn btn-primary" id="nextQuestion" disabled>'+next+'</button>');
+}
+function setUnderstanding(level) {
+ if(!locked)return;
+ const q=session[pos],s=mutableStat(q.id);
+ s.understanding=level;
+ save();
+ document.querySelectorAll('[data-understanding]').forEach(btn=>{
+  const active=btn.dataset.understanding===level;
+  btn.classList.toggle('selected',active);
+  btn.setAttribute('aria-pressed',active?'true':'false');
+ });
+ get('nextQuestion').disabled=false;
+ get('understandingStatus').textContent=level==='clear'?'理解済みとして保存しました。':level==='uncertain'?'復習対象として保存しました。':'重点復習として保存しました。';
+}
+function finish() {
+ const n=session.length,pct=Math.round(sessionCorrect/n*100);
+ get('quizBox').innerHTML='<h2>今回の結果</h2><div class="result-score">'+sessionCorrect+'/'+n+'</div><p class="result-sub">正答率 '+pct+'%</p><div class="why"><b>11月の目標</b><p>得点だけでなく、正解・誤答の理由を説明できるか確認しましょう。復習対象は「復習」タブから解き直せます。</p></div>';
+ get('quizButtons').innerHTML='<button class="btn btn-primary" data-go="review">復習へ</button><button class="btn btn-soft" data-go="home">ホームへ</button>';
+ renderHome();
+ window.scrollTo(0,0);
+}
+function renderReview(){
+ const pool=Q.filter(needsReview);
+ get('reviewBox').innerHTML=pool.length?'<p><b>'+pool.length+'問</b>が復習対象です。</p>'+pool.map(q=>'<div class="weak-row"><span class="small">'+html(q.id)+'｜'+html(q.domainLabel)+'<br>'+html(q.question)+'</span></div>').join(''):'<p class="nov-empty">要復習の問題はありません。曖昧だった問題を解説画面から登録できます。</p>';
+ get('reviewStart').disabled=!pool.length;
+}
+function clearReview(){
+ if(!confirm('11月の要復習フラグを解除しますか？回答履歴は残ります。'))return;
+ Q.forEach(q=>{const s=state.stats[q.id];if(s){s.last=s.last==='wrong'?null:s.last;if(['uncertain','retry'].includes(s.understanding))s.understanding=null;}});
+ save();renderReview();renderHome();toast('要復習を解除しました');
+}
+function clearAll(){
+ if(!confirm('11月の回答履歴をすべて削除しますか？元には戻せません。10月の記録は残ります。'))return;
+ state=defaultState();save();renderReview();renderHome();toast('11月の履歴を初期化しました');
+}
+get('domainSelect').innerHTML='<option value="all">すべての分野</option>'+DOMAINS.map(([code,label])=>'<option value="'+html(code)+'">'+html(code)+'：'+html(label)+'</option>').join('');
+get('dailyStart').addEventListener('click',()=>startMode('daily'));
+get('filteredStart').addEventListener('click',()=>{
+ const domain=get('domainSelect').value,level=get('levelSelect').value;
+ startSession(Q.filter(q=>(domain==='all'||q.domain===domain)&&(level==='all'||String(q.difficulty)===level)),'filtered');
+});
+get('domainSelect').addEventListener('change',renderCount);get('levelSelect').addEventListener('change',renderCount);
+get('termSearch').addEventListener('input',renderGlossary);
+get('reviewStart').addEventListener('click',()=>startMode('review'));
+get('clearReview').addEventListener('click',clearReview);
+get('clearAll').addEventListener('click',clearAll);
+document.addEventListener('click',ev=>{
+ const btn=ev.target.closest('button');if(!btn)return;
+ if(btn.dataset.tab){showTab(btn.dataset.tab);return}
+ if(btn.dataset.start){startMode(btn.dataset.start);return}
+ if(btn.dataset.answer!==undefined){selectChoice(Number(btn.dataset.answer));return}
+ if(btn.id==='submitAnswer'){submitAnswer();return}
+ if(btn.dataset.understanding){setUnderstanding(btn.dataset.understanding);return}
+ if(btn.id==='nextQuestion'){pos++;renderQuestion();return}
+ if(btn.id==='quitQuiz'){showTab('practice');return}
+ if(btn.dataset.go){showTab(btn.dataset.go);return}
+});
+renderHome();renderCount();renderGlossary();renderPractical();
+if (location.hash === '#bridge') showTab('bridge');
+})();
+</script>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const questions=JSON.parse($('questionBank').textContent).questions;
+const byId=new Map(questions.map(q=>[q.id,q]));
+const KEY='denki2_nov_mock_2026_v1';
+const REVIEW_KEY='denki2_nov_2026_v1';
+const DURATION=100*60*1000; // 100分：学習用設定（公式試験時間との同一性を保証しない）
+let exam=null, current=0, ticker=null;
+function store(){try{localStorage.setItem(KEY,JSON.stringify(exam))}catch(e){console.warn('模擬試験の保存に失敗',e)}}
+function read(){try{const a=JSON.parse(localStorage.getItem(KEY)||'null');if(!a||a.version!==1||!Array.isArray(a.ids)||a.ids.length!==50||new Set(a.ids).size!==50||!a.ids.every(id=>byId.has(id))||!Array.isArray(a.answers)||a.answers.length!==50||!Number.isFinite(a.deadline)||!Number.isFinite(a.started))return null;return a}catch(e){return null}}
+function shuffled(xs){const a=xs.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function pick(type){
+ const required=type==='choice4'?['NOV-B-004','NOV-B-006','NOV-E-010']:[];
+ const selected=required.map(id=>byId.get(id)).filter(q=>q&&q.type===type);
+ const domains=['A','B','C','D','E','F'];
+ const sets=domains.map(d=>shuffled(questions.filter(q=>q.type===type&&q.domain===d&&!required.includes(q.id))));
+ // 最初に各分野から満遍なく選択し、50問中3問の図面問題を確保する。
+ let n=0;
+ while(selected.length<25){const k=n%6;if(sets[k].length)selected.push(sets[k].pop());n++;if(n>200)break}
+ return shuffled(selected).map(q=>q.id);
+}
+function open(){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id==='mock'));document.querySelectorAll('nav button[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab==='practice'));window.scrollTo(0,0);render()}
+function start(){if(exam&&!exam.finished&&!confirm('進行中の模擬試験を破棄して最初からやり直しますか？'))return;exam={version:1,ids:[...pick('true_false'),...pick('choice4')],answers:Array(50).fill(null),started:Date.now(),deadline:Date.now()+DURATION,finished:null};current=0;store();render()}
+function due(){if(exam&&!exam.finished&&Date.now()>=exam.deadline){finish(true)}}
+function clock(){if(!exam||exam.finished)return;due();if(exam.finished)return;const ms=Math.max(0,exam.deadline-Date.now()),min=Math.floor(ms/60000),sec=Math.floor(ms%60000/1000);const node=$('mockTimer');if(node){node.textContent=String(min).padStart(2,'0')+':'+String(sec).padStart(2,'0');node.classList.toggle('low',ms<600000)}}
+function finish(timeout){if(!exam||exam.finished)return;if(!timeout&&!confirm('模擬試験を終了して採点しますか？ 未回答は不正解になります。'))return;exam.finished=Date.now();exam.timedOut=!!timeout;store();render()}
+function render(){if(ticker){clearInterval(ticker);ticker=null} exam=read();const app=$('mockApp');if(!exam){app.innerHTML='<p>新しい50問セットを作成します。選択順は毎回ランダムです。</p><button class="btn btn-primary" data-mock="start">50問模擬を開始する</button>';return}if(exam.finished){result();return}if(Date.now()>=exam.deadline){finish(true);return}
+current=Math.min(49,Math.max(0,current));const q=byId.get(exam.ids[current]);const count=exam.answers.filter(x=>x!==null).length;
+const clockHtml='<div class="mock-toolbar"><b>回答済み '+count+' / 50問</b><span id="mockTimer" class="mock-clock" role="timer">--:--</span></div>';
+const palette='<div class="mock-palette" aria-label="問題番号を選択">'+exam.ids.map((id,i)=>'<button type="button" data-mock-jump="'+i+'" class="'+(exam.answers[i]!==null?'done ':'')+(i===current?'current':'')+'" aria-label="第'+(i+1)+'問">'+(i+1)+'</button>').join('')+'</div>';
+const options=q.options.map((o,i)=>'<button type="button" class="mock-choice '+(exam.answers[current]===i?'chosen':'')+'" data-mock-answer="'+i+'" aria-pressed="'+(exam.answers[current]===i)+'">'+(q.type==='true_false'?(i===0?'○ ':'× '):('アイウエ'[i]+'．'))+esc(o)+'</button>').join('');
+app.innerHTML=clockHtml+'<p class="small">'+(current<25?'○×問題':'4つから選ぶ問題')+'｜第'+(current+1)+'問 / 50｜'+esc(q.domainLabel)+'</p><div class="question">'+esc(q.question)+'</div>'+(q.diagramId&&window.novemberQuestionFigure?window.novemberQuestionFigure(q.diagramId):'')+options+'<div class="mock-toolbar mock-actions"><button class="btn btn-soft" data-mock="prev" '+(current===0?'disabled':'')+'>前の問題</button><button class="btn btn-primary" data-mock="next" '+(current===49?'disabled':'')+'>次の問題</button></div><p class="small">青色の番号は回答済みです。番号をタップすると移動できます。</p>'+palette+'<div class="btn-row"><button type="button" class="btn btn-red" data-mock="finish">採点して終了</button><button type="button" class="btn btn-soft" data-mock="return">演習メニューへ戻る（時間は継続）</button></div>';
+clock();ticker=setInterval(clock,1000)}
+function result(){const qlist=exam.ids.map(id=>byId.get(id));const score=qlist.reduce((n,q,i)=>n+(exam.answers[i]===q.answerIndex),0),byDomain={};qlist.forEach((q,i)=>{const k=q.domain+' '+q.domainLabel;if(!byDomain[k])byDomain[k]={ok:0,n:0};byDomain[k].n++;if(exam.answers[i]===q.answerIndex)byDomain[k].ok++});
+const details=qlist.map((q,i)=>{const a=exam.answers[i],ok=a===q.answerIndex;return '<details class="mock-result-row"><summary><span class="'+(ok?'mock-correct':'mock-wrong')+'">'+(ok?'○':'×')+'</span> 第'+(i+1)+'問 '+esc(q.domainLabel)+'｜'+(a===null?'未回答':esc(q.options[a]))+'</summary><p><b>'+esc(q.question)+'</b></p>'+(q.diagramId&&window.novemberQuestionFigure?window.novemberQuestionFigure(q.diagramId):'')+'<p>正解：'+esc(q.options[q.answerIndex])+'</p><p><b>理由：</b>'+esc(q.explanation.correctReason)+'</p>'+(a!==null&&!ok?'<p><b>選んだ答えが違う理由：</b>'+esc(q.explanation.incorrectOptions[String(a)]||'')+'</p>':'')+'<p class="small"><b>実技との関連：</b>'+esc(q.explanation.practicalLink)+'</p></details>'}).join('');
+$('mockApp').innerHTML='<h3>模擬学科 結果</h3><div class="result-score">'+score+' / 50</div><p class="result-sub">正答率 '+(score*2)+'%｜'+(exam.timedOut?'時間切れで自動採点':'採点完了')+'</p><p class="small">未回答 '+exam.answers.filter(v=>v===null).length+'問。合否は表示しません（この教材は公式採点基準を再現していません）。</p><h3>分野別の結果</h3>'+Object.entries(byDomain).map(([d,s])=>'<div class="weak-row"><span>'+esc(d)+'</span><b>'+s.ok+'/'+s.n+'問</b></div>').join('')+'<div class="why"><b>弱点の復習へつなぐ</b><p class="small">誤答・未回答を通常の「復習」タブへ登録できます。通常演習の通算正答率は変更しません。</p><div class="btn-row"><button type="button" class="btn btn-green" data-mock="import-review">誤答を復習タブへ登録して開く</button><button type="button" class="btn btn-soft" data-mock="review-only">復習タブを開く</button></div><p class="small" id="mockImportStatus" aria-live="polite"></p></div><h3>50問の解説・復習</h3><p class="small">各問題を開くと正解と理由を確認できます。模擬試験の結果は通常演習の学習履歴に加算しません。</p>'+details+'<div class="btn-row"><button type="button" class="btn btn-primary" data-mock="start">新しい50問で再挑戦</button><button type="button" class="btn btn-soft" data-mock="return">問題演習へ戻る</button></div>'}
+function goBack(){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id==='practice'));window.scrollTo(0,0)}
+function openReviewTab(){const btn=document.querySelector('nav button[data-tab="review"]');if(btn){btn.click();return}document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id==='review'));document.querySelectorAll('nav button[data-tab]').forEach(el=>{el.classList.toggle('active',el.dataset.tab==='review');el.setAttribute('aria-current',el.dataset.tab==='review'?'page':'false')});window.scrollTo(0,0)}
+function reviewState(){try{const s=JSON.parse(localStorage.getItem(REVIEW_KEY)||'null');if(s&&s.stats&&typeof s.stats==='object'){return {version:1,stats:s.stats,totalAnswered:Number(s.totalAnswered)||0,totalCorrect:Number(s.totalCorrect)||0}}}catch(e){}return {version:1,stats:{},totalAnswered:0,totalCorrect:0}}
+function importMockMistakes(){exam=read();if(!exam||!exam.finished)return;const state=reviewState();exam.ids.forEach((id,i)=>{const q=byId.get(id),a=exam.answers[i],wrong=(a===null||a!==q.answerIndex);if(!wrong)return;const s=state.stats[id]||(state.stats[id]={attempts:0,correct:0,last:null,understanding:null});s.last='wrong';s.understanding='retry';});try{localStorage.setItem(REVIEW_KEY,JSON.stringify(state));window.dispatchEvent(new Event('denki-nov-review-updated'))}catch(e){alert('復習リストを保存できませんでした。ブラウザー設定をご確認ください。');return}openReviewTab()}
+$('openMock').addEventListener('click',open);
+$('mockApp').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-mock-answer')){if(!exam||exam.finished||Date.now()>=exam.deadline){due();return}exam.answers[current]=Number(b.dataset.mockAnswer);store();render();return}if(b.hasAttribute('data-mock-jump')){current=Number(b.dataset.mockJump);render();return}switch(b.dataset.mock){case 'start':start();break;case 'prev':current--;render();break;case 'next':current++;render();break;case 'finish':finish(false);break;case 'return':goBack();break;case 'import-review':importMockMistakes();break;case 'review-only':openReviewTab();break;}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&$('mock').classList.contains('active'))render()});
+})();
+</script>
+</body>
+</html>

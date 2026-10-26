@@ -1,0 +1,15 @@
+/* 実技先行の学習導線：10月・11月学習ホーム共通 */
+.practical-priority-card{border:2px solid #93c5fd!important;background:#f5f9ff!important}
+.practical-priority-eyebrow{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:850;line-height:1.5}
+.practical-priority-card h2{margin:9px 0 8px!important;line-height:1.45}
+.practical-priority-card p{margin:6px 0 10px;color:#334155}
+.practical-priority-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:13px}
+.practical-priority-links a,.practical-priority-links button{display:flex;align-items:center;justify-content:center;text-align:center;min-width:0;min-height:50px;white-space:normal;overflow-wrap:anywhere;border:2px solid #1d4ed8;border-radius:12px;padding:11px 12px;font:inherit;font-size:14px;font-weight:850;line-height:1.4;text-decoration:none;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
+.practical-priority-links .practical-priority-main{background:#1d4ed8;color:white}
+.practical-priority-links .practical-priority-secondary{background:white;color:#1e40af;border-color:#bfdbfe}
+.practical-priority-links .practical-priority-main:hover,.practical-priority-links .practical-priority-main:focus-visible{background:#1e40af;border-color:#1e40af;color:white}
+.practical-priority-links .practical-priority-secondary:hover,.practical-priority-links .practical-priority-secondary:focus-visible{background:#dbeafe;border-color:#60a5fa;color:#1e3a8a}
+.practical-priority-links a:focus-visible,.practical-priority-links button:focus-visible{outline:3px solid #60a5fa;outline-offset:3px}
+.practical-priority-habit{padding:10px 12px;background:#fff;border-radius:10px;border-left:4px solid #2563eb;font-size:13px;line-height:1.65;color:#334155}
+@media(max-width:479px){.practical-priority-links{grid-template-columns:1fr}.practical-priority-links a,.practical-priority-links button{min-height:48px;padding:11px 10px}}
+@media(prefers-reduced-motion:reduce){.practical-priority-links a,.practical-priority-links button{transition:none}}

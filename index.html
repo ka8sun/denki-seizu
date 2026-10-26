@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>技能検定2級 電気製図｜合格までの全体像</title>
+<style>
+:root{
+  --bg:#f5f7fb; --card:#fff; --ink:#172033; --muted:#64748b; --line:#e5eaf1;
+  --primary:#2563eb; --primary-soft:#eaf2ff; --navy:#0f172a;
+  --ok:#15803d; --ok-soft:#eaf8ef; --warn:#b45309; --warn-soft:#fff6e8;
+  --shadow:0 12px 32px rgba(15,23,42,.08); --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  -webkit-text-size-adjust:100%;
+}
+a,button{font:inherit}
+button{cursor:pointer}
+.app{max-width:1180px;margin:auto;padding-bottom:78px}
+.hero{
+  margin:0;background:linear-gradient(145deg,#0f172a,#1e3a8a);
+  color:#fff;padding:28px 18px 24px;border-radius:0 0 28px 28px;
+}
+.hero-inner{max-width:1120px;margin:auto}
+.eyebrow{font-size:12px;font-weight:900;letter-spacing:.08em;opacity:.78}
+h1{font-size:27px;line-height:1.3;margin:6px 0 8px}
+.hero p{margin:0;color:#dbeafe;font-size:14px;max-width:780px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.stat{padding:11px 12px;border:1px solid rgba(255,255,255,.14);border-radius:15px;background:rgba(255,255,255,.10)}
+.stat b{display:block;font-size:16px}
+.stat span{font-size:11px;color:#dbeafe}
+.count-line{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.count-line b{display:inline;font-size:16px}
+.count-line .count-label{font-size:11px;color:#dbeafe;font-weight:700}
+.exam-date{display:block;margin-top:3px;font-size:11px;color:#dbeafe;white-space:nowrap}
+.nav{
+  position:sticky;top:0;z-index:20;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;
+  padding:7px 8px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px)
+}
+.nav a{
+  min-width:0;text-align:center;text-decoration:none;color:#475569;font-size:11px;font-weight:850;
+  padding:7px 3px;border-radius:10px;white-space:nowrap
+}
+.nav a:hover{background:#eef2f7}
+main{padding:14px}
+.section{scroll-margin-top:64px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;margin:12px 0;box-shadow:var(--shadow)
+}
+h2{font-size:21px;line-height:1.4;margin:0 0 12px;text-wrap:balance}
+h3{font-size:17px;margin:0 0 5px;text-wrap:balance}
+.muted{font-size:14px;color:var(--muted)}
+.small{font-size:12px;color:var(--muted)}
+.badge{
+  display:inline-flex;align-items:center;border-radius:999px;padding:4px 9px;
+  background:var(--primary-soft);color:var(--primary);font-size:12px;font-weight:900
+}
+.goal{
+  margin-top:10px;text-wrap:pretty;padding:14px;border-left:4px solid var(--primary);
+  background:var(--primary-soft);border-radius:14px;font-weight:850
+}
+.overview-grid{display:grid;gap:12px}
+.simple-flow{
+  display:grid;grid-template-columns:1fr;gap:7px;text-align:center;font-weight:900
+}
+.flow-box{padding:11px;border:1px solid var(--line);border-radius:13px;background:#f8fafc}
+.arrow{color:#94a3b8;font-size:18px;line-height:1}
+.month-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.month-card{
+  position:relative;border:1px solid var(--line);border-radius:17px;padding:14px;
+  background:#fff;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+  outline:none;min-height:175px
+}
+.month-card-link{display:block;color:inherit;text-decoration:none}
+.month-card-link:focus-visible{outline:3px solid #bfdbfe;outline-offset:3px;border-radius:17px}
+.month-card .month-num{font-size:29px;line-height:1;font-weight:950;color:#111827}
+.month-card .month-title{font-weight:950;margin:6px 0 3px;white-space:nowrap;text-wrap:pretty}
+.month-card .month-short{font-size:13px;color:#475569}
+.month-card .phase{font-size:11px;font-weight:900;color:#475569;letter-spacing:.04em}
+.month-detail{
+  max-height:0;opacity:0;overflow:hidden;transform:translateY(4px);
+  transition:max-height .24s ease,opacity .18s ease,transform .18s ease;
+  font-size:12px;color:#475569
+}
+.month-detail ul{padding-left:18px;margin:8px 0 0}
+.month-card:hover,.month-card:focus-visible,.month-card.open{
+  transform:translateY(-4px);box-shadow:0 14px 28px rgba(15,23,42,.12);border-color:#93c5fd
+}
+.month-card:hover .month-detail,.month-card:focus-visible .month-detail,.month-card.open .month-detail{
+  max-height:220px;opacity:1;transform:none
+}
+.month-card.current{
+  border:2px solid var(--primary);background:var(--primary-soft);
+  box-shadow:0 12px 30px rgba(37,99,235,.16)
+}
+.month-card.current .month-num{color:#111827}
+.month-card.current:hover,.month-card.current:focus-visible,.month-card.current.open{
+  border-color:var(--primary);box-shadow:0 14px 28px rgba(37,99,235,.20)
+}
+.month-card.current::after{
+  content:"現在の段階";position:absolute;right:10px;top:10px;
+  background:var(--primary);color:#fff;font-size:10px;font-weight:900;padding:4px 7px;border-radius:999px;white-space:nowrap
+}
+.month-card.past{opacity:.76}
+.month-card.future .phase{color:#475569}
+.month-hint{font-size:12px;color:var(--muted);margin-top:9px}
+.current-touch-hint{
+  margin:2px 0 12px;
+  font-size:14px;
+  font-weight:900;
+  color:var(--primary);
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:6px;
+}
+
+.strategy{display:grid;gap:10px}
+.strategy-box{border:1px solid var(--line);border-radius:15px;padding:14px}
+.strategy-box b{display:block;font-size:16px}
+.icon{font-size:22px;margin-bottom:4px}
+.time-line{display:grid;gap:8px;margin-top:10px}
+.time-step{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
+.time-step:last-child{border-bottom:0}
+.time-pill{display:flex;align-items:center;justify-content:center;background:#eef2ff;color:#3730a3;font-weight:950;border-radius:999px;padding:5px}
+.priority-grid{display:grid;gap:10px}
+.priority{border:1px solid var(--line);border-radius:15px;padding:14px}
+.priority strong{display:block;margin-bottom:7px}.priority .small{line-height:1.8}
+.priority.a{border-left:5px solid #2563eb}
+.priority.b{border-left:5px solid #0f766e}
+.priority.c{border-left:5px solid #94a3b8}
+.steps{counter-reset:step;display:grid;gap:9px;margin-top:10px}
+.step{
+  counter-increment:step;display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start
+}
+.step::before{
+  content:counter(step);width:32px;height:32px;border-radius:10px;background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:950
+}
+.week-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.day{border:1px solid var(--line);border-radius:13px;padding:11px;background:#fff}
+.day b{display:block}
+.day.weekend{background:#f8fbff;border-color:#bfdbfe}
+.notice{background:var(--warn-soft);color:#7c3e05;border:1px solid #fed7aa;border-radius:14px;padding:12px;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.exam{padding:14px;border-radius:15px;border:1px solid var(--line);background:#fff}
+.exam b{display:block;font-size:16px}.exam span{white-space:nowrap}
+.final-rule{
+  padding:16px;border-radius:16px;background:var(--navy);color:#fff;font-weight:850;text-align:center
+}
+.month-page-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.month-page{
+  padding:14px;border-radius:15px;border:1px dashed #cbd5e1;background:#fafafa
+}
+.month-page b{display:block}
+.footer{padding:10px 18px 28px;text-align:center;color:var(--muted);font-size:12px}
+
+@media(min-width:680px){
+  .hero{padding:34px 26px 28px}
+  h1{font-size:31px}
+  .hero-stats{grid-template-columns:repeat(4,1fr)}
+  .nav{display:flex;justify-content:center;gap:6px;padding:8px 12px}
+  .nav a{font-size:12px;padding:8px 11px;border-radius:999px}
+  main{padding:20px}
+  .overview-grid{grid-template-columns:1.05fr .95fr}
+  .simple-flow{grid-template-columns:1fr auto 1fr auto 1fr}
+  .arrow{display:flex;align-items:center}
+  .month-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .strategy{grid-template-columns:1fr 1fr}
+  .priority-grid{grid-template-columns:repeat(3,1fr)}
+  .week-grid{grid-template-columns:repeat(4,1fr)}
+  .month-page-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(min-width:960px){
+  body{padding:24px 0}
+  .app{padding-bottom:0}
+  .hero{margin:0 20px;border-radius:28px 28px 0 0}
+  .nav{margin:0 20px;border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;justify-content:center}
+  main{padding:24px 20px}
+  .card{padding:22px}
+  .month-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .month-card{min-height:195px}
+  .week-grid{grid-template-columns:repeat(7,1fr)}
+}
+
+@media(max-width:679px){
+  .final-goal-text{font-size:20px;white-space:nowrap}
+  .month-card{min-height:auto;padding:14px 16px}
+  .month-card .month-num{font-size:27px}
+  .month-card .month-short{padding-right:2px}
+  .month-detail ul{margin-top:7px}
+  .exam{padding:13px 14px}
+  .priority .small{font-size:13px}
+}
+@media(pointer:coarse){
+  .month-card{min-height:185px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
+/* ===== スマホ低速回線・省電力向け軽量化 ===== */
+@media (max-width:679px){
+  html{scroll-behavior:auto}
+  body{background:#f5f7fb}
+  .hero{background:#0f172a}
+  .card,.month-card{box-shadow:none}
+  .month-card{transition:none}
+  .month-card:hover,.month-card:focus-visible,.month-card.open{transform:none;box-shadow:none}
+  .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+  .section,.card{content-visibility:auto;contain-intrinsic-size:1px 500px}
+}
+html.lite *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.lite .hero{background:#0f172a}
+html.lite .card,html.lite .month-card{box-shadow:none!important}
+html.lite .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+
+
+/* 各月の学科/実技を分離し、カード全体リンク内に別リンクを入れない */
+.month-tile{display:flex;flex-direction:column;min-width:0;gap:8px}
+.month-tile .month-card-link{display:flex;flex:1 1 auto}
+.month-tile>.month-card{flex:1 1 auto}
+.month-tile .month-card{width:100%;height:auto;flex:1 1 auto}
+.month-practical-link{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:11px 13px;border:2px solid #2563eb;border-radius:13px;background:#eff6ff;color:#1e40af;font-size:13px;font-weight:900;text-decoration:none;overflow-wrap:anywhere}
+.month-practical-link:hover,.month-practical-link:focus-visible{background:#1d4ed8;color:#fff}
+.month-practical-link:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.practical-first-reminder{padding:16px 18px;margin:12px 0;border:1px solid #bfdbfe;background:#eff6ff;border-radius:16px}
+.practical-first-heading{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.practical-first-heading strong{font-size:17px;line-height:1.45}
+.practical-first-reminder p{font-size:13px;color:#334155;margin:8px 0 0}
+@media(max-width:679px){.month-tile .month-card-link{flex:auto}}
+</style>
+<link rel="stylesheet" href="layout-fix-v22.css">
+<link rel="stylesheet" href="practical-priority-v28.css">
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">技能検定 2級 電気製図｜配電盤・制御盤製図作業</div>
+    <h1>合格までの全体像</h1>
+    
+    <div class="hero-stats">
+      <div class="stat"><b>平日 30分</b><span>短時間を継続</span></div>
+      <div class="stat"><b>週末は実技</b><span>まとまった練習</span></div>
+      <div class="stat"><div class="count-line"><b id="daysPractical">—日</b><span class="count-label">実技試験まで</span></div><span class="exam-date">2027年1月24日（日）</span></div>
+      <div class="stat"><div class="count-line"><b id="daysWritten">—日</b><span class="count-label">学科試験まで</span></div><span class="exam-date">2027年2月7日（日）</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="goal" class="section">
+  <div class="overview-grid">
+    <div class="card">
+      <span class="badge">最終目標</span>
+      <h2 class="final-goal-text" style="margin-top:8px">見たことある → 解けるに変える</h2>
+    </div>
+      </div>
+</section>
+
+<section class="section practical-first-reminder" aria-label="実技先行の学習方針">
+  <div class="practical-first-heading"><span class="practical-priority-eyebrow">学習の優先順位</span><strong>実技試験が先。毎月、実技を忘れずに。</strong></div>
+  <p>学科の基礎は実技の理解に欠かせません。「基礎を知る → 図を読む → 自分で描く」を毎月つなげます。各月の下に実技への専用リンクを置きました。</p>
+</section>
+
+<section id="roadmap" class="section card">
+  <span class="badge">4段階の進め方</span>
+  <div class="current-touch-hint">👇該当する月をタップ</div>
+
+  <div class="month-grid">
+    <div class="month-tile">
+    <a class="month-card-link" href="october.html" aria-label="10月 基礎固めの学習ページを開く">
+      <article class="month-card" data-month="10">
+        <div class="phase">第1段階</div>
+        <div class="month-num">10月</div>
+        <div class="month-title">基礎固め</div>
+        <div class="month-short">過去問の言葉が分かる状態へ</div>
+        <div class="month-detail">
+          <ul>
+            <li>電気機器の名称</li>
+            <li>電気用図記号</li>
+            <li>主回路・制御回路</li>
+            <li>展開接続図</li>
+            <li>配電盤・制御盤の構造</li>
+          </ul>
+        </div>
+      </article>
+    </a>
+    <a class="month-practical-link" href="october.html#bridge">10月の実技へ <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="month-tile">
+    <a class="month-card-link" href="november.html" aria-label="11月 過去問を理解の学習ページを開く">
+    <article class="month-card" data-month="11">
+      <div class="phase">第2段階</div>
+      <div class="month-num">11月</div>
+      <div class="month-title">過去問を理解</div>
+      <div class="month-short">「なぜこの答えか」を理解する</div>
+      <div class="month-detail">
+        <ul>
+          <li>過去問を教材として使う</li>
+          <li>正解理由を説明する</li>
+          <li>他の選択肢の違いも確認</li>
+          <li>知らない言葉をその都度調べる</li>
+          <li>実技は部分練習へ</li>
+        </ul>
+      </div>
+    </article>
+    </a>
+    <a class="month-practical-link" href="november.html#bridge">11月の実技へ <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="month-tile">
+    <article class="month-card" tabindex="0" data-month="12">
+      <div class="phase">第3段階</div>
+      <div class="month-num">12月</div>
+      <div class="month-title">得点力＋実技力</div>
+      <div class="month-short">学科70〜75％以上＋完成練習</div>
+      <div class="month-detail">
+        <ul>
+          <li>学科の正答率を安定させる</li>
+          <li>部分練習から作業単位へ</li>
+          <li>最後まで完成させる</li>
+          <li>通し練習へ進む</li>
+        </ul>
+      </div>
+    </article>
+    <a class="month-practical-link" href="practical.html#final-assignment">12月の総合作図へ <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="month-tile">
+    <article class="month-card" tabindex="0" data-month="1">
+      <div class="phase">第4段階</div>
+      <div class="month-num">1月</div>
+      <div class="month-title">本番対策</div>
+      <div class="month-short">時間を計って最後まで完成</div>
+      <div class="month-detail">
+        <ul>
+          <li>実技を最優先</li>
+          <li>本番同様に時間を計る</li>
+          <li>完成後に間違いを確認</li>
+          <li>最終段階で5時間集中を経験</li>
+          <li>実技後は学科に集中</li>
+        </ul>
+      </div>
+    </article>
+    <a class="month-practical-link" href="practical.html#examFocusV11">1月の時間・検図練習へ <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+</section>
+
+<section id="daily" class="section">
+  <div class="strategy">
+    <div class="card">
+      <h2>平日＝学科を30分</h2>
+      <div class="time-line">
+        <div class="time-step"><div class="time-pill">10分</div><div><b>専門用語・図記号</b><div class="muted">名前・意味・図面での見え方を確認。</div></div></div>
+        <div class="time-step"><div class="time-pill">15分</div><div><b>過去問を2〜5問</b><div class="muted">正解数より「理由が分かったか」を重視。</div></div></div>
+        <div class="time-step"><div class="time-pill">5分</div><div><b>間違いだけ復習</b><div class="muted">新しい勉強を増やさず、その日の穴を埋める。</div></div></div>
+      </div>
+      <div class="embedded-section" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line)">
+        <h2>学科の優先順位</h2>
+        <p class="muted">最初から全部を同じ深さで覚えません。出題範囲の中でも、先に覚えるものを決めます。</p>
+        <div class="priority-grid">
+          <div class="priority a">
+            <strong>優先順位A｜最重要</strong>
+            <div class="small">電気用図記号／配電盤・制御盤の機器／主回路・制御回路／展開接続図／電動機／インバータ／遮断器・接触器・継電器</div>
+          </div>
+          <div class="priority b">
+            <strong>優先順位B｜重要</strong>
+            <div class="small">JIS製図／寸法記入／線の種類／尺度／投影法／電気の基礎／三相交流</div>
+          </div>
+          <div class="priority c">
+            <strong>優先順位C｜後回し</strong>
+            <div class="small">材料／磁気の細かい理論／その他の細かな規格</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>週末＝実技をまとめて</h2>
+      <p class="muted">平日の30分だけで実技を完成させようとせず、土曜または日曜にまとまった製図時間を作ります。</p>
+      <div class="goal">学科＝短時間を積み重ねる<br>実技＝週末にまとまって練習する</div>
+      <div class="embedded-section" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line)">
+        <h2>実技は段階的に強くする</h2>
+        <div class="simple-flow">
+          <div class="flow-box"><b>10月：図を読む</b></div>
+          <div class="flow-box"><b>11月：部分を描く</b></div>
+          <div class="flow-box"><b>12月：作業単位で完成</b></div>
+        </div>
+        <div class="simple-flow" style="margin-top:8px">
+          <div class="flow-box"><b>1月：時間を計る</b></div>
+          <div class="flow-box"><b>本番：最後まで完成</b></div>
+          <div class="flow-box"><b>学科：実技後に集中</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section card">
+  <div class="final-rule">過去問に出たことから理解する</div>
+</section>
+
+</main>
+<div class="footer">技能検定2級 電気製図｜合格ロードマップ全体版</div>
+</div>
+
+<script>
+// Android Chrome等で「データセーバー / 2G相当」を検出したら描画効果を減らす
+const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+if(conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType||""))){
+  document.documentElement.classList.add("lite");
+}
+const cards=[...document.querySelectorAll(".month-card")];
+
+function currentStudyMonth(){
+  const d=new Date();
+  const y=d.getFullYear(), m=d.getMonth()+1;
+  if(y===2026 && [10,11,12].includes(m)) return m;
+  if(y===2027 && (m===1 || (m===2 && d.getDate()<=7))) return 1;
+  if(y<2026 || (y===2026 && m<10)) return 10;
+  return 1;
+}
+
+function applyCurrentStage(){
+  const cur=currentStudyMonth();
+  const order=[10,11,12,1];
+  const idx=order.indexOf(cur);
+  cards.forEach((card,i)=>{
+    card.classList.toggle("current",Number(card.dataset.month)===cur);
+    card.classList.toggle("past",i<idx);
+    card.classList.toggle("future",i>idx);
+  });
+}
+applyCurrentStage();
+
+cards.forEach(card=>{
+  card.addEventListener("click",()=>{
+    if(card.closest("a")) return;
+    if(matchMedia("(hover: none)").matches){
+      const wasOpen=card.classList.contains("open");
+      cards.forEach(c=>c.classList.remove("open"));
+      if(!wasOpen) card.classList.add("open");
+    }
+  });
+  card.addEventListener("keydown",e=>{
+    if(e.key==="Enter" || e.key===" "){
+      e.preventDefault();
+      card.classList.toggle("open");
+    }
+  });
+});
+
+function daysUntil(y,m,d){
+  const now=new Date();
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const target=new Date(y,m-1,d);
+  return Math.max(0,Math.ceil((target-today)/86400000));
+}
+function updateExamCountdown(){
+  document.getElementById("daysPractical").textContent=daysUntil(2027,1,24)+"日";
+  document.getElementById("daysWritten").textContent=daysUntil(2027,2,7)+"日";
+}
+
+// ページを開いた時に更新し、そのまま開き続けた場合も日付変更を反映
+updateExamCountdown();
+let countdownTimer=setInterval(updateExamCountdown, 5 * 60 * 1000);
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){clearInterval(countdownTimer);countdownTimer=null;}
+  else{updateExamCountdown();if(!countdownTimer)countdownTimer=setInterval(updateExamCountdown,5*60*1000);}
+});
+</script>
+</body>
+</html>
