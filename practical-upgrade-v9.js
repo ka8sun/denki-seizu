@@ -16,49 +16,51 @@ const html=`
     <div class="v9-panel active" data-v9panel="scheme">
       <div class="v9-grid">
         <div class="v9-figure">
-          <svg viewBox="0 0 980 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="機器符号・接点番号を付けたインバータ改造の制御回路見本">
-            <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#475569"/></marker></defs>
-            <g fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M70 40 V465 M930 40 V465"/>
-              <path d="M70 110 H145 M190 110 H260 M260 110 H330 M330 110 H390 M450 110 H520 M520 110 H640 M700 110 H770 M820 110 H930"/>
-              <path d="M390 110 V180 H520 M640 180 H770 V110"/>
-              <path d="M70 250 H145 M190 250 H280 M280 250 H350 M410 250 H490 M550 250 H650 M650 250 H930"/>
-              <path d="M70 360 H180 M240 360 H340 M400 360 H470 M530 360 H620 M680 360 H930"/>
-              <circle cx="795" cy="110" r="25"/>
-              <circle cx="675" cy="250" r="25"/>
-              <rect x="145" y="88" width="45" height="44" rx="8"/>
-              <rect x="280" y="228" width="70" height="44" rx="8"/>
-              <rect x="180" y="338" width="60" height="44" rx="8"/>
+          <svg viewBox="0 0 1100 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="制御回路見本。Lから停止b、インバータ異常bを直列に通し、起動aとR1補助aを並列に接続してR1コイルを励磁する。下段はR1補助aでRUN出力Y1を制御する。">
+            <g font-family="sans-serif" fill="#17253b">
+              <text x="55" y="48" text-anchor="middle" font-size="23" font-weight="700">L</text>
+              <text x="1045" y="48" text-anchor="middle" font-size="23" font-weight="700">N</text>
+              <text x="80" y="87" font-size="16" font-weight="700">① 運転許可・自己保持</text>
+              <text x="80" y="355" font-size="16" font-weight="700">② RUN出力</text>
             </g>
-            <g fill="#fff" stroke-width="2">
-              <rect x="145" y="88" width="45" height="44" rx="8" stroke="#16a34a"/>
-              <rect x="330" y="88" width="60" height="44" rx="8" stroke="#dc2626"/>
-              <rect x="520" y="88" width="60" height="44" rx="8" stroke="#2563eb"/>
-              <rect x="280" y="228" width="70" height="44" rx="8" stroke="#2563eb"/>
-              <rect x="470" y="338" width="60" height="44" rx="8" stroke="#2563eb"/>
+            <g stroke="#334155" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M55 64 V481 M1045 64 V481"/>
+              <!-- 第1段：停止b、異常b、起動a／保持a、R1コイル -->
+              <path d="M55 171 H175 M205 171 H325 M355 171 H460 M460 171 H550 M580 171 H760 M760 171 H911 M969 171 H1045"/>
+              <path d="M460 171 V270 H550 M580 270 H760 V171"/>
+              <!-- 第2段：R1補助aを介したRUN出力 -->
+              <path d="M55 424 H320 M350 424 H911 M969 424 H1045"/>
+              <!-- b接点：斜線、a接点：並行線 -->
+              <path d="M175 153 V189 M205 153 V189 M171 193 L209 149"/>
+              <path d="M325 153 V189 M355 153 V189 M321 193 L359 149"/>
+              <path d="M550 153 V189 M580 153 V189"/>
+              <path d="M550 252 V288 M580 252 V288"/>
+              <path d="M320 406 V442 M350 406 V442"/>
+              <!-- コイルは配線上に中央揃え -->
+              <circle cx="940" cy="171" r="29" fill="#fff"/>
+              <circle cx="940" cy="424" r="29" fill="#fff"/>
             </g>
-            <g font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">
-              <text x="70" y="28">L</text><text x="930" y="28">N</text>
-              <text x="167" y="104">SB1</text><text x="167" y="122">停止b</text><text x="167" y="139">1-2</text>
-              <text x="295" y="244">F1</text><text x="295" y="262">INV異常b</text><text x="295" y="279">95-96</text>
-              <text x="360" y="104">SB2</text><text x="360" y="122">起動a</text><text x="360" y="139">3-4</text>
-              <text x="550" y="104">R1補助a</text><text x="550" y="122">13-14</text>
-              <text x="795" y="115">R1</text><text x="795" y="134">A1/A2</text>
-              <text x="210" y="354">R1補助a</text><text x="210" y="372">13-14</text>
-              <text x="500" y="354">RUN出力</text><text x="500" y="372">Y1</text>
-              <text x="675" y="255">Y1</text><text x="675" y="274">INV入力</text>
+            <!-- 機器名を配線の上、接点番号を配線の下に分離 -->
+            <g font-family="sans-serif" fill="#17253b" text-anchor="middle">
+              <g font-size="19" font-weight="700">
+                <text x="190" y="133">SB1</text><text x="340" y="133">F1</text>
+                <text x="565" y="133">SB2</text><text x="565" y="236">R1補助a</text>
+                <text x="335" y="392">R1補助a</text>
+                <text x="940" y="178">R1</text><text x="940" y="431">Y1</text>
+              </g>
+              <g font-size="16">
+                <text x="190" y="214">停止b</text><text x="190" y="235">1–2</text>
+                <text x="340" y="214">INV異常b</text><text x="340" y="235">95–96</text>
+                <text x="565" y="214">起動a</text><text x="565" y="327">13–14</text>
+                <text x="565" y="193">3–4</text>
+                <text x="335" y="465">13–14</text>
+                <text x="940" y="217">A1／A2</text>
+                <text x="940" y="467">INV入力へ</text>
+              </g>
             </g>
-            <g font-size="13" fill="#475569">
-              <text x="105" y="92">共通停止条件</text>
-              <text x="434" y="166">保持枝</text>
-              <text x="315" y="218">異常時に開いて運転許可を遮断</text>
-              <text x="248" y="406">R1補助aでRUN出力を有効化</text>
-              <text x="732" y="406">メーカー仕様で入力論理は確認</text>
-            </g>
-            <g stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)">
-              <path d="M115 84 C95 68,95 68,78 66"/>
-              <path d="M435 158 C455 145,470 142,505 134"/>
-              <path d="M613 344 C640 330,640 330,655 280"/>
+            <g font-family="sans-serif" font-size="15" fill="#475569">
+              <text x="675" y="248">起動接点と保持接点は並列</text>
+              <text x="470" y="503">R1が動作すると補助a接点が閉じ、RUN出力を有効化</text>
             </g>
           </svg>
         </div>
