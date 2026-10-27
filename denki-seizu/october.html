@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>2級電気製図｜10月 基礎固め</title>
+<link rel="stylesheet" href="assets/css/october.css">
+
+
+
+
+
+</head>
+<body class="stage7-exam">
+<header>
+  <div class="head-inner">
+    <div><h1>2級電気製図｜10月 基礎固め</h1><p>配電盤・制御盤製図作業｜30分/日</p><a class="course-top-link" href="index.html">← サイトのトップページへ戻る</a></div>
+    <div class="header-chip">10月：基礎を読む</div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="active">
+  <div class="card hero">
+    <span class="badge">10月のゴール</span>
+    <h2 style="margin-top:8px">過去問の言葉を理解し、図面を「意味」で追えるようにする</h2>
+    <p>4年間の製図補助経験を土台に、名称暗記だけでなく「この機器は何をするか」「この接点が動くと何が起きるか」まで結び付けます。</p>
+    <div class="bank-counts" aria-label="10月の問題数"><div class="bank-count"><span>問題バンク全体</span><strong>60問</strong></div><div class="bank-count"><span>1回の学習</span><strong>15問</strong></div></div>
+    <div class="progressbar"><div id="progressFill"></div></div>
+    <p class="small">全60問の習得状況：<b id="progressText">0%</b> <span id="masterText"></span></p>
+    <p class="bank-guide">60問の中から毎回15問ずつ練習します。習得状況は全60問を基準に表示します。※15分という意味ではありません。</p>
+    <button class="btn btn-primary" onclick="startDaily()">今日の30分を始める（15問）</button>
+  </div>
+
+  <div class="card practical-priority-card" aria-labelledby="oct-practical-priority-heading">
+    <span class="practical-priority-eyebrow">実技試験が先｜10月から実技も進める</span>
+    <h2 id="oct-practical-priority-heading">学んだ基礎を、そのまま実技につなげる</h2>
+    <p>機器・図記号を覚えたら、扉正面図と展開接続図でも確かめましょう。学科の学習だけで終わらせないための入口です。</p>
+    <div class="practical-priority-links">
+      <button type="button" class="practical-priority-main" onclick="showTab('bridge')">10月の実技メニューを開く →</button>
+      <a class="practical-priority-secondary" href="practical-study.html#week1">回路図の作図練習へ →</a>
+    </div>
+    <p class="practical-priority-habit"><b>学習のつなげ方：</b> 平日は基礎を理解 → 週末は実技の図を1つ読み、できれば白紙に描いてみる。</p>
+  </div>
+
+  <div class="card exam-card">
+    <span class="badge purple">本番から逆算</span>
+    <h2 style="margin-top:8px">試験の形を先に知っておく</h2>
+    <div class="info-grid">
+      <div class="info-box"><span class="small">学科</span><strong>50題</strong><span class="small">真偽法＋四肢択一法</span></div>
+      <div class="info-box"><span class="small">学科時間</span><strong>100分</strong><span class="small">1時間40分</span></div>
+      <div class="info-box"><span class="small">2級 実技</span><strong>5時間</strong><span class="small">令和8年度後期概要</span></div>
+      <div class="info-box"><span class="small">実技の柱</span><strong>2課題</strong><span class="small">扉正面図＋展開接続図</span></div>
+    </div>
+    <p class="small" style="margin-bottom:0">※10月版は基礎5分野に集中した教材です。学科試験全範囲をこの1か月だけで網羅するものではありません。実技内容は中央職業能力開発協会「令和8年度（後期）技能検定 実技試験問題の概要」に基づきます（公式概要は今後一部変更される場合があります）。</p>
+  </div>
+
+  <div class="card">
+    <span class="badge">学習内容</span>
+    <h2 style="margin-top:8px">10月に学ぶ5つの基礎分野</h2>
+    <p class="small">ここでは「何を学ぶか」の全体像を確認します。分野を選んで問題を解くときは、下部メニューの「問題演習」→「分野別ドリル」を使います。</p>
+    <div class="grid" id="topicGrid"></div>
+  </div>
+
+  <div class="card">
+    <h2>学習状況</h2>
+    <div class="statgrid">
+      <div class="stat"><strong id="statAnswered">0</strong><span>回答</span></div>
+      <div class="stat"><strong id="statRate">0%</strong><span>正答率</span></div>
+      <div class="stat"><strong id="statReview">0</strong><span>要復習</span></div>
+    </div>
+    <div id="weakBox" style="margin-top:12px"></div>
+  </div>
+
+  <div class="card notice">
+    <h2>10月の使い方</h2>
+    <p style="margin-bottom:5px"><b>平日：</b>ホームの「今日の30分」15問 → 間違いだけ復習。</p>
+    <p style="margin-top:5px;margin-bottom:5px"><b>苦手分野：</b>「問題演習」→「分野別ドリル」で1分野に絞って練習。</p>
+    <p style="margin-top:5px"><b>週末：</b>分野別ドリル → 「実技への橋渡し」を読む。</p>
+    <p style="margin-bottom:0"><b>月末：</b>「問題演習」→「50問 模擬学科」を1回。点数より「迷った言葉」を特定します。</p>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="card">
+    <span class="badge green">問題演習</span>
+    <h2 style="margin-top:8px">まず、練習方法を選ぶ</h2>
+    <p class="small">○×・4択・間違い復習・50問模擬から選びます。分野を1つに絞りたい場合は、下の「分野別ドリル」を使います。</p>
+    <div class="mode-grid">
+      <div class="mode"><span class="badge">基礎</span><h3>○×ドリル</h3><p class="small">用語の定義や基本動作を素早く判定。</p><button class="btn btn-soft" onclick="startMode('tf')">10問</button></div>
+      <div class="mode"><span class="badge green">比較</span><h3>4択ドリル</h3><p class="small">似た機器・似た役割を比べて判断。</p><button class="btn btn-green" onclick="startMode('mcq')">10問</button></div>
+      <div class="mode"><span class="badge amber">弱点</span><h3>間違い復習</h3><p class="small">最後に間違えた問題を優先。</p><button class="btn btn-red" onclick="startReview()">復習する</button></div>
+      <div class="mode"><span class="badge purple">月末</span><h3>50問 模擬学科</h3><p class="small">真偽25問＋4択25問。制限時間100分。</p><button class="btn btn-purple" onclick="startMock()">模擬を始める</button></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="badge purple">分野別</span>
+    <h2 style="margin-top:8px">苦手な分野を集中練習</h2>
+    <p class="small">「機器・図記号・回路・展開図・盤」から1つ選び、その分野の問題だけを解きます。</p>
+    <div class="filter" id="practiceFilters"></div>
+    <p class="small" id="selectedCategoryText" style="margin:4px 0 10px"><b>選択中：</b>機器</p>
+    <div class="btn-row"><button class="btn btn-dark" onclick="startCategory(selectedCategory,10)">選んだ分野を10問</button><button class="btn btn-soft" onclick="startCategory(selectedCategory,12)">選んだ分野を全12問</button></div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="card">
+    <p class="quiz-stage-note">問題文を読んで、答えを選んでください。回答後に解説を確認できます。</p>
+    <div id="quizBox" aria-live="polite" aria-atomic="false"></div>
+    <div class="btn-row" id="quizButtons" style="margin-top:14px"></div>
+  </div>
+</section>
+
+<section id="review">
+  <div class="card">
+    <h2>間違い復習</h2>
+    <p class="small">「最後に間違えた問題」を要復習として残します。正解したら復習対象から外れます。</p>
+    <div id="reviewBox"></div>
+    <div class="btn-row"><button class="btn btn-primary" onclick="startReview()">復習を始める</button><button class="btn btn-red" onclick="clearProgress('review')">要復習だけ解除</button></div>
+  </div>
+  <div class="card">
+    <h2>全学習履歴</h2>
+    <p class="small">端末内（localStorage）に保存されています。</p>
+    <button class="btn btn-red" onclick="clearProgress('all')">学習履歴をすべてリセット</button>
+  </div>
+</section>
+
+<section id="bridge">
+  <div class="card exam-card">
+    <span class="badge purple">実技への橋渡し</span>
+    <h2 style="margin-top:8px">下段の「実技」から取り組む内容はこちらです</h2>
+    <p class="practical-guide-note" style="margin:10px 0 0"><b>おすすめ：</b>10月はまず「扉正面図」か「展開接続図」を1つ選び、次に「主回路」を確認してください。</p>
+    <p>令和8年度後期の2級実技概要は、①高圧・フィーダ回路を収納する<ruby>閉鎖配電盤<rt>へいさはいでんばん</rt></ruby>の<ruby>扉正面図<rt>とびらしょうめんず</rt></ruby>、②既設ポンプ用<ruby>三相かご形誘導電動機<rt>さんそうかごがたゆうどうでんどうき</rt></ruby>のうち1台をインバータ装置付きへ改造した場合の<ruby>展開接続図<rt>てんかいせつぞくず</rt></ruby>をCWD方式で作成、の2本柱です。</p><p class="small">出典：中央職業能力開発協会「令和8年度（後期）技能検定 実技試験問題の概要」。公式資料には、内容等は今後一部変更される場合がある旨の注記があります。</p>
+    <div class="practical-anchor-links" aria-label="10月 実技の入口">
+      <a href="#oct-practical-door">扉正面図</a>
+      <a href="#oct-practical-circuit">展開接続図</a>
+      <a href="#oct-practical-main">主回路</a>
+      <a href="#oct-practical-next">11月への準備</a>
+    </div>
+    <div class="practical-priority-links" aria-label="作図教材へ進む">
+      <a class="practical-priority-main" href="practical-study.html#week1">回路図の実技練習を開く →</a>
+      <a class="practical-priority-secondary" href="practical-study.html#week4">扉正面図の作図練習へ →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge">10月の実技項目</span>
+    <h2 style="margin-top:8px">何を見たいかで選べる4つの入口</h2>
+    <p class="small">「配置を学ぶ」「通電経路を読む」「主回路を整理する」「11月の準備をする」の4つに整理しました。迷ったら上から順に進めてください。</p>
+    <div class="practical-overview-grid">
+      <article class="practical-overview-card">
+        <div class="practical-overview-head"><span class="step-chip">入口1</span><span class="goal-chip">配置</span></div>
+        <h3>扉正面図の読み方</h3>
+        <p class="small">扉に見える機器を見分け、役割と配置の考え方をつかみます。</p>
+        <ul class="practical-points"><li>機器名</li><li>役割分類</li><li>中心・寸法</li></ul>
+        <p class="practical-meta">向いているとき：盤の見た目と機器配置の基本を整理したい</p>
+        <div class="practical-action"><a class="btn btn-soft" href="#oct-practical-door">この項目を見る</a></div>
+      </article>
+      <article class="practical-overview-card">
+        <div class="practical-overview-head"><span class="step-chip">入口2</span><span class="goal-chip">回路</span></div>
+        <h3>展開接続図の読み方</h3>
+        <p class="small">停止条件・運転条件・自己保持の流れを読み、コイルと接点の関係を追います。</p>
+        <ul class="practical-points"><li>停止b接点</li><li>自己保持</li><li>コイル追跡</li></ul>
+        <p class="practical-meta">向いているとき：接点の意味や通電経路で止まりやすい</p>
+        <div class="practical-action"><a class="btn btn-soft" href="#oct-practical-circuit">この項目を見る</a></div>
+      </article>
+      <article class="practical-overview-card">
+        <div class="practical-overview-head"><span class="step-chip">入口3</span><span class="goal-chip">主回路</span></div>
+        <h3>主回路とインバータ改造</h3>
+        <p class="small">電源からモータまでの「力の道」を整理し、インバータが入る位置を確認します。</p>
+        <ul class="practical-points"><li>保護</li><li>開閉</li><li>速度制御</li></ul>
+        <p class="practical-meta">向いているとき：主回路と制御回路の違いをはっきりさせたい</p>
+        <div class="practical-action"><a class="btn btn-soft" href="#oct-practical-main">この項目を見る</a></div>
+      </article>
+      <article class="practical-overview-card">
+        <div class="practical-overview-head"><span class="step-chip">入口4</span><span class="goal-chip">準備</span></div>
+        <h3>11月の作図練習への準備</h3>
+        <p class="small">5時間実技へいきなり進まず、10月で固めるべき到達点を確認します。</p>
+        <ul class="practical-points"><li>専門用語</li><li>読み取り</li><li>段取り</li></ul>
+        <p class="practical-meta">向いているとき：今やるべきことを短時間で把握したい</p>
+        <div class="practical-action"><a class="btn btn-soft" href="#oct-practical-next">この項目を見る</a></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="card practical-detail-card" id="oct-practical-door">
+    <span class="jump-chip">扉正面図</span>
+    <h2 style="margin-top:8px">① <ruby>扉正面図<rt>とびらしょうめんず</rt></ruby>につながる見方</h2>
+    <ol class="steps">
+      <li><b>機器名を読む</b><br><span class="small">VCB、計器、表示灯、操作器など「何を置くか」を言葉で把握。</span></li>
+      <li><b>役割で分類する</b><br><span class="small">保護・計測・表示・操作を混同しない。</span></li>
+      <li><b>正面から見える物を意識</b><br><span class="small">内部配線図ではなく、扉面の配置として考える。</span></li>
+      <li><b>寸法・中心・文字を確認</b><br><span class="small">実技では「分かっている」だけでなく、指定どおり図面に落とす。</span></li>
+    </ol>
+  </div>
+
+  <div class="card practical-detail-card" id="oct-practical-circuit">
+    <span class="jump-chip">展開接続図</span>
+    <h2 style="margin-top:8px">② <ruby>展開接続図<rt>てんかいせつぞくず</rt></ruby>につながる見方</h2>
+    <div class="diagram">制御電源 → 停止条件(b接点) → 運転条件(a接点)
+                  └→ 自己保持接点(a接点)
+                         ↓
+                    MCなどのコイル
+                         ↓
+                  対応する接点が動く</div>
+    <p class="small">まず「どの条件がそろうと、どのコイルが<ruby>励磁<rt>れいじ</rt></ruby>されるか」を日本語にします。次に、同じ機器記号の接点がどこで使われているかを追います。</p>
+  </div>
+
+  <div class="card practical-detail-card" id="oct-practical-main">
+    <span class="jump-chip">主回路</span>
+    <h2 style="margin-top:8px">③ 主回路は「力の道」</h2>
+    <div class="diagram">基本の考え方：
+電源 → 保護 → 開閉/制御 → 過負荷保護 → モータ
+
+インバータを含むとき：
+電源 → 保護 → インバータ → 三相誘導電動機
+※実際の接続は、試験問題の指定・回路条件に従う。</div>
+    <p class="small">10月は回路を丸暗記せず、「どの機器が、保護・開閉・速度制御のどれを担当するか」を説明できれば十分です。</p>
+  </div>
+
+  <div class="card practical-detail-card" id="oct-practical-next">
+    <span class="jump-chip">11月への準備</span>
+    <h2 style="margin-top:8px">5時間実技に向けて今やること</h2>
+    <p><b>今は5時間通し練習をしなくて大丈夫です。</b> 10月は、問題文を見て専門用語で止まらない状態を作ります。11月以降に作図手順と時間配分へ進める土台になります。</p>
+    <div class="practical-guide-note">おすすめの見方：まず「扉正面図」または「展開接続図」を1つ選び、次に「主回路」、最後に「11月への準備」を確認すると、10月の実技学習の全体像がつかみやすくなります。</div>
+  </div>
+</section>
+
+<section id="glossary">
+  <div class="card">
+    <h2>用語集</h2>
+    <p class="small">ふりがなは、電気製図の専門用語のうち読みを迷いやすい語に限定しています。</p>
+    <input class="search" id="search" placeholder="例：フィーダ、励磁、MC、インバータ" oninput="renderGlossary()">
+    <div id="glossaryList"></div>
+  </div>
+</section>
+</main>
+
+<nav aria-label="10月の学習メニュー">
+  <button class="active" data-tab="home" onclick="showTab('home',this)">学習ホーム</button>
+  <button data-tab="practice" onclick="showTab('practice',this)">問題演習</button>
+  <button data-tab="review" onclick="showTab('review',this)">復習</button>
+  <button class="nav-practical" data-tab="bridge" aria-label="実技" onclick="showTab('bridge',this)"><span class="nav-main">実技</span></button>
+  <button data-tab="glossary" onclick="showTab('glossary',this)">用語</button>
+  <a class="overview-link" href="index.html" aria-label="サイトのトップページへ戻る">⌂ トップへ</a>
+</nav>
+<div id="toast" class="toast"></div>
+
+<script>
+// Android Chrome等で「データセーバー / 2G相当」を検出したら描画効果を減らす
+const conn=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+if(conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType||""))){
+  document.documentElement.classList.add("lite");
+}
+const APP_VERSION = "oct2026-v2.3";
+const CATS = [
+  ["機器","MCCB・VCB・DS・MC・THR・CT・インバータ"],
+  ["図記号","a接点・b接点・コイル・通常状態・機器記号"],
+  ["回路","主回路・制御回路・自己保持・インターロック"],
+  ["展開図","コイルと接点・動作条件・読み順・CWDへの入口"],
+  ["盤","配電盤・制御盤・母線・フィーダ・扉正面図・端子台"]
+];
+
+const Q = [
+// ===== 機器：真偽 =====
+{id:"M-T01",cat:"機器",type:"tf",q:"MCCBは、低圧回路の過負荷や短絡などの過電流から回路を保護するために用いられる。",answer:"○",explain:"MCCB（配線用遮断器）は、低圧回路で過負荷・短絡などの過電流を遮断し、配線や回路を保護します。",memory:"MCCB＝低圧回路を『守って切る』。",bridge:"主回路を読むとき、まず保護機器を見つける癖を付けます。"},
+{id:"M-T02",cat:"機器",type:"tf",q:"MC（電磁接触器）は、短絡電流を遮断して配線を保護することを主目的とする機器である。",answer:"×",explain:"MCの主な役割は、コイルの励磁・無励磁で主接点を開閉し、モータなどを頻繁にON/OFFすることです。短絡保護の主役ではありません。",memory:"MC＝開閉。MCCB＝保護。",bridge:"主回路でMCを見たら『運転・停止の開閉役』と読みます。"},
+{id:"M-T03",cat:"機器",type:"tf",q:"THR（サーマルリレー）は、主としてモータの過負荷を検出するために用いられる。",answer:"○",explain:"THRは過負荷による継続的な過電流を検出し、制御回路の接点を動作させてMCを落とすなど、モータ保護に使われます。",memory:"THR＝モータの無理を見張る。",bridge:"制御回路ではTHR接点がMCコイルの停止条件になることがあります。"},
+{id:"M-T04",cat:"機器",type:"tf",q:"DS（断路器）は、通常、負荷電流や短絡電流を積極的に遮断するための機器として用いる。",answer:"×",explain:"DSは電路を目で確認できる形で切り離し、安全な点検・保守状態を作るための機器です。遮断器のような事故電流の遮断を主目的にはしません。",memory:"DS＝安全に『切り離す』。",bridge:"高圧回路では、遮断器と断路器の役割を混同しないことが重要です。"},
+{id:"M-T05",cat:"機器",type:"tf",q:"CT（変流器）は、大きな一次電流を計測・保護に扱いやすい二次電流へ変換する。",answer:"○",explain:"CTはCurrent Transformer（変流器）。大電流を計器や保護継電器で扱える値に変換します。",memory:"CT＝電流を『測れる大きさ』へ。",bridge:"計器・保護回路と主回路のつながりを理解する入口です。"},
+{id:"M-T06",cat:"機器",type:"tf",q:"インバータは、交流モータへ与える周波数などを変えることで回転速度を制御できる。",answer:"○",explain:"インバータは出力周波数や電圧を制御し、三相誘導電動機などの速度制御に用いられます。",memory:"インバータ＝周波数を変えて速度を変える。",bridge:"2級実技概要に『インバータ装置付きに改造』が明記されています。"},
+// ===== 機器：4択 =====
+{id:"M-Q01",cat:"機器",type:"mcq",q:"低圧のモータ主回路で、短絡・過負荷などの過電流から配線を保護する機器として最も適切なのは？",choices:["MCCB","MC","THR","CT"],answer:"MCCB",explain:"MCCBは配線用遮断器で、低圧回路の過電流を遮断します。THRも過負荷保護に関係しますが、短絡遮断を含む配線保護の中心はMCCBです。",memory:"『配線を守る』→MCCB。",bridge:"主回路で最初に保護機器を探す練習になります。"},
+{id:"M-Q02",cat:"機器",type:"mcq",q:"モータを運転・停止するため、制御回路からの命令で主接点を頻繁に開閉する機器は？",choices:["MC","VCB","DS","CT"],answer:"MC",explain:"MC（電磁接触器）はコイルで主接点を開閉し、モータなどの頻繁な運転・停止に用います。",memory:"MC＝コイルで主回路をカチッと開閉。",bridge:"制御回路のMCコイルと主回路のMC主接点を結び付けて読みます。"},
+{id:"M-Q03",cat:"機器",type:"mcq",q:"高圧回路で、真空中の消弧作用を利用して電流を遮断する機器は？",choices:["VCB","DS","MCCB","THR"],answer:"VCB",explain:"VCBはVacuum Circuit Breaker（真空遮断器）。高圧回路の開閉・事故電流遮断に用いられます。",memory:"V＝Vacuum、CB＝Circuit Breaker。",bridge:"閉鎖配電盤に使われる高圧機器を読む基礎です。"},
+{id:"M-Q04",cat:"機器",type:"mcq",q:"モータに過負荷が続いたとき、それを検出して制御回路を開放する用途に最も適するものは？",choices:["THR","MC","TB","DS"],answer:"THR",explain:"THRはモータの過負荷を検出するサーマルリレーです。通常、補助接点でMCコイル回路を切りモータを停止させます。",memory:"THRが検出 → MCを落とす。",bridge:"展開接続図でTHRのb接点を見つけられるようにします。"},
+{id:"M-Q05",cat:"機器",type:"mcq",q:"大電流を電流計や保護継電器で扱えるようにする機器は？",choices:["CT","VT","MC","INV"],answer:"CT",explain:"CTは変流器で、一次側の大電流を二次側の扱いやすい電流へ変換します。VTは電圧を扱いやすくする変成器です。",memory:"C＝Current（電流）。",bridge:"計器用変成器の役割を区別する練習です。"},
+{id:"M-Q06",cat:"機器",type:"mcq",q:"三相かご形誘導電動機の省エネ運転や速度制御に直接関係する装置は？",choices:["インバータ","断路器","端子台","表示灯"],answer:"インバータ",explain:"インバータはモータへ供給する周波数などを変え、必要な回転速度に制御できます。",memory:"速度を変える → インバータ。",bridge:"2級実技の『インバータ装置付きへの改造』を理解する中心語です。"},
+
+// ===== 図記号：真偽 =====
+{id:"S-T01",cat:"図記号",type:"tf",q:"a接点は、機器が動作していない通常状態では開いている接点である。",answer:"○",explain:"a接点は通常開（NO）。機器が動作すると閉じます。",memory:"a＝普段は開、動くと閉。",bridge:"自己保持回路でMCのa接点がよく使われます。"},
+{id:"S-T02",cat:"図記号",type:"tf",q:"b接点は、機器が動作していない通常状態では開いている。",answer:"×",explain:"b接点は通常閉（NC）。動作すると開きます。",memory:"b＝普段は閉、動くと開。",bridge:"停止PBや過負荷停止条件でb接点を読む基礎です。"},
+{id:"S-T03",cat:"図記号",type:"tf",q:"『通常状態』とは、一般にコイルなどが励磁されていない基準状態を表す。",answer:"○",explain:"接点記号は、原則として操作や励磁がされていない基準状態を表します。そこから動作時の変化を考えます。",memory:"記号はまず『普段の姿』で読む。",bridge:"展開図を読むとき、最初に無励磁状態を思い浮かべます。"},
+{id:"S-T04",cat:"図記号",type:"tf",q:"同じ機器記号『MC1』のコイルと接点が図面上で離れていても、同一機器の動作関係を表すことがある。",answer:"○",explain:"展開接続図では同一機器のコイルと複数接点が別の場所に描かれます。機器記号が対応関係を追う手掛かりです。",memory:"離れていても『同じ名前』を追う。",bridge:"実技の展開接続図で必須の読み方です。"},
+{id:"S-T05",cat:"図記号",type:"tf",q:"コイルが励磁されると、その機器に属するa接点は開き、b接点は閉じる。",answer:"×",explain:"逆です。励磁するとa接点は閉じ、b接点は開きます。",memory:"励磁：aはON、bはOFF。",bridge:"コイル動作後の回路状態を頭の中で切り替える練習です。"},
+{id:"S-T06",cat:"図記号",type:"tf",q:"『無励磁』とは、コイルに通電されておらず、電磁的に動作していない状態をいう。",answer:"○",explain:"無励磁はコイルに電流が流れず、電磁石として動作していない状態です。",memory:"無励磁＝コイルOFF。",bridge:"通常状態を判断する基本語です。"},
+// ===== 図記号：4択 =====
+{id:"S-Q01",cat:"図記号",type:"mcq",q:"停止用押しボタンに一般的に使われる接点として適切なのは？",choices:["b接点","a接点","自己保持用a接点","主接点"],answer:"b接点",explain:"停止PBは通常時に回路を成立させ、押したときに回路を開く必要があるため、b接点が一般的です。",memory:"停止＝普段つながるb接点。",bridge:"停止条件を回路の入口側から追えるようにします。"},
+{id:"S-Q02",cat:"図記号",type:"mcq",q:"運転用押しボタンを押したときだけ回路を成立させたい。一般的に用いる接点は？",choices:["a接点","b接点","THRのb接点","DS"],answer:"a接点",explain:"運転PBは通常開で、押すと閉じてコイルへ電流を流すa接点が一般的です。",memory:"運転＝押すとつながるa接点。",bridge:"自己保持回路のスタート条件を読む基礎です。"},
+{id:"S-Q03",cat:"図記号",type:"mcq",q:"MC1コイルが励磁したとき、MC1の補助a接点は通常どうなる？",choices:["閉じる","開く","必ず短絡する","変化しない"],answer:"閉じる",explain:"a接点は通常開で、対応するコイルが励磁されると閉じます。",memory:"a：励磁で閉。",bridge:"自己保持が成立する理由を説明できるようになります。"},
+{id:"S-Q04",cat:"図記号",type:"mcq",q:"展開接続図で『R1』コイルと『R1』接点を見つけた。最初に行う判断として適切なのは？",choices:["同じリレーの動作関係を確認する","必ず別機器と判断する","接点記号を無視する","主回路だけを見る"],answer:"同じリレーの動作関係を確認する",explain:"同一の機器記号は、離れて描かれたコイルと接点の対応を追う重要な手掛かりです。",memory:"同名記号は仲間を疑う。",bridge:"図面内の参照関係を追う力につながります。"},
+{id:"S-Q05",cat:"図記号",type:"mcq",q:"『励磁』を最も正しく説明しているものは？",choices:["コイルに通電して磁力を生じさせ、機器を動作させること","遮断器を手動で引き出すこと","配線を端子台から外すこと","盤内機器を冷却すること"],answer:"コイルに通電して磁力を生じさせ、機器を動作させること",explain:"励磁とはコイルに電流を流し、電磁石として機器を動作させることです。",memory:"励磁＝コイルON。",bridge:"『○○コイルが励磁する条件』を文章化できるようにします。"},
+{id:"S-Q06",cat:"図記号",type:"mcq",q:"通常閉で、動作すると開く接点を表す呼び方は？",choices:["b接点","a接点","主接点","コイル"],answer:"b接点",explain:"b接点は通常閉（NC）で、動作時に開きます。",memory:"b＝Breakのイメージで動作時に切れる。",bridge:"停止・異常停止条件の理解に直結します。"},
+
+// ===== 回路：真偽 =====
+{id:"C-T01",cat:"回路",type:"tf",q:"主回路は、モータなどの負荷へ実際の電力を供給する経路である。",answer:"○",explain:"主回路は負荷へ電力を送る『力の道』です。",memory:"主回路＝力の道。",bridge:"実技では主回路と制御回路を混同しないことが出発点です。"},
+{id:"C-T02",cat:"回路",type:"tf",q:"制御回路は、押しボタンやリレー接点などを使って、MCやリレーなどの動作条件を作る。",answer:"○",explain:"制御回路は『命令の道』。操作・保護条件を組み合わせ、コイルを励磁・無励磁にします。",memory:"制御回路＝命令の道。",bridge:"展開接続図を読む中心です。"},
+{id:"C-T03",cat:"回路",type:"tf",q:"自己保持回路は、運転ボタンを押し続けなければ運転を維持できない回路である。",answer:"×",explain:"自己保持は、運転PBを離した後も、MCなどの補助a接点を使ってコイルへの通電を維持する回路です。",memory:"一瞬のSTARTを自分の接点で保持。",bridge:"展開図の典型的な基本回路です。"},
+{id:"C-T04",cat:"回路",type:"tf",q:"正転用MCと逆転用MCを同時に投入しないようにする仕組みは、インターロックの一例である。",answer:"○",explain:"正逆転回路では同時投入を防ぐため、相手側MCのb接点や機械的インターロックなどを使います。",memory:"インターロック＝同時にしてはいけない動作を防ぐ。",bridge:"複数コイルの禁止条件を読む力になります。"},
+{id:"C-T05",cat:"回路",type:"tf",q:"THRが過負荷を検出したときは、一般にモータを加速させて負荷を逃がす。",answer:"×",explain:"過負荷時は、THR接点によりMCコイルを無励磁にしてモータを停止させる方向に働かせます。",memory:"過負荷 → 止めて守る。",bridge:"異常時にどの接点が開くかを追う練習です。"},
+{id:"C-T06",cat:"回路",type:"tf",q:"制御回路を読むときは、最終的にどのコイル・表示灯などへ電流が到達するかを確認すると動作条件を理解しやすい。",answer:"○",explain:"電源から接点条件を順に追い、最終負荷（コイル・表示灯など）まで通電経路が成立するかを見ると理解しやすくなります。",memory:"電源 → 条件 → 最後の負荷。",bridge:"展開接続図を文章に直す基本手順です。"},
+// ===== 回路：4択 =====
+{id:"C-Q01",cat:"回路",type:"mcq",q:"低圧モータの基本的な主回路の流れとして最も自然なのは？",choices:["電源→MCCB→MC→THR→モータ","電源→PB→MCコイル→モータ","電源→CT→表示灯→モータ","電源→TB→停止PB→モータ"],answer:"電源→MCCB→MC→THR→モータ",explain:"典型的な直入れ始動では、MCCBで保護し、MCで開閉し、THRで過負荷を検出してモータへ給電します。",memory:"守る→開閉→過負荷監視→M。",bridge:"主回路の各機器の役割を順番で理解します。"},
+{id:"C-Q02",cat:"回路",type:"mcq",q:"自己保持回路で、運転PBを離した後もMCコイルへの通電を保つために使うものは？",choices:["MCの補助a接点","停止PBのb接点だけ","THRのb接点だけ","MCCBの主接点だけ"],answer:"MCの補助a接点",explain:"MCが励磁すると補助a接点が閉じ、運転PBと並列の通電経路を作ることで自己保持します。",memory:"自分のa接点で自分を保持。",bridge:"展開接続図で並列枝の意味を読む練習です。"},
+{id:"C-Q03",cat:"回路",type:"mcq",q:"停止PBを押したとき、自己保持中のMCを停止させる直接の理由は？",choices:["停止PBのb接点が開き、MCコイルへの通電が切れるから","MCの主接点が先に閉じるから","THRが必ず動作するから","CTの二次電流がゼロになるから"],answer:"停止PBのb接点が開き、MCコイルへの通電が切れるから",explain:"停止PBのb接点を押すと制御回路が開き、MCコイルが無励磁となるため主接点も開いてモータが停止します。",memory:"STOPでコイルの電気を切る。",bridge:"操作→コイル→主接点→モータの因果関係をつなぎます。"},
+{id:"C-Q04",cat:"回路",type:"mcq",q:"正転MCが投入中は逆転MCを投入できないようにする電気的インターロックで、逆転MCコイル回路に入れる接点は？",choices:["正転MCのb接点","正転MCのa接点","逆転MCのa接点","運転PBのa接点"],answer:"正転MCのb接点",explain:"正転MCが励磁すると正転MCのb接点が開き、逆転MCコイルへの通電を禁止できます。",memory:"相手がONなら、自分の道を相手のb接点で切る。",bridge:"禁止条件を回路記号で表現する考え方です。"},
+{id:"C-Q05",cat:"回路",type:"mcq",q:"THRが動作したときにMCコイルを落とすため、制御回路に一般的に使うTHR接点は？",choices:["b接点","a接点","主接点","接地接点"],answer:"b接点",explain:"正常時は閉じていて、過負荷でTHRが動作すると開くb接点をMCコイル回路へ直列に入れるのが基本です。",memory:"異常で開いて止める → b接点。",bridge:"保護条件を展開図で読めるようにします。"},
+{id:"C-Q06",cat:"回路",type:"mcq",q:"主回路と制御回路の説明の組合せで正しいものは？",choices:["主回路＝負荷へ電力、制御回路＝動作条件や命令","主回路＝表示だけ、制御回路＝大電力だけ","主回路＝機械構造、制御回路＝盤の外形","主回路＝接地だけ、制御回路＝母線だけ"],answer:"主回路＝負荷へ電力、制御回路＝動作条件や命令",explain:"主回路は負荷への電力経路、制御回路は操作・保護条件を作って機器の動作を決める回路です。",memory:"主＝力、制御＝命令。",bridge:"どの図を見ているかを判断する基本軸です。"},
+
+// ===== 展開図：真偽 =====
+{id:"D-T01",cat:"展開図",type:"tf",q:"展開接続図は、同一機器のコイルと接点を動作関係が追いやすいよう別々の場所に描くことがある。",answer:"○",explain:"展開接続図では、物理的な位置より回路の動作関係を分かりやすくするため、コイルと接点を離して描きます。",memory:"実物配置ではなく、動作を追う図。",bridge:"機器記号で対応関係を追うことが重要です。"},
+{id:"D-T02",cat:"展開図",type:"tf",q:"展開接続図を読むときは、接点の機器記号を無視し、線の形だけを追えば十分である。",answer:"×",explain:"同じ記号のコイル・接点が連動するため、機器記号は動作関係を理解する重要な情報です。",memory:"線＋名前の両方を見る。",bridge:"実技で接点の所属を取り違えないための基本です。"},
+{id:"D-T03",cat:"展開図",type:"tf",q:"あるコイルが励磁される条件を知るには、そのコイルまでの通電経路にある接点条件を確認する。",answer:"○",explain:"コイルまでの直列・並列の接点状態を追うと、『何が起きたら励磁するか』を説明できます。",memory:"コイルの手前＝動作条件。",bridge:"図面を日本語へ翻訳する練習です。"},
+{id:"D-T04",cat:"展開図",type:"tf",q:"展開接続図は、盤扉上の計器や押しボタンの物理的な配置を示すことが主目的である。",answer:"×",explain:"物理的な扉面配置を表すのは扉正面図。展開接続図は回路の接続・動作関係を表します。",memory:"配置＝正面図、動作＝展開図。",bridge:"実技の2課題を混同しないための重要な区別です。"},
+{id:"D-T05",cat:"展開図",type:"tf",q:"展開接続図を読む際、回路を『この接点が閉じると、このコイルが励磁する』のような文章に直す方法は有効である。",answer:"○",explain:"回路記号を日本語の因果関係へ変換すると、複雑な図でも動作を整理しやすくなります。",memory:"図面→文章→動作。",bridge:"製図補助経験を『読む力』へ変換する方法です。"},
+{id:"D-T06",cat:"展開図",type:"tf",q:"CWD方式が出題される2級実技では、端子や外部機器との接続関係を意識して図面を読むことが重要になる。",answer:"○",explain:"2級実技ではCWD方式の展開接続図作成が課題です。10月段階では、盤内だけでなく端子・外部機器・接続先の対応を意識することが有効です。",memory:"『どこから、どこへ』を明確に。",bridge:"CWDの作図練習へ進む前の読み方です。"},
+// ===== 展開図：4択 =====
+{id:"D-Q01",cat:"展開図",type:"mcq",q:"展開接続図でMCコイルの動作条件を調べるとき、最初に注目するものは？",choices:["MCコイルへ至る通電経路上の接点","盤の塗装色","扉板の材質だけ","メーカーのロゴ"],answer:"MCコイルへ至る通電経路上の接点",explain:"コイルまでの接点が、停止・運転・保護・インターロックなどの動作条件を作っています。",memory:"コイルまでの道を逆算。",bridge:"実技で展開図を修正するときの基本動作です。"},
+{id:"D-Q02",cat:"展開図",type:"mcq",q:"同じ『MC1』という記号のa接点を図面内で見つけた。MC1コイルが励磁したときの変化は？",choices:["a接点が閉じる","a接点が開く","必ず何も変わらない","主回路電圧が半分になる"],answer:"a接点が閉じる",explain:"同じMC1に属するa接点は、MC1コイルが励磁すると閉じます。",memory:"同名＋a＝励磁で閉。",bridge:"コイルと接点の連動を実際の図面上で追う力です。"},
+{id:"D-Q03",cat:"展開図",type:"mcq",q:"展開接続図を読む順序として最も理解しやすいものは？",choices:["制御電源→接点条件→コイル・負荷→同名接点の動作確認","コイルだけ暗記→寸法確認→塗装確認","部品メーカー→盤重量→配線色だけ確認","扉外形→板厚→主回路を無視"],answer:"制御電源→接点条件→コイル・負荷→同名接点の動作確認",explain:"電源から成立条件を追い、コイルが動いた結果として同名接点がどう変わるか確認すると動作を整理しやすくなります。",memory:"電源→条件→コイル→接点変化。",bridge:"複雑な展開図でも再現できる読み方です。"},
+{id:"D-Q04",cat:"展開図",type:"mcq",q:"自己保持回路の展開接続図で、運転PBと並列に描かれることが多い接点は？",choices:["MCの補助a接点","THRのb接点","停止PBのb接点","MCCBの主接点"],answer:"MCの補助a接点",explain:"MCが励磁した後、そのa接点が閉じて運転PBをバイパスする通電経路を作ります。",memory:"STARTと並列＝自己保持a接点。",bridge:"並列配線の意味を『条件のOR』として読む入口です。"},
+{id:"D-Q05",cat:"展開図",type:"mcq",q:"正転・逆転の展開接続図で、相手側MCのb接点が直列に入っている主な理由は？",choices:["同時投入を防ぐため","速度を2倍にするため","CTを保護するため","表示灯を明るくするため"],answer:"同時投入を防ぐため",explain:"相手側が励磁するとb接点が開くため、自分側のコイルを励磁できなくなり、同時投入を防止できます。",memory:"相手のb接点＝禁止条件。",bridge:"インターロックを図面から読み取る問題です。"},
+{id:"D-Q06",cat:"展開図",type:"mcq",q:"2級実技の展開接続図課題と最も関係が深い変更は？",choices:["既設ポンプ用三相かご形誘導電動機の1台をインバータ装置付きに改造","盤の塗装色だけを変更","モータ軸受を機械的に交換","扉の鍵だけを交換"],answer:"既設ポンプ用三相かご形誘導電動機の1台をインバータ装置付きに改造",explain:"令和8年度後期の2級実技概要では、2台の既設ポンプ用三相かご形誘導電動機のうち1台をインバータ装置付きに改造した場合の展開接続図をCWD方式で作成します。",memory:"2台中1台 → インバータ化 → 展開図。",bridge:"本番課題の骨格を10月から意識します。"},
+
+// ===== 盤：真偽 =====
+{id:"P-T01",cat:"盤",type:"tf",q:"配電盤は、受けた電力を各回路へ分配し、遮断・保護などを行う設備である。",answer:"○",explain:"配電盤は電力を受け、分配し、遮断器や保護装置などで回路を保護します。",memory:"配電盤＝受ける・分ける・守る。",bridge:"閉鎖配電盤の扉正面図課題につながる基本語です。"},
+{id:"P-T02",cat:"盤",type:"tf",q:"制御盤の主な目的は、機械や設備の運転条件を作り、動作を制御することである。",answer:"○",explain:"制御盤にはリレー、MC、PLC、インバータ、操作器などが配置され、設備の動作を制御します。",memory:"制御盤＝機械への司令塔。",bridge:"回路と盤の役割を結び付けます。"},
+{id:"P-T03",cat:"盤",type:"tf",q:"母線は、盤内で複数回路へ電力を分配する元となる幹線状の導体である。",answer:"○",explain:"母線（busbar）は大きな電流をまとめて運び、各フィーダなどへ分岐させる導体です。",memory:"母線＝電気の幹線道路。",bridge:"高圧・フィーダ回路の位置関係を理解する基礎です。"},
+{id:"P-T04",cat:"盤",type:"tf",q:"フィーダとは、母線などから負荷側や別の盤などへ電力を送り出す回路を指す。",answer:"○",explain:"フィーダは電源側から負荷側へ電力を送り出す回路です。",memory:"フィーダ＝幹線から出ていく送り道。",bridge:"2級実技の『高圧・フィーダ回路を収納する閉鎖配電盤』に直結する用語です。"},
+{id:"P-T05",cat:"盤",type:"tf",q:"扉正面図は、主として盤扉の正面から見える計器・表示灯・操作器などの配置を表す。",answer:"○",explain:"扉正面図は、扉上に配置される計器、表示灯、押しボタンなどを正面から見た配置図です。",memory:"扉正面図＝扉のレイアウト。",bridge:"2級実技課題そのものにつながります。"},
+{id:"P-T06",cat:"盤",type:"tf",q:"TB（端子台）は、盤内配線と外部配線などを整理して接続するために用いられる。",answer:"○",explain:"端子台は盤内・盤外の配線を接続・中継し、保守や配線整理をしやすくします。",memory:"TB＝配線の乗り換え地点。",bridge:"外部機器との接続を追うときの重要な目印です。"},
+// ===== 盤：4択 =====
+{id:"P-Q01",cat:"盤",type:"mcq",q:"盤内で電力をまとめて運び、複数の回路へ分岐させる導体は？",choices:["母線","端子台","押しボタン","補助接点"],answer:"母線",explain:"母線は大電流をまとめて運ぶ幹線状の導体で、そこから各回路へ分岐します。",memory:"母線＝バス。",bridge:"高圧盤の主回路構成を理解する基礎です。"},
+{id:"P-Q02",cat:"盤",type:"mcq",q:"母線から負荷側へ電力を送り出す回路を表す用語は？",choices:["フィーダ","インターロック","自己保持","励磁"],answer:"フィーダ",explain:"フィーダは、母線などの電源側から負荷や別設備へ電力を供給する送り出し回路です。",memory:"フィーダ＝送り出す回路。",bridge:"実技課題文を読んだとき『フィーダ』で止まらないようにします。"},
+{id:"P-Q03",cat:"盤",type:"mcq",q:"閉鎖配電盤の扉正面図で主に検討する対象は？",choices:["扉面の計器・表示灯・操作器などの配置","モータ内部の巻線構造","ケーブルの銅純度","建屋の基礎寸法だけ"],answer:"扉面の計器・表示灯・操作器などの配置",explain:"扉正面図は扉面の機器レイアウトを表します。内部の回路動作は展開接続図などで表します。",memory:"正面図＝見た目の配置。",bridge:"2級実技の第1課題の考え方です。"},
+{id:"P-Q04",cat:"盤",type:"mcq",q:"外部ケーブルと盤内配線の接続点として最も関係が深い部品は？",choices:["TB（端子台）","MC主接点","VCB消弧部","モータ軸"],answer:"TB（端子台）",explain:"TBは外部配線と盤内配線を整理して接続する中継点です。",memory:"TB＝Terminal Block。",bridge:"CWD方式の接続関係を追うときに意識する部品です。"},
+{id:"P-Q05",cat:"盤",type:"mcq",q:"配電盤と制御盤の役割の組合せとして適切なのは？",choices:["配電盤＝電力の受配電・保護、制御盤＝設備の動作制御","配電盤＝速度制御だけ、制御盤＝短絡遮断だけ","配電盤＝機械支持、制御盤＝建築構造","両方とも端子台だけを収納する盤"],answer:"配電盤＝電力の受配電・保護、制御盤＝設備の動作制御",explain:"配電盤は電力の受電・分配・保護、制御盤は機械や設備の運転・停止や制御を担うのが基本です。",memory:"配電＝電力、制御＝動作。",bridge:"図面名と盤の目的を結び付けます。"},
+{id:"P-Q06",cat:"盤",type:"mcq",q:"2級実技の扉正面図課題で対象となる盤の説明として、令和8年度後期概要に合うものは？",choices:["高圧・フィーダ回路を収納する閉鎖配電盤","家庭用分電盤だけ","モータ単体の端子箱","低圧照明器具だけを収納する箱"],answer:"高圧・フィーダ回路を収納する閉鎖配電盤",explain:"公式の令和8年度後期概要では、2級は『高圧・フィーダ回路を収納する閉鎖配電盤の扉正面図』を作成するとされています。",memory:"高圧＋フィーダ＋閉鎖配電盤＋扉正面図。",bridge:"本番課題の文章を分解して読めるようにします。"}
+];
+
+const GLOSSARY = [
+["MCCB","配線用遮断器。低圧回路で過負荷・短絡などの過電流を遮断し、回路・配線を保護する。"],
+["VCB","真空遮断器。真空中でアークを消弧し、高圧回路の開閉・遮断に用いる。"],
+["DS","断路器。点検・保守のため電路を切り離す。事故電流の遮断を主目的とする機器ではない。"],
+["MC","電磁接触器。コイルの励磁で主接点を開閉し、モータ等を頻繁にON/OFFする。"],
+["THR","サーマルリレー。主にモータの過負荷を検出し、制御回路を介して停止させる。"],
+["CT","変流器。大きな一次電流を計測・保護に扱いやすい二次電流へ変換する。"],
+["VT","計器用変圧器。高い電圧を計測・保護に扱いやすい電圧へ変換する。"],
+["INV / インバータ","交流モータへ供給する周波数などを制御し、回転速度を調整する装置。"],
+["PB","押しボタンスイッチ。運転・停止などの操作指令に用いる。"],
+["TB","端子台（Terminal Block）。盤内配線と外部配線などを整理して接続する。"],
+["a接点","通常開（NO）。通常状態では開き、機器が動作すると閉じる。"],
+["b接点","通常閉（NC）。通常状態では閉じ、機器が動作すると開く。"],
+["励磁","コイルへ通電し、磁力を発生させて電磁機器を動作させること。"],
+["無励磁","コイルへ通電しておらず、電磁的に動作していない状態。"],
+["主回路","モータなどの負荷へ実際の電力を送る回路。"],
+["制御回路","操作・保護条件を組み合わせ、MCやリレー等へ動作命令を与える回路。"],
+["自己保持","一度励磁したコイルを、その機器の補助a接点などを使って通電維持する回路。"],
+["インターロック","同時に動いてはいけない機器・動作を電気的または機械的に防止する仕組み。"],
+["展開接続図","機器のコイル・接点等を動作関係が追いやすいよう展開して表した接続図。"],
+["CWD方式","2級実技の展開接続図で指定される方式。10月は端子・外部機器・接続先の対応を意識して読む。"],
+["配電盤","電力を受け、各回路へ分配し、遮断・保護などを行う盤。"],
+["制御盤","機械・設備の運転・停止や各種動作を制御する機器を収納する盤。"],
+["母線","盤内などで電力をまとめて運び、複数回路へ分岐する幹線状の導体。"],
+["フィーダ","母線などから負荷側や別設備へ電力を送り出す回路。"],
+["閉鎖配電盤","充電部や機器を金属等の箱体内に収納し、保護・安全性等を確保した配電盤。"],
+["扉正面図","盤扉を正面から見た計器・表示灯・操作器などの配置を表す図。"],
+["投入","遮断器や開閉器などをONし、回路を導通状態にすること。"],
+["引外し / トリップ","保護動作等によって遮断器を開放すること。"],
+["定格","機器を所定条件で安全・正常に使用するために定められた基準値。"],
+["負荷","電力を消費して仕事をする機器・設備。"],
+["過負荷","機器に許容範囲を超える負担が一定時間以上かかる状態。"],
+["短絡","本来の負荷を経ず低インピーダンス経路で導体間がつながり、大電流が流れる異常。"],
+["地絡","電路が大地または接地された部分へつながる異常。"],
+["三相かご形誘導電動機","三相交流で回転磁界を作り、かご形回転子に誘導電流を生じて回転する代表的な交流モータ。"]
+];
+
+let state = loadState();
+let session = [];
+let pos = 0;
+let locked = false;
+let mode = "drill";
+let sessionCorrect = 0;
+let mockStart = null;
+let timerId = null;
+let selectedCategory = CATS[0][0];
+
+function loadState(){
+  try{
+    const raw = JSON.parse(localStorage.getItem("denki2_oct_state")||"null");
+    if(raw && raw.stats){
+      raw.version=APP_VERSION;
+      raw.totalAnswered=Number(raw.totalAnswered||0);
+      raw.totalCorrect=Number(raw.totalCorrect||0);
+      return raw;
+    }
+  }catch(e){}
+  return {version:APP_VERSION,totalAnswered:0,totalCorrect:0,stats:{}};
+}
+function saveState(){localStorage.setItem("denki2_oct_state",JSON.stringify(state))}
+function getStat(id){if(!state.stats[id]) state.stats[id]={attempts:0,correct:0,last:null,streak:0};return state.stats[id]}
+function shuffle(a){const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
+function prepared(q){return {...q,displayChoices:q.type==="mcq"?shuffle(q.choices):["○","×"]}}
+function sample(arr,n){return shuffle(arr).slice(0,Math.min(n,arr.length))}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]))}
+const FURIGANA = [
+  ["三相かご形誘導電動機","さんそうかごがたゆうどうでんどうき"],
+  ["計器用変圧器","けいきようへんあつき"],
+  ["配線用遮断器","はいせんようしゃだんき"],
+  ["真空遮断器","しんくうしゃだんき"],
+  ["電磁接触器","でんじせっしょくき"],
+  ["過電流継電器","かでんりゅうけいでんき"],
+  ["閉鎖配電盤","へいさはいでんばん"],
+  ["展開接続図","てんかいせつぞくず"],
+  ["三相誘導電動機","さんそうゆうどうでんどうき"],
+  ["誘導電動機","ゆうどうでんどうき"],
+  ["変流器","へんりゅうき"],
+  ["変成器","へんせいき"],
+  ["断路器","だんろき"],
+  ["遮断器","しゃだんき"],
+  ["接触器","せっしょくき"],
+  ["継電器","けいでんき"],
+  ["扉正面図","とびらしょうめんず"],
+  ["配電盤","はいでんばん"],
+  ["制御盤","せいぎょばん"],
+  ["励磁","れいじ"],
+  ["無励磁","むれいじ"],
+  ["短絡","たんらく"],
+  ["地絡","ちらく"],
+  ["母線","ぼせん"],
+  ["消弧","しょうこ"],
+  ["導通","どうつう"],
+  ["引外し","ひきはずし"]
+].sort((a,b)=>b[0].length-a[0].length);
+function escapeRegExp(value){return value.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+const FURIGANA_RE = new RegExp(FURIGANA.map(([w])=>escapeRegExp(w)).join('|'),'g');
+const FURIGANA_MAP = Object.fromEntries(FURIGANA);
+function readingHtml(value){
+  const text=String(value??''); let out='',last=0;
+  text.replace(FURIGANA_RE,(m,offset)=>{out+=escapeHtml(text.slice(last,offset));out+=`<ruby>${escapeHtml(m)}<rt>${escapeHtml(FURIGANA_MAP[m])}</rt></ruby>`;last=offset+m.length;return m});
+  return out+escapeHtml(text.slice(last));
+}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
+
+function showTab(id,btn){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+  const target=btn||document.querySelector(`nav button[data-tab="${id}"]`);if(target)target.classList.add("active");
+  if(id==="home")renderHome(); if(id==="review")renderReview(); if(id==="glossary")renderGlossary(); if(id==="practice")renderPracticeFilters();
+  window.scrollTo(0,0);
+}
+
+function renderHome(){
+  const topicGrid=document.getElementById("topicGrid");
+  topicGrid.innerHTML=CATS.map(([cat,desc],i)=>{
+    const qs=Q.filter(q=>q.cat===cat); const answered=qs.filter(q=>getStat(q.id).attempts>0).length; const mastered=qs.filter(q=>getStat(q.id).streak>=2).length;
+    return `<div class="topic"><b>${i+1}. ${cat}</b><span class="small">${readingHtml(desc)}</span><div class="topic-score">問題演習の進捗：回答 ${answered}/${qs.length}｜習得 ${mastered}/${qs.length}</div></div>`
+  }).join("");
+  updateStats();
+}
+
+function updateStats(){
+  const mastered=Q.filter(q=>getStat(q.id).streak>=2).length;
+  const review=Q.filter(q=>getStat(q.id).last==="wrong").length;
+  const pct=Math.round(mastered/Q.length*100);
+  document.getElementById("progressFill").style.width=pct+"%";
+  document.getElementById("progressText").textContent=pct+"%";
+  document.getElementById("masterText").textContent=`（${mastered}/${Q.length}問）`;
+  document.getElementById("statAnswered").textContent=state.totalAnswered;
+  document.getElementById("statRate").textContent=state.totalAnswered?Math.round(state.totalCorrect/state.totalAnswered*100)+"%":"0%";
+  document.getElementById("statReview").textContent=review;
+  const catScores=CATS.map(([cat])=>{
+    const stats=Q.filter(q=>q.cat===cat).map(q=>getStat(q.id)).filter(s=>s.attempts>0);
+    const at=stats.reduce((a,s)=>a+s.attempts,0),co=stats.reduce((a,s)=>a+s.correct,0);
+    return {cat,rate:at?Math.round(co/at*100):null,attempts:at};
+  }).sort((a,b)=>(a.rate??999)-(b.rate??999));
+  const used=catScores.filter(x=>x.attempts>0).slice(0,3);
+  document.getElementById("weakBox").innerHTML=used.length?`<b class="small">今の弱点候補</b>`+used.map(x=>`<div class="weak-row"><span>${x.cat}</span><b>${x.rate}%</b></div>`).join(""):"<span class='small'>まだデータがありません。まず10問解いてみましょう。</span>";
+}
+
+function renderPracticeFilters(){
+  const box=document.getElementById("practiceFilters");
+  box.innerHTML=CATS.map(([cat])=>`<button class="${cat===selectedCategory?'active':''}" onclick="selectCategory('${cat}',this)">${cat}</button>`).join("");
+  const label=document.getElementById("selectedCategoryText");
+  if(label) label.innerHTML=`<b>選択中：</b>${selectedCategory}`;
+}
+function selectCategory(cat,btn){
+  selectedCategory=cat;
+  document.querySelectorAll("#practiceFilters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const label=document.getElementById("selectedCategoryText");
+  if(label) label.innerHTML=`<b>選択中：</b>${cat}`;
+}
+
+function priorityDaily(){
+  const wrong=Q.filter(q=>getStat(q.id).last==="wrong");
+  const unseen=Q.filter(q=>getStat(q.id).attempts===0 && !wrong.includes(q));
+  const seen=Q.filter(q=>getStat(q.id).attempts>0 && getStat(q.id).last!=="wrong");
+  const picked=[]; sample(wrong,5).forEach(q=>picked.push(q));
+  sample(unseen,10).forEach(q=>{if(picked.length<15&&!picked.includes(q))picked.push(q)});
+  sample(seen,15).forEach(q=>{if(picked.length<15&&!picked.includes(q))picked.push(q)});
+  sample(Q,15).forEach(q=>{if(picked.length<15&&!picked.includes(q))picked.push(q)});
+  return shuffle(picked).map(prepared);
+}
+function startDaily(){startSession(priorityDaily(),"daily")}
+function startMode(type){startSession(sample(Q.filter(q=>q.type===type),10).map(prepared),type)}
+function startCategory(cat,n=10){selectedCategory=cat;startSession(sample(Q.filter(q=>q.cat===cat),n).map(prepared),"category")}
+function startReview(){
+  const pool=Q.filter(q=>getStat(q.id).last==="wrong");
+  if(!pool.length){toast("現在、要復習の問題はありません");showTab("review");return}
+  startSession(shuffle(pool).map(prepared),"review")
+}
+function startMock(){
+  const out=[];
+  CATS.forEach(([cat])=>{sample(Q.filter(q=>q.cat===cat&&q.type==="tf"),5).forEach(q=>out.push(q));});
+  CATS.forEach(([cat])=>{sample(Q.filter(q=>q.cat===cat&&q.type==="mcq"),5).forEach(q=>out.push(q));});
+  startSession(out.map(prepared),"mock");
+  mockStart=Date.now();startTimer();
+}
+function startSession(arr,m){
+  clearInterval(timerId);timerId=null;mockStart=null;
+  session=arr;pos=0;mode=m;sessionCorrect=0;locked=false;
+  showTab("quiz");renderQuestion();
+}
+
+function renderQuestion(){
+  if(!session.length){document.getElementById("quizBox").innerHTML="<p>問題がありません。</p>";return}
+  if(pos>=session.length){finishSession();return}
+  locked=false;
+  const x=session[pos];
+  const labels=x.type==="mcq"?["イ","ロ","ハ","ニ"]:["1）","2）"];
+  const timer=mode==="mock"?`<span class="timer" id="timer">100:00</span>`:"";
+  let html=`<div class="question-head"><div class="question-no">${escapeHtml(x.cat)}｜${x.type==='tf'?'○×':'4択'}｜${pos+1}/${session.length}</div>${timer}</div><div class="question">${readingHtml(x.q)}</div>`;
+  const choiceHtml=x.displayChoices.map((c,i)=>`<button type="button" class="choice" onclick="answerChoice(${i},this)" aria-label="選択肢 ${i+1} ${escapeHtml(c)}"><span class="choice-label">${labels[i]}</span><span class="choice-text">${readingHtml(c)}</span></button>`).join("");
+  html+=x.type==="tf"?`<div class="tf-choices">${choiceHtml}</div>`:choiceHtml;
+  html+=`<div id="explain" class="explain"></div>`;
+  document.getElementById("quizBox").innerHTML=html;
+  document.getElementById("quizButtons").innerHTML=mode==="mock"?`<button class="btn btn-soft" onclick="quitMock()">模擬を中断</button>`:"";
+  if(mode==="mock")updateTimer();
+}
+
+function answerChoice(i,el){
+  if(locked)return; locked=true;
+  const x=session[pos]; const selected=x.displayChoices[i]; const ok=selected===x.answer;
+  const s=getStat(x.id); s.attempts++; state.totalAnswered++;
+  if(ok){s.correct++;s.last="correct";s.streak++;state.totalCorrect++;sessionCorrect++;}else{s.last="wrong";s.streak=0;}
+  saveState();
+  const buttons=[...document.querySelectorAll(".choice")];
+  buttons.forEach((b,idx)=>{b.disabled=true;const val=x.displayChoices[idx];if(val===x.answer)b.classList.add("correct");else if(idx===i)b.classList.add("wrong");else b.classList.add("dim")});
+  const exp=document.getElementById("explain"); exp.className="explain "+(ok?"ok":"ng");
+  exp.innerHTML=`<b>${ok?'○ 正解':'× 不正解'}</b>${!ok?`<div class="why"><b>正解：</b>${readingHtml(x.answer)}</div>`:""}<div class="why"><b>解説</b><br>${readingHtml(x.explain)}</div><div class="memory"><b>覚え方：</b>${readingHtml(x.memory)}</div><div class="bridge"><b>実技へのつながり：</b>${readingHtml(x.bridge)}</div>`;
+  const label=pos===session.length-1?"結果を見る":"次の問題";
+  document.getElementById("quizButtons").innerHTML=`<button class="btn btn-primary" onclick="nextQuestion()">${label}</button>${!ok&&mode!=="mock"?'<button class="btn btn-green" onclick="retryCurrent()">もう一度</button>':''}${mode==='mock'?'<button class="btn btn-soft" onclick="quitMock()">模擬を中断</button>':''}`;
+}
+function retryCurrent(){session[pos]=prepared(Q.find(q=>q.id===session[pos].id));renderQuestion()}
+function nextQuestion(){pos++;renderQuestion();window.scrollTo(0,0)}
+
+function finishSession(){
+  clearInterval(timerId);timerId=null;
+  const score=Math.round(sessionCorrect/session.length*100);
+  const title=mode==="mock"?"50問 模擬結果":"今回の結果";
+  document.getElementById("quizBox").innerHTML=`<div class="result-score">${sessionCorrect}/${session.length}</div><div class="result-sub">${title}｜正答率 ${score}%</div><div class="why" style="margin-top:18px">${score>=80?'基礎知識はかなり安定しています。間違い問題の理由を言葉で説明できるか確認しましょう。':score>=60?'合格学習の途中として十分です。間違えた用語を用語集で確認し、同じ分野をもう10問解きましょう。':'今は点数を気にしなくて大丈夫です。10月は「知らない言葉を見つける月」です。復習から1つずつ埋めていきましょう。'}</div>`;
+  document.getElementById("quizButtons").innerHTML=`<button class="btn btn-primary" onclick="showTab('review')">間違いを復習</button><button class="btn btn-soft" onclick="showTab('home')">ホームへ</button>`;
+  updateStats();
+}
+function quitMock(){if(confirm("模擬学科を中断しますか？回答履歴は保存されています。")){clearInterval(timerId);timerId=null;showTab("home")}}
+function startTimer(){clearInterval(timerId);timerId=setInterval(updateTimer,1000)}
+function updateTimer(){
+  if(mode!=="mock"||!mockStart)return;
+  const left=Math.max(0,6000-Math.floor((Date.now()-mockStart)/1000));
+  const el=document.getElementById("timer");if(el)el.textContent=String(Math.floor(left/60)).padStart(2,"0")+":"+String(left%60).padStart(2,"0");
+  if(left<=0){clearInterval(timerId);timerId=null;alert("100分になりました。ここまでの結果を表示します。");session=session.slice(0,Math.max(pos,1));finishSession();}
+}
+
+function renderReview(){
+  const box=document.getElementById("reviewBox"); const pool=Q.filter(q=>getStat(q.id).last==="wrong");
+  if(!pool.length){box.innerHTML="<p>現在、要復習の問題はありません。</p>";return}
+  const byCat={};pool.forEach(q=>(byCat[q.cat]??=[]).push(q));
+  box.innerHTML=`<p><b>${pool.length}問</b>あります。</p>`+Object.entries(byCat).map(([cat,qs])=>`<details><summary>${cat}｜${qs.length}問</summary>${qs.map(q=>`<p class="small">・${readingHtml(q.q)}</p>`).join("")}</details>`).join("");
+}
+function clearProgress(which){
+  if(which==="review"){
+    if(!confirm("要復習フラグだけ解除しますか？正答率などの履歴は残ります。"))return;
+    Q.forEach(q=>{const s=getStat(q.id);if(s.last==="wrong")s.last=null});saveState();renderReview();renderHome();
+  }else{
+    if(!confirm("全学習履歴をリセットしますか？元に戻せません。"))return;
+    state={version:APP_VERSION,totalAnswered:0,totalCorrect:0,stats:{}};saveState();renderReview();renderHome();
+  }
+}
+
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){
+    if(timerId){clearInterval(timerId);timerId=null;}
+  }else if(mode==="mock" && mockStart && !timerId){
+    updateTimer();
+    startTimer();
+  }
+});
+
+function renderGlossary(){
+  const term=(document.getElementById("search")?.value||"").toLowerCase();
+  const list=GLOSSARY.filter(([a,b])=>(a+b).toLowerCase().includes(term));
+  document.getElementById("glossaryList").innerHTML=list.map(([a,b])=>`<div class="term"><b>${readingHtml(a)}</b><br><span>${readingHtml(b)}</span></div>`).join("");
+}
+
+renderHome();renderPracticeFilters();
+if (location.hash === '#bridge') showTab('bridge');
+</script>
+<script>
+// The redesigned problem hub can start the original practice mode without altering its scoring logic.
+window.addEventListener('load',function(){
+  const key='denki-next-action'; const action=sessionStorage.getItem(key);
+  if(!action || !action.startsWith('oct-')) return;
+  sessionStorage.removeItem(key);
+  setTimeout(function(){
+    const mode=action.split('-').slice(1).join('-');
+    try { if(mode==='mock') { document.getElementById('openMock')?.click(); if(typeof startMock==='function' && !document.getElementById('openMock'))startMock(); }
+      else if(mode==='all')document.querySelector('[data-start="all"]')?.click();
+      else if(mode==='tf'||mode==='mcq'){const button=document.querySelector('[data-start="'+mode+'"]');if(button)button.click();else if(typeof startMode==='function')startMode(mode);} }
+    catch(e){console.warn('Learning shortcut could not start automatically',e)}
+  },150);
+});
+</script>
+<script>window.addEventListener('load',function(){if(location.hash==='#review'||location.hash==='#reviewBox'){const btn=document.querySelector('nav button[data-tab="review"]');if(btn)btn.click();else if(typeof showTab==='function')showTab('review');}});</script>
+<nav class="mobile-bottom-nav" aria-label="スマートフォン用学習メニュー"><a href="index.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a><a href="problems.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-2-5-3-9-2v15c4-1 7 0 9 2 2-2 5-3 9-2V4c-4-1-7 0-9 2z"/><path d="M12 6v15"/></svg><span>問題</span></a><a href="practical.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 20 4-.9L20 7a2.1 2.1 0 0 0-3-3L5 16z"/><path d="m14 6 4 4M13 20h8M18 15v5"/></svg><span>実技</span></a><a href="review.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12.3-2"/></svg><span>復習</span></a><a href="records.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 16v-3m4 3V9m4 7V7"/></svg><span>記録</span></a></nav>
+<script src="assets/js/common.js" defer></script>
+</body>
+</html>
