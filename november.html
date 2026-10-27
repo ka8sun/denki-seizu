@@ -7,346 +7,14 @@
 <meta content="#0f172a" name="theme-color"/>
 <meta content="技能検定2級電気製図・11月版：60問、重要用語15語、実技の部分練習3テーマを収録。正解理由・誤答理由・実技との関連を学ぶ。" name="description"/>
 <title>2級電気製図｜11月 過去問を理解（60問教材版）</title>
-<style>
-:root{
-  --bg:#f6f8fb;--card:#fff;--text:#172033;--muted:#667085;--line:#e4e7ec;
-  --navy:#0f172a;--blue:#2563eb;--blue2:#eff6ff;--green:#15803d;--green2:#f0fdf4;
-  --red:#b42318;--red2:#fff1f2;--amber:#a16207;--amber2:#fffbeb;--purple:#6d28d9;--purple2:#f5f3ff;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;color-scheme:light}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--text)}
-button,input{font:inherit}
-header{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;padding:12px 14px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-header .head-inner{max-width:820px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-header h1{font-size:17px;margin:0;line-height:1.35}
-header p{font-size:11px;color:#cbd5e1;margin:3px 0 0}
-.header-chip{font-size:11px;font-weight:800;background:#1e293b;border:1px solid #334155;border-radius:999px;padding:6px 9px;white-space:nowrap}
-main{max-width:820px;margin:auto;padding:14px 14px 92px}
-section{display:none}
-section.active{display:block}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:13px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
-.hero{background:linear-gradient(135deg,#eff6ff,#ecfeff)}
-.notice{background:var(--amber2);border-color:#fde68a}
-.exam-card{background:linear-gradient(135deg,#f8fafc,#eef2ff)}
-h2{font-size:19px;margin:0 0 10px;line-height:1.45}
-h3{font-size:16px;margin:16px 0 8px}
-p,li{line-height:1.7}
-.small{font-size:12.5px;color:var(--muted)}
-.mini{font-size:11px;color:var(--muted)}
-.badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;background:#e0e7ff;color:#3730a3}
-.badge.green{background:#dcfce7;color:#166534}.badge.amber{background:#fef3c7;color:#92400e}.badge.purple{background:#ede9fe;color:#5b21b6}
-.progressbar{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden}
-.progressbar>div{height:100%;background:var(--blue);width:0%;transition:.25s}
-.btn{border:0;border-radius:11px;padding:11px 14px;font-size:14px;font-weight:800;cursor:pointer;touch-action:manipulation}
-.btn:disabled{opacity:.45;cursor:not-allowed}
-.btn-primary{background:var(--blue);color:#fff}.btn-soft{background:var(--blue2);color:#1d4ed8}.btn-green{background:#dcfce7;color:#166534}.btn-red{background:#fee2e2;color:#991b1b}.btn-dark{background:var(--navy);color:#fff}.btn-purple{background:var(--purple2);color:var(--purple)}
-.btn-row{display:flex;gap:8px;flex-wrap:wrap}
-.btn-row .btn{flex:0 0 auto}
-.grid{display:grid;grid-template-columns:1fr;gap:9px}
-.topic{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
-.topic b{display:block;margin-bottom:5px}
-.topic-score{margin-top:8px;font-size:12px;color:var(--muted)}
-
-.muted{color:var(--muted)}
-.practical-overview-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
-.practical-overview-card{border:1px solid #cfe0ff;border-radius:16px;padding:16px;background:linear-gradient(180deg,#ffffff,#f8fbff)}
-.practical-overview-card h3{margin:6px 0 8px;font-size:17px;line-height:1.45}
-.practical-overview-card p{margin:0}
-.practical-overview-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.step-chip,.goal-chip,.jump-chip{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;line-height:1.2}
-.step-chip{background:#dbeafe;color:#1d4ed8}
-.goal-chip{background:#e0f2fe;color:#075985}
-.jump-chip{background:#eef2ff;color:#4338ca}
-.practical-points{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:12px 0}
-.practical-points li{background:#fff;border:1px solid #dbe4f0;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700;color:#334155}
-.practical-meta{font-size:12.5px;color:var(--muted);margin:0 0 10px}
-.practical-action{margin-top:10px}
-.practical-action .btn{transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .12s ease;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-.practical-action .btn-soft{background:var(--blue2);color:#1d4ed8;border:1px solid #dbeafe}
-.practical-action .btn-soft:hover,.practical-action .btn-soft:focus-visible,.practical-action .btn-soft:active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 2px 8px rgba(37,99,235,.16)}
-
-.practical-anchor-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.practical-anchor-links a{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:999px;border:1px solid #cfe0ff;background:#fff;color:#1d4ed8;font-size:12px;font-weight:800;text-decoration:none}
-.practical-anchor-links a:hover{background:#eff6ff}
-.practical-detail-card{scroll-margin-top:88px}
-.practical-guide-note{margin-top:10px;padding:10px 12px;border-radius:12px;background:#f8fafc;border:1px solid var(--line);font-size:13px;color:#475467}
-@media(min-width:680px){.practical-overview-grid{grid-template-columns:1fr 1fr}}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.info-box{padding:12px;border-radius:12px;background:#fff;border:1px solid var(--line)}
-.info-box strong{display:block;font-size:20px;margin-top:3px}
-.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat{padding:10px 6px;border-radius:11px;background:#f8fafc;text-align:center}.stat strong{display:block;font-size:20px}.stat span{font-size:11px;color:var(--muted)}
-.mode-grid{display:grid;grid-template-columns:1fr;gap:9px}
-.mode{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
-.question-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
-.question-no{font-size:12px;color:var(--muted)}
-.timer{font-variant-numeric:tabular-nums;font-size:13px;font-weight:800;background:#f1f5f9;border-radius:999px;padding:5px 9px}
-.question{font-size:19px;font-weight:800;line-height:1.55;margin:8px 0 14px}
-.choice{display:block;width:100%;text-align:left;padding:14px 13px;border:1px solid var(--line);border-radius:11px;background:#fff;color:#172033 !important;-webkit-text-fill-color:#172033 !important;margin:8px 0;font-size:15px;font-weight:600;line-height:1.55;cursor:pointer;appearance:none;-webkit-appearance:none;opacity:1}
-.choice b,.choice .choice-label{color:#0f172a !important;-webkit-text-fill-color:#0f172a !important;display:inline-block;min-width:2.1em;font-weight:900}
-.choice:hover{border-color:#bfdbfe;background:#f8fbff;color:#172033 !important;-webkit-text-fill-color:#172033 !important}
-.choice.correct{background:var(--green2);border-color:#86efac;color:#166534 !important;-webkit-text-fill-color:#166534 !important;font-weight:700}
-.choice.correct b,.choice.correct .choice-label{color:#166534 !important;-webkit-text-fill-color:#166534 !important}
-.choice.wrong{background:var(--red2);border-color:#fda4af;color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important;font-weight:700}
-.choice.wrong b,.choice.wrong .choice-label{color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important}
-.choice.dim{opacity:.62}
-.choice:disabled{cursor:default;opacity:1;color:#172033 !important;-webkit-text-fill-color:#172033 !important}
-.choice.dim:disabled{opacity:.62}
-.choice.correct:disabled{color:#166534 !important;-webkit-text-fill-color:#166534 !important}
-.choice.wrong:disabled{color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important}
-
-.tf-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}
-.tf-choices .choice{margin:0;text-align:center;font-size:20px;font-weight:800;padding:16px 10px;min-height:60px}
-.tf-choices .choice-label{min-width:auto!important;margin-right:.35em;font-size:15px;vertical-align:2px}
-ruby{ruby-align:center;ruby-position:over}
-rt{font-size:.53em;font-weight:600;color:#667085;letter-spacing:.02em}
-.question rt{font-size:.5em;color:#475467}
-.choice rt{font-size:.52em}
-.explain rt,.term rt,.bridge rt,.memory rt{font-size:.58em}
-.explain{margin-top:14px;border-radius:13px;padding:13px;display:none}.explain.ok{display:block;background:var(--green2);border:1px solid #bbf7d0}.explain.ng{display:block;background:var(--red2);border:1px solid #fecdd3}
-.why{margin-top:10px;background:#fff;border-radius:10px;padding:11px;border:1px solid var(--line)}
-.memory{margin-top:10px;background:var(--amber2);border-left:4px solid #f59e0b;border-radius:8px;padding:10px 12px}
-.bridge{margin-top:10px;background:var(--purple2);border-left:4px solid #8b5cf6;border-radius:8px;padding:10px 12px}
-.filter{display:flex;gap:7px;overflow:auto;padding-bottom:5px;margin-bottom:10px;scrollbar-width:none}.filter::-webkit-scrollbar{display:none}.filter button{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 10px;font-size:12px}.filter button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.term{padding:12px 0;border-bottom:1px solid var(--line)}.term b{font-size:16px}
-input.search{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;font-size:16px;background:#fff}
-details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0;background:#fff}summary{font-weight:800;cursor:pointer}
-.diagram{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0f172a;color:#e2e8f0;border-radius:12px;padding:13px;white-space:pre-wrap;line-height:1.7;overflow:auto;font-size:13px}
-.steps{counter-reset:step;list-style:none;padding:0;margin:0}.steps li{counter-increment:step;position:relative;padding:10px 10px 10px 43px;border-bottom:1px solid var(--line)}.steps li:before{content:counter(step);position:absolute;left:7px;top:10px;width:25px;height:25px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px}.steps li:last-child{border-bottom:0}
-.result-score{font-size:42px;font-weight:900;text-align:center;line-height:1}.result-sub{text-align:center;color:var(--muted);margin-top:7px}
-.weak-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:9px 0}.weak-row:last-child{border-bottom:0}
-.source{font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:12px;padding-top:10px}
-nav{position:fixed;left:50%;right:auto;bottom:0;transform:translateX(-50%);z-index:40;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);width:100%;max-width:920px;padding-bottom:env(safe-area-inset-bottom)}
-nav button,nav a{border:0;background:#fff;padding:10px 1px 11px;font-size:10px;color:#475467;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center}nav button.active{color:var(--blue);font-weight:900}
-nav .nav-practical{position:relative;flex-direction:column;background:linear-gradient(180deg,#eff6ff 0%,#dbeafe 100%);color:#1d4ed8;border-top:3px solid #2563eb;font-weight:900;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
-nav .nav-practical .nav-main{display:block;font-size:12px;line-height:1.1}
-nav .nav-practical .nav-sub{display:block;font-size:9px;line-height:1.15;color:#1d4ed8;opacity:.9;margin-top:2px}
-nav .nav-practical.active{background:linear-gradient(180deg,#2563eb 0%,#1d4ed8 100%);color:#fff!important}
-nav .nav-practical.active .nav-sub,nav .nav-practical.active .nav-main{color:#fff!important}
-
-
-.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#111827;color:#fff;border-radius:999px;padding:9px 13px;font-size:12px;z-index:60;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
-@media(min-width:680px){.grid,.mode-grid{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:repeat(4,1fr)}nav button{font-size:11px}}
-
-
-/* ===== v2.4 完全レスポンシブ調整（PC / Android） ===== */
-html,body{max-width:100%;overflow-x:hidden}
-body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-header .head-inner>div:first-child{min-width:0}
-header h1,header p,h2,h3,p,li,.small,.mini,.question,.choice,.term,.why,.memory,.bridge{overflow-wrap:anywhere;word-break:normal}
-main{width:100%;max-width:920px;padding-bottom:calc(94px + env(safe-area-inset-bottom))}
-.small{font-size:13.5px}
-.mini{font-size:12.5px}
-.source{font-size:12.5px}
-.topic-score,.question-no{font-size:13px}
-.btn{min-height:44px;padding:11px 14px}
-.choice{min-height:52px}
-.filter{-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
-.filter button{min-height:42px;font-size:13px;touch-action:manipulation;
-  color:#172033 !important;-webkit-text-fill-color:#172033 !important;
-  background:#fff;border-color:#d0d5dd;
-  transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .12s ease;
-}
-.filter button:hover{
-  background:#eff6ff;border-color:#93c5fd;
-  color:#1d4ed8 !important;-webkit-text-fill-color:#1d4ed8 !important;
-  box-shadow:0 2px 8px rgba(37,99,235,.10);
-}
-.filter button.active{
-  background:var(--navy);border-color:var(--navy);
-  color:#fff !important;-webkit-text-fill-color:#fff !important;font-weight:800;
-}
-.filter button.active:hover{
-  background:#1e293b;border-color:#334155;
-  color:#fff !important;-webkit-text-fill-color:#fff !important;
-}
-.filter button:focus-visible{outline:3px solid #bfdbfe;outline-offset:2px}
-.filter button:active{transform:translateY(1px)}
-.diagram{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.info-box,.topic,.mode,.stat{min-width:0}
-nav{width:100%;max-width:920px;box-shadow:0 -4px 16px rgba(15,23,42,.06)}
-nav button,nav a{min-width:0;min-height:48px;font-size:11.5px;line-height:1.2;touch-action:manipulation}
-nav .nav-practical{padding-top:7px}
-.toast{max-width:calc(100vw - 28px);text-align:center;white-space:normal}
-
-@media (max-width:479px){
-  header{padding:10px 12px}
-  header .head-inner{gap:7px;align-items:flex-start;flex-wrap:wrap}
-  header h1{font-size:16px}
-  header p{font-size:12px;line-height:1.4}
-  .header-chip{font-size:10.5px;padding:5px 8px}
-  main{padding:12px 12px calc(94px + env(safe-area-inset-bottom))}
-  .card{padding:14px;border-radius:14px}
-  h2{font-size:18px}
-  h3{font-size:16px}
-  .question{font-size:18px;line-height:1.55}
-  .choice{font-size:15px;padding:14px 12px}
-  .btn-row .btn{flex:1 1 100%;width:100%}
-  nav button,nav a{font-size:11px;padding:10px 0 9px}
-  nav .nav-practical .nav-main{font-size:11.5px}
-  nav .nav-practical .nav-sub{font-size:8.5px}
-}
-
-@media (max-width:359px){
-  header .head-inner{display:block}
-  .header-chip{display:inline-flex;margin-top:7px}
-  .info-grid{grid-template-columns:1fr}
-  .statgrid{gap:5px}
-  .stat{padding:9px 3px}
-  .stat strong{font-size:18px}
-  .stat span{font-size:10.5px}
-  .tf-choices{gap:7px}
-  nav button,nav a{font-size:10.5px}
-  nav .nav-practical:after{display:none}
-}
-
-@media (min-width:680px){
-  main{padding:20px 20px 100px}
-  .card{padding:20px;margin-bottom:16px}
-  header{padding:13px 20px}
-  header h1{font-size:18px}
-  header p{font-size:12px}
-  .small{font-size:14px}
-  .mini{font-size:13px}
-  nav button,nav a{font-size:12px;min-height:52px}
-}
-
-@media (min-width:1000px){
-  main{padding-top:24px}
-  .card{border-radius:18px}
-  nav{border-left:1px solid var(--line);border-right:1px solid var(--line);border-radius:14px 14px 0 0;overflow:hidden}
-}
-
-@media (hover:none),(pointer:coarse){
-  .choice:hover{border-color:var(--line);background:#fff;color:#172033 !important;-webkit-text-fill-color:#172033 !important}
-  .choice.correct:hover{background:var(--green2);border-color:#86efac;color:#166534 !important;-webkit-text-fill-color:#166534 !important}
-  .choice.wrong:hover{background:var(--red2);border-color:#fda4af;color:#9f1239 !important;-webkit-text-fill-color:#9f1239 !important}
-}
-
-
-/* 下部メニューは画面最下部に常時固定表示 */
-
-/* ===== スマホ低速回線・省電力向け軽量化 ===== */
-section:not(.active){content-visibility:hidden}
-@media (max-width:679px){
-  html{scroll-behavior:auto}
-  .card{box-shadow:none}
-  .hero,.exam-card{background:#fff}
-  .progressbar>div,.toast{transition:none}
-  .card,.topic,.mode,.info-box,details{content-visibility:auto;contain-intrinsic-size:1px 220px}
-  nav{box-shadow:none}
-}
-html.lite *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-html.lite .card,html.lite nav{box-shadow:none!important}
-html.lite .hero,html.lite .exam-card{background:#fff!important}
+<link rel="stylesheet" href="assets/css/november.css">
 
 
 
-/* November additions, preserving October's design tokens and layout */
-.nov-hero{background:linear-gradient(135deg,#eff6ff,#f0fdfa)}
-.go-home{display:inline-block;color:#dbeafe;font-size:12px;text-decoration:none;margin-top:4px}
-.go-home:hover{text-decoration:underline}
-.nov-goal{border-left:4px solid var(--blue);background:#fff;border-radius:10px;padding:12px 14px;margin:12px 0}
-.subheading{font-size:13px;color:var(--muted);margin:8px 0 13px}
-.domain-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
-.domain-row strong{display:block;font-size:14px}
-.domain-row span{font-size:12px;color:var(--muted)}
-.formrow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:10px 0}
-.formrow label{font-size:13px;font-weight:800}
-.formrow select{font:inherit;font-size:14px;border:1px solid #d0d5dd;background:#fff;border-radius:10px;padding:10px;min-height:44px;max-width:100%;color:var(--text)}
-.understand{margin:12px 0 4px;border-radius:12px;background:#fff;border:1px solid #dbeafe;padding:12px}
-.understand-label{font-size:13px;font-weight:900;margin-bottom:9px}
-.understand-buttons{display:flex;gap:7px;flex-wrap:wrap}
-.understand-buttons button{background:#fff;border:1px solid #cbd5e1;padding:10px 12px;border-radius:9px;min-height:44px;color:#334155;cursor:pointer;font-weight:800}
-.understand-buttons button.selected{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}
-.choice.selected-pending{border-color:#2563eb;background:#eff6ff}
-.explain{display:block}
-.explain strong{font-weight:900}
-.mistake-row{border-bottom:1px solid #edf1f5;padding:8px 0;line-height:1.65}
-.mistake-row:last-child{border-bottom:0}
-.correct-row{color:#166534;font-weight:900}
-.source-links{display:flex;flex-direction:column;gap:7px;margin-top:7px}
-.source-links a{font-size:12px;color:#1d4ed8;overflow-wrap:anywhere}
-.nov-error{background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;padding:14px;color:#9f1239}
-.nov-ok{background:#effdf5;border:1px solid #a7f3d0;border-radius:12px;padding:14px;color:#065f46}
-.nov-empty{background:#f8fafc;border-radius:12px;padding:14px;color:#475467}
-.choices-buttons{margin:12px 0}
-.list-actions{display:flex;gap:8px;flex-wrap:wrap}
-.list-actions .btn{flex:1 1 175px}
-.difficulty{display:inline-block;border:1px solid #cbd5e1;border-radius:6px;padding:2px 6px;font-size:11px;color:#475467}
-.quizmeta{display:flex;justify-content:space-between;gap:7px;flex-wrap:wrap;margin-bottom:10px}
-.questions-summary{display:flex;gap:7px;flex-wrap:wrap}
-.questions-summary span{border:1px solid #dbe3ee;border-radius:100px;padding:5px 9px;color:#52617a;font-size:12px}
-.step-text{line-height:1.75}
-#quizBox{scroll-margin-top:96px}
-.btn-outline{border:1px solid #cbd5e1;background:#fff;color:#334155}
-/* 少数のカードはオフスクリーンでもプレースホルダー化せず表示する */
-.card,.topic,.mode,.info-box,details{content-visibility:visible;contain-intrinsic-size:auto}
-button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
-@media(max-width:479px){.nov-hero{background:#fff}.domain-row{align-items:start}.understand-buttons button{flex:1 1 100%}.formrow select{width:100%}}
-
-/* November 60 questions / glossary / partial practice */
-nav{grid-template-columns:repeat(6,minmax(0,1fr))}
-nav button,nav a{font-size:10.5px}
-  nav .nav-practical:after{display:none}
-.searchlabel{font-size:13px;display:block;margin:10px 0 6px;font-weight:850}
-.practice-detail{margin:12px 0;border-radius:14px;overflow:hidden;background:#fff}
-.practice-detail>summary{display:flex;gap:10px;align-items:center;padding:9px 2px;font-size:16px;line-height:1.6}
-.practice-detail[open]>summary{border-bottom:1px solid var(--line)}
-.practice-tag{background:var(--blue2);color:#1d4ed8;border-radius:8px;padding:4px 8px;font-size:11px;white-space:nowrap}
-.practice-body{padding:6px 0 14px}
-.goal-text{background:#eff6ff;border-radius:10px;padding:10px 12px;margin:12px 0;line-height:1.7}
-.partial-steps{padding-left:25px;line-height:1.8}.partial-steps li{margin-bottom:8px}
-.partial-checks{padding-left:23px;line-height:1.8}
-.answer-reveal{border:1px solid #c7d2fe;background:#eff6ff}.answer-reveal summary{color:#1d4ed8}
-.inline-term summary{font-size:13px;color:#1d4ed8}.inline-term p{margin:8px 0;font-size:13px}
-#termList .term p{margin:6px 0 9px}
-@media(max-width:359px){nav button{font-size:9.5px;padding:10px 0}}
-
-.figure-wrap{margin:14px 0 10px}
-.diagram-note{font-size:12px;color:var(--muted);margin:8px 0 0}
-.circuit-figure,.panel-figure{width:100%;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;overflow:auto;-webkit-overflow-scrolling:touch}
-.circuit-figure svg,.panel-figure svg{width:100%;height:auto;display:block;min-width:760px;overflow:visible}
-.svg-label{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;fill:#172033;font-weight:700;paint-order:stroke;stroke:rgba(255,255,255,.94);stroke-width:4px;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.svg-small{font-size:12.5px}
-.svg-mid{font-size:13.5px;font-weight:700}
-.svg-title{font-size:14px;font-weight:800}
-.figure-caption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.7}
 
 
-.mock-figure{margin:12px 0 16px;max-width:100%}
-.mock-figure .circuit-figure{background:#fff}
-.mock-figure svg{width:100%;min-width:720px;max-height:none;object-fit:contain}
-@media(max-width:479px){.mock-figure .circuit-figure{padding:5px}}
-/* 模擬学科：既存スタイルと同一トーン */
-.mock-toolbar{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0}
-.mock-clock{font-variant-numeric:tabular-nums;font-weight:900;font-size:20px;color:var(--navy)}
-.mock-clock.low{color:var(--red)}
-.mock-palette{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;margin:13px 0}
-.mock-palette button{border:1px solid #cbd5e1;background:#fff;border-radius:8px;min-height:39px;font-weight:700;font-size:12px;color:var(--text)}
-.mock-palette button.done{background:#dbeafe;border-color:#93c5fd}
-.mock-palette button.current{outline:3px solid var(--blue);outline-offset:1px}
-.mock-palette button:focus-visible,.mock-actions button:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
-.mock-choice{display:block;width:100%;margin:9px 0;padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff;cursor:pointer;text-align:left;line-height:1.65;color:var(--text)}
-.mock-choice.chosen{border:2px solid var(--blue);background:var(--blue2);font-weight:800}
-.mock-choice:focus-visible{outline:3px solid #93c5fd}
-.mock-result-row{padding:11px 0;border-bottom:1px solid var(--line)}
-.mock-correct{color:var(--green)}.mock-wrong{color:var(--red)}
-@media(max-width:479px){.mock-palette{grid-template-columns:repeat(5,minmax(0,1fr))}.mock-palette button{min-height:44px}}
-
-/* v18: total question bank vs one session */
-.bank-counts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 12px}
-.bank-count{padding:13px 15px;border:1px solid #cbdcf6;border-radius:13px;background:#fff}
-.bank-count span{display:block;font-size:12px;color:#475569;font-weight:700}
-.bank-count strong{display:block;margin-top:3px;font-size:25px;color:#0f172a;line-height:1.2}
-.bank-guide{font-size:13px;color:#475569;margin:7px 0 15px;line-height:1.65}
-@media(max-width:380px){.bank-counts{gap:7px}.bank-count{padding:12px 10px}.bank-count strong{font-size:23px}}
-</style>
-<link rel="stylesheet" href="layout-fix-v22.css">
-<link rel="stylesheet" href="practical-priority-v28.css">
 </head>
-<body>
+<body class="stage7-exam">
 <header>
 <div class="head-inner">
 <div><h1>2級電気製図｜11月 過去問を理解</h1><p>配電盤・制御盤製図作業｜「なぜ」を説明できるようになる</p><a class="go-home" href="index.html">← サイトのトップページへ戻る</a></div>
@@ -372,7 +40,7 @@ nav button,nav a{font-size:10.5px}
 <p>筆記問題で理解した自己保持・インターロック・インバータ・扉配置を、実際に図を描く練習につなげます。</p>
 <div class="practical-priority-links">
 <button type="button" class="practical-priority-main" data-tab="bridge">11月の実技メニューを開く →</button>
-<a class="practical-priority-secondary" href="practical.html#weekly">実技の4週間を直接開く →</a>
+<a class="practical-priority-secondary" href="practical-study.html#weekly">実技の4週間を直接開く →</a>
 </div>
 <p class="practical-priority-habit"><b>学習のつなげ方：</b> 平日は理由を理解 → 週末は該当する週の図を描き、見本と照らして検図する。</p>
 </div>
@@ -417,19 +85,20 @@ nav button,nav a{font-size:10.5px}
 </div>
 </section>
 <section id="quiz">
-<div class="card"><div id="quizBox"></div><div class="btn-row" id="quizButtons" style="margin-top:14px"></div></div>
+<div class="card"><p class="quiz-stage-note">問題文を読んで、答えを選んでください。回答後に解説を確認できます。</p>
+    <div id="quizBox" aria-live="polite" aria-atomic="false"></div><div class="btn-row" id="quizButtons" style="margin-top:14px"></div></div>
 </section>
 <section id="review">
 <div class="card"><h2>要復習の問題</h2><p class="small">不正解、または解説後に「曖昧・未理解」と判断した問題が対象です。</p><div id="reviewBox"></div><div class="list-actions"><button class="btn btn-primary" id="reviewStart">要復習を解く</button><button class="btn btn-red" id="clearReview">要復習だけ解除</button></div></div>
 <div class="card"><h2>学習記録の管理</h2><p class="small">11月の学習履歴のみ初期化します。10月の保存データには触れません。</p><button class="btn btn-red" id="clearAll">11月の履歴をリセット</button></div>
 </section>
-<section id="bridge"><div class="card" id="nov-practical-weeks" style="border:2px solid #93c5fd;background:#f8fbff"><span class="badge">11月の実技</span><h2 style="margin-top:8px">下段の「実技」から、週別の実技問題へ進みます</h2><p class="practical-guide-note" style="margin:10px 0 12px"><b>おすすめ：</b>迷ったら第1週から順に進めてください。急ぎのときは、今つまずいている項目のカードを1つ選ぶだけでも大丈夫です。</p><p>11月の実技学習はこちらから進めます。第1週から「読む → 動作を考える → 白紙に描く → 解答で検図」を実施してください。各リンクは実技専用ページの対応教材へ移動します。</p><div class="practical-anchor-links" aria-label="11月 実技の入口"><a href="practical.html#week1">第1週</a><a href="practical.html#week2">第2週</a><a href="practical.html#week3">第3週</a><a href="practical.html#week4">第4週</a><a href="practical.html#final-assignment">総合課題</a><a href="practical.html#examFocusV11">実技力診断</a></div><div class="practical-overview-grid">
-<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第1週</span><span class="goal-chip">基礎確認</span></div><h3>図記号と通電経路</h3><p class="small">a接点・b接点、コイル、主回路／制御回路を読み分けます。</p><ul class="practical-points"><li>図記号</li><li>接点追跡</li><li>誤配線発見</li></ul><p class="practical-meta">こんな時に選ぶ：接点の読み方や、通電の流れがまだ曖昧なとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week1">第1週の実技を開く</a></div></article>
-<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第2週</span><span class="goal-chip">動作理解</span></div><h3>自己保持と相互インターロック</h3><p class="small">既存の4段階図解を使い、起動・停止・逆転禁止を確認します。</p><ul class="practical-points"><li>自己保持</li><li>インターロック</li><li>正転・逆転</li></ul><p class="practical-meta">こんな時に選ぶ：回路がなぜ保持されるか、なぜ同時動作しないかを説明したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week2">第2週の実技を開く</a></div></article>
-<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第3週</span><span class="goal-chip">作図強化</span></div><h3>CWD方式・インバータ改造</h3><p class="small">改造前後の比較図、図記号付きSVG見本、改造前後の比較と検図に挑戦します。</p><ul class="practical-points"><li>CWD方式</li><li>改造前後比較</li><li>検図</li></ul><p class="practical-meta">こんな時に選ぶ：11月の中心課題である展開接続図を重点的に進めたいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week3">第3週の実技を開く</a></div></article>
-<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第4週</span><span class="goal-chip">扉正面図</span></div><h3>扉正面図・総合確認</h3><p class="small">外形、中心線、機器配置、寸法を照合し、寸法演習と詳細見本でも確認します。</p><ul class="practical-points"><li>外形</li><li>機器配置</li><li>寸法記入</li></ul><p class="practical-meta">こんな時に選ぶ：扉正面図の配置や寸法で迷いやすいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#week4">第4週の実技を開く</a></div></article>
-<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">総合</span><span class="goal-chip">本番想定</span></div><h3>総合実技課題</h3><p class="small">ポンプ改造と扉正面図を、一連の課題として作図・検図します。</p><ul class="practical-points"><li>総合作図</li><li>検図</li><li>仕上げ確認</li></ul><p class="practical-meta">こんな時に選ぶ：週別学習を終えて、本番に近い流れで確認したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#final-assignment">総合実技課題を開く</a></div></article>
-<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">診断</span><span class="goal-chip">弱点発見</span></div><h3>回路図検図・実技力診断</h3><p class="small">CWD寄り参考図、回路図監査、時間付き作図、100点満点の独自自己採点と弱点復習を確認します。</p><ul class="practical-points"><li>検図</li><li>時間計測</li><li>自己採点</li></ul><p class="practical-meta">こんな時に選ぶ：今の実力と弱点をまとめて確認したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical.html#examFocusV11">回路図検図・実技力診断を開く</a></div></article></div><div class="practical-guide-note">おすすめの進め方：第1週 → 第2週 → 第3週 → 第4週 → 総合実技課題 → 実技力診断 の順です。時間がない日は「今つまずいている項目」のカードだけ選んでも大丈夫です。</div></div>
+<section id="bridge"><div class="card" id="nov-practical-weeks" style="border:2px solid #93c5fd;background:#f8fbff"><span class="badge">11月の実技</span><h2 style="margin-top:8px">下段の「実技」から、週別の実技問題へ進みます</h2><p class="practical-guide-note" style="margin:10px 0 12px"><b>おすすめ：</b>迷ったら第1週から順に進めてください。急ぎのときは、今つまずいている項目のカードを1つ選ぶだけでも大丈夫です。</p><p>11月の実技学習はこちらから進めます。第1週から「読む → 動作を考える → 白紙に描く → 解答で検図」を実施してください。各リンクは実技専用ページの対応教材へ移動します。</p><div class="practical-anchor-links" aria-label="11月 実技の入口"><a href="practical-study.html#week1">第1週</a><a href="practical-study.html#week2">第2週</a><a href="practical-study.html#week3">第3週</a><a href="practical-study.html#week4">第4週</a><a href="practical-study.html#final-assignment">総合課題</a><a href="practical-study.html#examFocusV11">実技力診断</a></div><div class="practical-overview-grid">
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第1週</span><span class="goal-chip">基礎確認</span></div><h3>図記号と通電経路</h3><p class="small">a接点・b接点、コイル、主回路／制御回路を読み分けます。</p><ul class="practical-points"><li>図記号</li><li>接点追跡</li><li>誤配線発見</li></ul><p class="practical-meta">こんな時に選ぶ：接点の読み方や、通電の流れがまだ曖昧なとき</p><div class="practical-action"><a class="btn btn-soft" href="practical-study.html#week1">第1週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第2週</span><span class="goal-chip">動作理解</span></div><h3>自己保持と相互インターロック</h3><p class="small">既存の4段階図解を使い、起動・停止・逆転禁止を確認します。</p><ul class="practical-points"><li>自己保持</li><li>インターロック</li><li>正転・逆転</li></ul><p class="practical-meta">こんな時に選ぶ：回路がなぜ保持されるか、なぜ同時動作しないかを説明したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical-study.html#week2">第2週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第3週</span><span class="goal-chip">作図強化</span></div><h3>CWD方式・インバータ改造</h3><p class="small">改造前後の比較図、図記号付きSVG見本、改造前後の比較と検図に挑戦します。</p><ul class="practical-points"><li>CWD方式</li><li>改造前後比較</li><li>検図</li></ul><p class="practical-meta">こんな時に選ぶ：11月の中心課題である展開接続図を重点的に進めたいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical-study.html#week3">第3週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">第4週</span><span class="goal-chip">扉正面図</span></div><h3>扉正面図・総合確認</h3><p class="small">外形、中心線、機器配置、寸法を照合し、寸法演習と詳細見本でも確認します。</p><ul class="practical-points"><li>外形</li><li>機器配置</li><li>寸法記入</li></ul><p class="practical-meta">こんな時に選ぶ：扉正面図の配置や寸法で迷いやすいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical-study.html#week4">第4週の実技を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">総合</span><span class="goal-chip">本番想定</span></div><h3>総合実技課題</h3><p class="small">ポンプ改造と扉正面図を、一連の課題として作図・検図します。</p><ul class="practical-points"><li>総合作図</li><li>検図</li><li>仕上げ確認</li></ul><p class="practical-meta">こんな時に選ぶ：週別学習を終えて、本番に近い流れで確認したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical-study.html#final-assignment">総合実技課題を開く</a></div></article>
+<article class="practical-overview-card"><div class="practical-overview-head"><span class="step-chip">診断</span><span class="goal-chip">弱点発見</span></div><h3>回路図検図・実技力診断</h3><p class="small">CWD寄り参考図、回路図監査、時間付き作図、100点満点の独自自己採点と弱点復習を確認します。</p><ul class="practical-points"><li>検図</li><li>時間計測</li><li>自己採点</li></ul><p class="practical-meta">こんな時に選ぶ：今の実力と弱点をまとめて確認したいとき</p><div class="practical-action"><a class="btn btn-soft" href="practical-study.html#examFocusV11">回路図検図・実技力診断を開く</a></div></article></div><div class="practical-guide-note">おすすめの進め方：第1週 → 第2週 → 第3週 → 第4週 → 総合実技課題 → 実技力診断 の順です。時間がない日は「今つまずいている項目」のカードだけ選んでも大丈夫です。</div></div>
 <div aria-hidden="true" hidden="" id="practicalList"></div>
 </section>
 <section id="glossary">
@@ -792,5 +461,23 @@ $('mockApp').addEventListener('click',e=>{const b=e.target.closest('button');if(
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&$('mock').classList.contains('active'))render()});
 })();
 </script>
+<script>
+// The redesigned problem hub can start the original practice mode without altering its scoring logic.
+window.addEventListener('load',function(){
+  const key='denki-next-action'; const action=sessionStorage.getItem(key);
+  if(!action || !action.startsWith('nov-')) return;
+  sessionStorage.removeItem(key);
+  setTimeout(function(){
+    const mode=action.split('-').slice(1).join('-');
+    try { if(mode==='mock') { document.getElementById('openMock')?.click(); if(typeof startMock==='function' && !document.getElementById('openMock'))startMock(); }
+      else if(mode==='all')document.querySelector('[data-start="all"]')?.click();
+      else if(mode==='tf'||mode==='mcq'){const button=document.querySelector('[data-start="'+mode+'"]');if(button)button.click();else if(typeof startMode==='function')startMode(mode);} }
+    catch(e){console.warn('Learning shortcut could not start automatically',e)}
+  },150);
+});
+</script>
+<script>window.addEventListener('load',function(){if(location.hash==='#review'||location.hash==='#reviewBox'){const btn=document.querySelector('nav button[data-tab="review"]');if(btn)btn.click();else if(typeof showTab==='function')showTab('review');}});</script>
+<nav class="mobile-bottom-nav" aria-label="スマートフォン用学習メニュー"><a href="index.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a><a href="problems.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-2-5-3-9-2v15c4-1 7 0 9 2 2-2 5-3 9-2V4c-4-1-7 0-9 2z"/><path d="M12 6v15"/></svg><span>問題</span></a><a href="practical.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 20 4-.9L20 7a2.1 2.1 0 0 0-3-3L5 16z"/><path d="m14 6 4 4M13 20h8M18 15v5"/></svg><span>実技</span></a><a href="review.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12.3-2"/></svg><span>復習</span></a><a href="records.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 16v-3m4 3V9m4 7V7"/></svg><span>記録</span></a></nav>
+<script src="assets/js/common.js" defer></script>
 </body>
 </html>

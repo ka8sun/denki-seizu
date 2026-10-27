@@ -1,0 +1,396 @@
+/* Consolidated styles for practical-study.html; source order preserved. */
+
+/* BEGIN inline */
+
+:root{color-scheme:light;--blue:#2563eb;--ink:#172033;--line:#dce4ef}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",Meiryo,sans-serif;color:var(--ink);background:#f4f7fb;line-height:1.75}header{background:linear-gradient(130deg,#0f172a,#1e40af);color:white;padding:24px max(16px,calc((100% - 1050px)/2))}header h1{margin:4px 0;font-size:clamp(23px,4vw,33px)}header p{margin:4px 0;color:#dbeafe}nav{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}a.btn,button{display:inline-block;border:1px solid #cbd5e1;background:white;color:#1e3a8a;border-radius:10px;padding:9px 14px;text-decoration:none;cursor:pointer;font:inherit;font-weight:700}button:focus-visible,a:focus-visible{outline:3px solid #60a5fa;outline-offset:2px}main{max-width:1050px;margin:0 auto;padding:15px 15px 70px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:20px;margin:13px 0;box-shadow:0 6px 20px #1023470a}h2{margin:0 0 9px;font-size:22px}h3{margin:10px 0 6px}.muted,.note{color:#475569}.note{font-size:14px}.alert{border-left:4px solid #f59e0b;background:#fff7ed;padding:12px;border-radius:6px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.step{border:1px solid #d9e5f3;border-radius:12px;padding:14px;background:#fafcff}.figure{overflow-x:auto;border:1px solid #dbe5f0;border-radius:12px;padding:12px;background:#fff}.figure svg{width:100%;height:auto;min-width:640px;display:block;overflow:visible}.figure.door svg{min-width:420px}.state-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}.state-card{border:1px solid #d9e5f3;border-radius:14px;padding:14px;background:#fcfdff}.state-card h3{margin-top:0}.state-card ul{margin:10px 0 0;padding-left:20px}.mini-figure{overflow-x:auto;border:1px solid #dbe5f0;border-radius:10px;padding:10px;background:#fff}.mini-figure svg{width:100%;height:auto;min-width:400px;display:block;overflow:visible}.figure svg text,.mini-figure svg text{paint-order:stroke;stroke:rgba(255,255,255,.94);stroke-width:4px;stroke-linejoin:round;vector-effect:non-scaling-stroke}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:14px;color:#475569}.legend .dot{display:inline-block;width:12px;height:12px;border-radius:999px;margin-right:5px;vertical-align:-1px}.callout{border-left:4px solid #2563eb;background:#eff6ff;padding:10px 12px;border-radius:8px;margin-top:12px}.explain{margin-top:14px;border:1px solid #dbeafe;background:#f8fbff;border-radius:14px;padding:14px}.explain h3{margin-top:0}.explain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.explain-box{border:1px solid #d9e5f3;border-radius:12px;background:white;padding:12px}.keypoint{background:#fff7ed;border-left:4px solid #f59e0b;padding:10px 12px;border-radius:8px;margin-top:12px}.terms{margin-top:12px;padding:0;list-style:none}.terms li{padding:8px 0;border-bottom:1px solid #e2e8f0}ol{padding-left:25px}.quiz{border:1px solid #bfdbfe;background:#eff6ff;border-radius:12px;padding:14px}.quiz button{margin:5px}.quiz button.selected{background:#1d4ed8;color:white}.feedback{min-height:24px;font-weight:700}.checks label{display:block;padding:9px 0;border-bottom:1px solid #e2e8f0}.checks input{width:19px;height:19px;vertical-align:middle;margin-right:9px}.progress{height:13px;border-radius:999px;background:#e2e8f0;overflow:hidden}.bar{height:100%;width:0%;background:#0d9488;transition:width .2s}footer{text-align:center;color:#64748b;padding:20px;font-size:13px}@media(max-width:600px){.card{padding:14px}.figure{margin:0 -4px}.figure svg{min-width:700px}.mini-figure svg{min-width:440px}}@media print{header nav,button,.quiz,.checks{display:none}main{padding:0}.card{break-inside:avoid;box-shadow:none}}
+
+/* v25: 11月・自己保持の4段階図解をカード内に全幅表示 */
+#self-visual .state-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:16px}
+#self-visual .state-card{min-width:0}
+#self-visual .mini-figure{min-width:0;overflow:visible;padding:10px}
+#self-visual .mini-figure svg{width:100%;min-width:0;max-width:100%;height:auto;overflow:visible}
+#self-visual .self-state-caption{font-size:14px;line-height:1.6;color:#475569;text-align:center;margin:8px 0 12px;overflow-wrap:anywhere}
+@media(max-width:760px){#self-visual .state-grid{grid-template-columns:minmax(0,1fr)}}
+@media print{#self-visual .state-card{break-inside:avoid}}
+
+/* END inline */
+
+/* BEGIN practical-weeks.css */
+.weekcheck{display:block;padding:12px;margin:16px 0;background:#eef6ff;border:1px solid #bfdbfe;border-radius:10px;font-weight:700}.weekcheck input{width:20px;height:20px;vertical-align:middle}.ladder,.schematic pre{white-space:pre;overflow-x:auto;font:13px/1.75 ui-monospace,Consolas,monospace;background:#0f172a;color:#f1f5f9;padding:13px;border-radius:10px}.schematic{overflow-x:auto}.stepflow{background:#f8fafc;border:1px solid #cbd5e1;padding:15px;border-radius:12px}.exercise{border:1px solid #dae3ef;border-radius:12px;padding:13px;margin:12px 0}.exercise details{background:#f1f5f9;padding:10px;margin-top:12px}.exercise label{display:block;margin:8px 0}.exercise button{margin:5px 5px 5px 0}.explain-result{font-weight:700}.weekcheck:focus-within{outline:2px solid #60a5fa}html{scroll-behavior:smooth;scroll-padding-top:18px}@media print{#drawingExercises details{display:block!important}#week3{break-inside:auto}.weekcheck,#weekly{display:none}}/* v6: learner exercises, simulations and print worksheets */
+.simbuttons{display:flex;flex-wrap:wrap;gap:6px}.simbuttons button{min-height:43px}.simstatus{background:#e6f5eb;border-left:5px solid #16a34a;padding:10px;min-height:66px}.question-card{border:1px solid #cbd5e1;border-radius:12px;padding:12px;margin:12px 0;background:#fff}.question-card fieldset{border:0;margin:0;padding:0}.question-card legend{font-weight:700}.question-card label{display:block;margin:6px 0;padding:5px}.question-card label:focus-within{background:#eef6ff}.question-card input{margin-right:8px}.question-card .result{background:#f1f5f9;padding:8px;margin:8px 0}.finalchecks label{display:block;margin:8px 0;padding:8px;background:#f8fafc}.printonly{display:none}.drawinggrid{height:220mm;border:1px solid #bbb;background-image:linear-gradient(#e5e7eb 1px,transparent 1px),linear-gradient(90deg,#e5e7eb 1px,transparent 1px);background-size:10mm 10mm}.correctlight{color:#15803d;font-weight:700}.warninglight{color:#b45309;font-weight:700}
+@media print{@page{size:A4 portrait;margin:12mm}body.print-worksheets header,body.print-worksheets main,body.print-worksheets footer{display:none!important}body.print-worksheets #printSheets{display:block!important}body.print-worksheets #printSheets>h1{font-size:19pt}body.print-worksheets #printSheets>h2{break-before:page;margin-top:6mm}body.print-worksheets .drawinggrid{height:235mm}body.print-worksheets .drawinggrid:last-child{height:200mm}}
+/* v7: detailed drawing models */
+.modeltabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.modeltabs button{background:#eff6ff;border-color:#bfdbfe;color:#1e3a8a}
+.modeltabs button.active{background:#1d4ed8;color:#fff;border-color:#1d4ed8}
+.model-panel{display:none;border:1px solid #dbe5f0;border-radius:14px;padding:14px;background:#fbfdff}
+.model-panel.active{display:block}
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:start}
+.model-figure{overflow-x:auto;border:1px solid #dbe5f0;border-radius:12px;background:#fff;padding:8px}
+.model-figure svg{width:100%;height:auto;min-width:520px;display:block}
+.model-note{background:#f8fafc;border:1px solid #d7e2ee;border-radius:12px;padding:12px}
+.model-note ul{margin:8px 0 0;padding-left:20px}
+.compare-table{width:100%;border-collapse:collapse;margin-top:8px}
+.compare-table th,.compare-table td{border:1px solid #d7e2ee;padding:8px;vertical-align:top;text-align:left}
+.compare-table th{background:#eff6ff}
+.answerbox{margin-top:12px;padding:12px;border:1px solid #bfdbfe;border-radius:12px;background:#f8fbff}
+.modelexercise{border:1px solid #d8e3ef;border-radius:14px;padding:14px;margin:12px 0;background:#fff}
+.modelexercise h4{margin:0 0 8px}
+.minitable{width:100%;border-collapse:collapse}
+.minitable th,.minitable td{border:1px solid #e2e8f0;padding:6px 8px}
+.minitable th{background:#f8fafc}
+.tagline{font-size:13px;color:#475569;margin-top:8px}
+@media(max-width:600px){.model-figure svg{min-width:620px}}
+/* v8 figures and interactive dimension lesson */
+.v8-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.v8-toolbar button[aria-pressed=true]{background:#1d4ed8;color:#fff}.v8-figure{border:1px solid #cbd5e1;background:#fff;border-radius:12px;padding:12px;margin:12px 0;overflow-x:auto}.v8-figure svg{display:block;width:100%;height:auto;min-width:550px}.v8-caption{color:#475569;font-size:14px;margin:5px 0}.v8-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.v8-compare .v8-figure{min-width:0}.v8-compare svg{min-width:470px}.v8-dimquiz{border:1px solid #bfdbfe;border-radius:10px;padding:12px}.v8-dimquiz label{display:block;padding:6px}.v8-dimquiz input{margin-right:8px}#v8-dim-feedback{min-height:22px;font-weight:bold}@media(max-width:880px){.v8-compare{grid-template-columns:1fr}}
+@media print{.v8-toolbar,.v8 button,.v8-dimquiz{display:none!important}.v8-figure{break-inside:avoid}}
+/* v9 advanced drafting models */
+.v9-wrap{border:1px solid #cfd9e8;border-radius:16px;background:#fcfdff;padding:14px}
+.v9-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.v9-tabs button{background:#eef2ff;border-color:#c7d2fe;color:#3730a3}
+.v9-tabs button.active{background:#4338ca;color:#fff;border-color:#4338ca}
+.v9-panel{display:none}
+.v9-panel.active{display:block}
+.v9-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:start}
+.v9-figure{border:1px solid #dbe5f0;border-radius:12px;padding:10px;background:#fff;overflow-x:auto}
+.v9-figure svg{display:block;width:100%;height:auto;min-width:620px}
+.v9-side{border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;padding:12px}
+.v9-side h3{margin-top:0}
+.v9-list{margin:0;padding-left:20px}
+.v9-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.v9-table th,.v9-table td{border:1px solid #d7e2ee;padding:7px 8px;vertical-align:top}
+.v9-table th{background:#eef6ff}
+.v9-chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;background:#e0e7ff;color:#3730a3}
+.v9-card{border:1px solid #d9e3f0;border-radius:12px;background:#fff;padding:12px;margin:10px 0}
+.v9-checklist label{display:block;padding:8px 0;border-bottom:1px solid #e5e7eb}
+.v9-checklist input{margin-right:8px;width:18px;height:18px;vertical-align:middle}
+.v9-feedback{min-height:22px;font-weight:700}
+.v9-ans{margin-top:10px;padding:12px;border:1px solid #c7d2fe;border-radius:12px;background:#f8fbff}
+@media(max-width:900px){.v9-grid{grid-template-columns:1fr}.v9-figure svg{min-width:700px}}
+@media print{.v9-tabs, .v9-toggle, .v9-checklist button, .v9-checklist input{display:none!important}.v9-panel{display:block!important}.v9-wrap{break-inside:avoid}}
+/* v10 final complete model */
+.v10-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.v10-tabs button{background:#eff6ff;border-color:#bfdbfe;color:#1e3a8a}
+.v10-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.v10-panel{display:none;border:1px solid #dbe5f0;border-radius:14px;background:#fcfdff;padding:14px}
+.v10-panel.active{display:block}
+.v10-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:start}
+.v10-figure{border:1px solid #dbe5f0;border-radius:12px;background:#fff;padding:10px;overflow-x:auto}
+.v10-figure svg{display:block;width:100%;height:auto;min-width:680px}
+.v10-note{border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;padding:12px}
+.v10-note h3{margin-top:0}
+.v10-note ul,.v10-note ol{margin:8px 0 0;padding-left:20px}
+.v10-table{width:100%;border-collapse:collapse;margin-top:10px}
+.v10-table th,.v10-table td{border:1px solid #d7e2ee;padding:7px 8px;vertical-align:top;text-align:left}
+.v10-table th{background:#eff6ff}
+.v10-box{border:1px solid #d8e3ef;border-radius:12px;background:#fff;padding:12px;margin:10px 0}
+.v10-answer{margin-top:10px;padding:12px;border:1px solid #bfdbfe;border-radius:12px;background:#f8fbff}
+.v10-check label{display:block;padding:8px 0;border-bottom:1px solid #e5e7eb}
+.v10-check input{margin-right:8px;width:18px;height:18px;vertical-align:middle}
+.v10-status{min-height:22px;font-weight:700}
+@media(max-width:920px){.v10-grid{grid-template-columns:1fr}.v10-figure svg{min-width:760px}}
+@media print{.v10-tabs,.v10-toggle,.v10-check input{display:none!important}.v10-panel{display:block!important;break-inside:avoid}}
+/* v11 exam-priority practice */
+.v11-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.v11-summary>div{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:12px;text-align:center}.v11-summary b{display:block;font-size:24px}.v11-summary small{display:block;color:#475569}.v11-field{margin:10px 0;border:1px solid #dbe3ef;border-radius:12px;padding:12px}.v11-field legend{font-weight:750}.v11-field p{margin:4px 0 8px}.v11-options{display:flex;flex-wrap:wrap;gap:14px}.v11-options label{cursor:pointer;padding:6px 8px;border-radius:8px;background:#f8fafc}.v11-options input{margin-right:5px}.v11-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}.v11-controls select{display:block;border:1px solid #94a3b8;border-radius:8px;font:inherit;padding:7px;background:white}.v11-controls button:disabled{opacity:.45;cursor:not-allowed}.v11-timer{font-weight:800;color:#1e3a8a;font-variant-numeric:tabular-nums}.v11-note{border:1px solid #cbd5e1;border-radius:12px;padding:12px;background:#f8fafc}.v11-table{width:100%;border-collapse:collapse;font-size:14px}.v11-table th,.v11-table td{border:1px solid #cbd5e1;padding:7px;text-align:left}.v11-table th{background:#eff6ff}@media(max-width:640px){.v11-summary{grid-template-columns:1fr 1fr 1fr}.v11-summary b{font-size:18px}.v11-summary small{font-size:11px}#v11History{overflow-x:auto}}
+
+/* v12: self-contained circuit diagrams and practice */
+.v12-diagram{overflow-x:auto;background:#fff;border:1px solid #cbd5e1;border-radius:12px;margin:12px 0;padding:10px}.v12-diagram svg{display:block;min-width:750px;width:100%;height:auto}.v12-diagram text{font-family:Arial,'Noto Sans JP',sans-serif}.v12-question{border:1px solid #dbeafe;padding:14px;margin:12px 0;border-radius:10px;background:#f8fafc}.v12-question label{display:block;margin:6px 0}.v12-answer{padding:9px 12px;background:#edf8ef;border-radius:7px}.v12-question input{margin-right:8px}
+/* v13 diagram audit */
+.v13-scroll,.v13-figure{overflow-x:auto;border:1px solid #cbd5e1;border-radius:12px;background:white;padding:10px;margin:12px 0}.v13-table{width:100%;border-collapse:collapse;font-size:14px;min-width:730px}.v13-table th,.v13-table td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}.v13-table th{background:#eff6ff}.v13-figure svg{display:block;width:100%;min-width:820px;height:auto}
+@media print{.v13-figure{break-inside:avoid}.v13-figure svg{min-width:0}}
+
+
+/* v23: circuit text readability */
+.figure,.mini-figure,.v8-figure,.v9-figure,.v10-figure,.v12-diagram,.v13-figure,.circuit-figure,.panel-figure{padding:12px}
+.figure svg,.mini-figure svg,.v8-figure svg,.v9-figure svg,.v10-figure svg,.v12-diagram svg,.v13-figure svg,.circuit-figure svg,.panel-figure svg{overflow:visible}
+.figure svg text,.mini-figure svg text,.v8-figure svg text,.v9-figure svg text,.v10-figure svg text,.v12-diagram svg text,.v13-figure svg text,.circuit-figure svg text,.panel-figure svg text{paint-order:stroke;stroke:rgba(255,255,255,.94);stroke-width:4px;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.v9-figure svg{min-width:760px}
+.v10-figure svg{min-width:820px}
+.v12-diagram svg{min-width:860px}
+.v13-figure svg{min-width:900px}
+@media(max-width:900px){.v9-figure svg{min-width:780px}.v10-figure svg{min-width:860px}.v12-diagram svg{min-width:900px}}
+
+/* END practical-weeks.css */
+
+/* BEGIN layout-fix-v22.css */
+/* v22: Japanese text collision prevention. Preserve navigation and learning logic. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-wrap:break-word}
+main,section,article,.card,.step,.grid>* , .practical-overview-card,.month-card,.mode,.topic{min-width:0}
+h1,h2,h3,h4,p,li,summary,label{overflow-wrap:anywhere;word-break:normal;line-height:normal;line-height:1.55}
+a.btn,button,.practical-action .btn,.practical-anchor-links a{max-width:100%;height:auto;min-height:44px;white-space:normal;overflow-wrap:anywhere;word-break:normal;line-height:1.5;text-align:center;vertical-align:middle}
+/* Long practical task names and week descriptions need intrinsic height. */
+.practical-overview-grid{grid-auto-rows:auto;align-items:stretch}
+.practical-overview-card{height:auto;min-height:0;display:flex;flex-direction:column;gap:0;overflow:visible}
+.practical-overview-card h3{height:auto;min-height:0;line-height:1.55;white-space:normal;overflow-wrap:anywhere}
+.practical-overview-card .small,.practical-overview-card .practical-meta{line-height:1.75;white-space:normal}
+.practical-overview-head{height:auto;min-height:0;align-items:flex-start;flex-wrap:wrap;row-gap:6px}
+.step-chip,.goal-chip,.jump-chip,.practical-points li{height:auto;min-height:0;white-space:normal;line-height:1.5;overflow-wrap:anywhere}
+.practical-points{align-content:flex-start}
+.practical-action{margin-top:auto;padding-top:12px;width:100%;min-width:0}
+.practical-action .btn{display:flex;width:100%;min-height:48px;padding:11px 12px;justify-content:center;align-items:center;white-space:normal;line-height:1.5}
+.practical-anchor-links a{min-height:42px;padding:8px 12px}
+/* Menus remain accessible as Japanese text wraps at narrow widths or large font sizes. */
+nav button,nav a, .nav a{height:auto;min-width:0;overflow-wrap:anywhere;white-space:normal;line-height:1.35}
+nav .nav-practical .nav-main,nav .nav-practical .nav-sub{white-space:normal;overflow-wrap:anywhere;line-height:1.3}
+.practice-detail>summary,.question-card legend,.v11-field legend,.weekcheck{white-space:normal;overflow-wrap:anywhere;line-height:1.65}
+/* Technical drawings must keep their original geometry, scroll horizontally instead of squeezing labels. */
+.figure,.mini-figure,.schematic,.model-figure,.v8-figure,.v9-figure,.v10-figure,.v12-diagram,.v13-figure,.circuit-figure,.panel-figure{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+svg text{overflow-wrap:normal}
+@media(max-width:679px){
+ .practical-overview-grid{grid-template-columns:minmax(0,1fr)}
+ .practical-overview-card{padding:14px}
+ .practical-action .btn{font-size:14px}
+ .grid,.state-grid,.explain-grid,.model-grid,.v9-grid,.v10-grid{min-width:0}
+ nav button,nav a{padding-left:3px;padding-right:3px}
+ .month-card .month-title,.exam span,.exam-date{white-space:normal;overflow-wrap:anywhere}
+}
+@media(max-width:359px){.practical-overview-card{padding:12px}.practical-anchor-links{gap:6px}.practical-overview-card h3{font-size:16px}}
+@media print{.practical-overview-card{break-inside:avoid}a.btn,button{min-height:0}}
+
+/* END layout-fix-v22.css */
+
+/* BEGIN diagram-display-fix.css */
+/* 回路図の表示欠けを防止するレイアウト調整 (2026-10-26) */
+/* SVGの横幅と解説欄の横幅を無理に二分しない。図面を優先して1列表示。 */
+#modeldrawings .model-grid,
+#door-detailed .model-grid,
+#complete-models .v10-grid,
+#pro-models .v9-panel[data-v9panel="scheme"] > .v9-grid {
+  grid-template-columns:minmax(0,1fr);
+  gap:14px;
+}
+#modeldrawings .model-grid > *,
+#door-detailed .model-grid > *,
+#complete-models .v10-grid > *,
+#pro-models .v9-grid > * { min-width:0; }
+#modeldrawings .model-figure,
+#door-detailed .model-figure,
+#complete-models .v10-figure,
+#pro-models .v9-figure {
+  width:100%;
+  min-width:0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+#modeldrawings .model-figure svg,
+#door-detailed .model-figure svg,
+#complete-models .v10-figure svg,
+#pro-models .v9-figure svg {
+  display:block;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  height:auto;
+}
+#modeldrawings .model-figure svg,
+#door-detailed .model-figure svg {overflow:hidden;}
+.model-figure-caption {
+  margin:8px 4px 3px;
+  font-size:14px;
+  line-height:1.65;
+  color:#475569;
+  overflow-wrap:anywhere;
+}
+/* 小画面は文字を極端に小さく縮小しない。水平スクロールで図全体を閲覧可能に。 */
+@media(max-width:680px) {
+  #modeldrawings .model-figure svg,
+  #door-detailed .model-figure svg,
+  #complete-models .v10-figure svg,
+  #pro-models .v9-figure svg {
+    width:730px;
+    min-width:730px;
+    max-width:none;
+  }
+  #modeldrawings .model-figure::before,
+  #door-detailed .model-figure::before,
+  #complete-models .v10-figure::before,
+  #pro-models .v9-figure::before {
+    content:"図面は左右にスクロールして全体を確認できます →";
+    display:block;
+    margin:0 3px 9px;
+    font-size:12px;
+    font-weight:700;
+    color:#1e40af;
+  }
+}
+@media print {
+  #modeldrawings .model-grid,
+  #door-detailed .model-grid,
+  #complete-models .v10-grid,
+  #pro-models .v9-grid {grid-template-columns:minmax(0,1fr)}
+  #modeldrawings .model-figure svg,
+  #door-detailed .model-figure svg,
+  #complete-models .v10-figure svg,
+  #pro-models .v9-figure svg {width:100%;min-width:0;max-width:100%}
+}
+
+/* END diagram-display-fix.css */
+
+/* BEGIN mobile-stage6.css */
+/* Stage 6 responsive shell; presentation only, no changes to storage, questions, scoring. */
+:root{--mobile-ink:#10346a;--mobile-blue:#2489e5;--mobile-mint:#078e80;--mobile-paper:#f9fcff}
+html{max-width:100%;overflow-x:clip;scroll-padding-bottom:94px}
+body{max-width:100%;overflow-x:clip;-webkit-text-size-adjust:100%}
+img,video,canvas,svg{max-width:100%}
+button,input,select,textarea{max-width:100%;font:inherit}
+button,a,summary,[role="button"]{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f0b52e!important;outline-offset:3px}
+.mobile-bottom-nav,.mobile-hero-brand,.mobile-intro{display:none}
+@media(max-width:767px){
+ html{scroll-padding-bottom:100px}
+ body{background:#f9fcff!important;color:var(--mobile-ink)}
+ .mobile-bottom-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(255,255,255,.97);border-top:1px solid #dfebf7;box-shadow:0 -6px 26px #17447314;padding:7px 4px calc(7px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(12px)}
+ .mobile-bottom-nav a{min-width:0;min-height:54px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;text-align:center;text-decoration:none;color:#718199;font-size:10.5px;font-weight:800;border-radius:12px}
+ .mobile-bottom-nav a svg{width:22px;height:22px;flex-shrink:0}
+ .mobile-bottom-nav a[aria-current="page"]{color:#147ddc;background:#eef7ff}
+ .mobile-bottom-nav a[aria-current="page"]:after{content:"";position:absolute;bottom:calc(4px + env(safe-area-inset-bottom,0px));height:3px;width:25px;border-radius:4px;background:#218cee}
+ body .unified-nav{display:none!important}
+ body .learning-shell{box-sizing:border-box;width:100%;max-width:100%;min-height:100vh;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:19px 16px calc(100px + env(safe-area-inset-bottom,0px))!important}
+ body.learning-page .learning-header{align-items:flex-start;gap:12px;margin:5px 0 23px}
+ body.learning-page .learning-header h1{font-size:clamp(23px,6vw,28px);line-height:1.35}
+ body.learning-page .learning-header p{font-size:13px;line-height:1.6;margin-top:5px}
+ body.learning-page .back-link{flex:0 0 38px;min-width:38px;min-height:42px;justify-content:center;background:#edf6ff;border-radius:13px;font-size:32px}
+ body.learning-page .feature-card{border-radius:20px;min-width:0;gap:12px}
+ body.learning-page .feature-copy{min-width:0;flex:1 1 170px}
+ body.learning-page .feature-copy h2{font-size:19px}
+ body.learning-page .feature-copy p{font-size:13px}
+ body.learning-page .study-card{width:100%;min-width:0;border-radius:19px;padding:14px 12px;gap:12px}
+ body.learning-page .study-copy strong{font-size:16px}
+ body.learning-page .study-icon{flex:0 0 60px;height:60px;font-size:29px}
+ body.learning-page .learning-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+ body.learning-page .learning-tab{min-width:0;white-space:normal;font-size:clamp(12px,3.6vw,15px);padding:12px 3px;min-height:46px}
+ body.learning-page .primary-action{min-height:48px;white-space:normal;text-align:center}
+ body.learning-page .learning-footer-nav{margin-bottom:20px}
+ body .records-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body .records-metrics>*,body .learning-grid>*{min-width:0}
+ body .app{min-width:0;padding-bottom:calc(98px + env(safe-area-inset-bottom,0px))}
+ body .app main{padding:12px 15px}
+ body .app .hero{background:#fff!important;color:#10346a!important;border-radius:0!important;padding:23px 20px 12px!important;margin:0!important;box-shadow:none!important}
+ body .app .hero .hero-inner{max-width:680px;margin:auto}
+ body .app .hero h1{font-size:clamp(16px,4.4vw,21px);color:#627b9d;font-weight:700;margin:8px 0 3px}
+ body .app .hero p{display:none}
+ body .app .hero .eyebrow{font-size:10px;color:#6883a2!important;line-height:1.5}
+ .mobile-hero-brand{display:flex;gap:12px;align-items:center;font-size:clamp(23px,7vw,32px);font-weight:900;letter-spacing:.025em;color:#10346a;line-height:1.3;margin:3px 0 6px}
+ .mobile-hero-brand svg{width:42px;height:42px;color:#1877d6;flex-shrink:0}
+ .mobile-intro{display:block;padding:11px 9px 3px;color:#5a7297;font-size:clamp(17px,4.7vw,21px);font-weight:750;line-height:1.5}
+ .mobile-intro p{margin:6px 0 0;font-size:12px;font-weight:600;color:#7790ad}
+ body .schedule-details{margin:7px 0 0}
+ body .schedule-details>summary{color:#2876bc!important;font-size:12px;padding:8px 2px}
+ body .schedule-details .stat{background:#eaf4ff;border-color:#deebfa;color:#10346a}
+ body .schedule-details .stat span{color:#5c7698}
+ body .app .quick-start{border:0!important;background:transparent!important;box-shadow:none!important;padding:5px 0 15px!important;margin:0!important}
+ body .app .quick-start h2,body .app .quick-start>p{display:none}
+ body .app .quick-start-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:13px!important}
+ body .app .quick-start-grid a{display:flex!important;gap:14px!important;align-items:center!important;min-height:114px!important;border:1px solid #d8eafb!important;padding:16px 15px!important;background:linear-gradient(130deg,#f2f9ff,#ebf7ff)!important;border-radius:23px!important;box-shadow:0 4px 12px #306a9610!important;color:#10346a!important}
+ body .app .quick-start-grid a:nth-child(even){background:linear-gradient(130deg,#f0fffa,#e4f9f5)!important;border-color:#d1f1e8!important}
+ body .app .quick-start-grid a .entry-symbol{display:grid;place-items:center;flex:0 0 72px!important;width:72px;height:72px!important;background:#daedff!important;color:#2588df!important;border-radius:50%!important}
+ body .app .quick-start-grid a:nth-child(even) .entry-symbol{background:#d1f5ec!important;color:#16a68f!important}
+ .entry-symbol svg{width:41px;height:41px;stroke-width:1.8}
+ body .app .quick-start-grid a .entry-copy{gap:5px}
+ body .app .quick-start-grid a .entry-copy strong{font-size:clamp(18px,5.2vw,22px);line-height:1.3!important;color:#10346a}
+ body .app .quick-start-grid a .entry-copy small{font-size:12px!important;line-height:1.6!important;color:#5f789c!important}
+ body .app .quick-start-grid a .entry-arrow{flex:0 0 34px;width:34px;height:34px;display:grid;place-items:center;background:#dceeff;border-radius:50%;color:#1e6eb9;font-size:30px;line-height:1}
+ body .app .quick-start-grid a:nth-child(even) .entry-arrow{background:#d0f4ea;color:#078f7e}
+ body .app .more-roadmap{margin:10px 0}
+ body .app .more-roadmap>summary{font-size:13px;border-radius:16px;background:#fff}
+ .month-page-grid,.month-grid,.overview-grid,.exam-grid,.strategy,.priority-grid{min-width:0}
+ body:not(.learning-page) main,body:not(.learning-page) section,body:not(.learning-page) article{max-width:100%}
+ body:not(.learning-page) pre,body:not(.learning-page) .table-wrap,body:not(.learning-page) .scroll-table{max-width:100%;overflow-x:auto}
+ body:not(.learning-page) table{max-width:100%;}
+ body:not(.learning-page) header .head-inner{max-width:100%;min-width:0;flex-wrap:wrap}
+ body:not(.learning-page) nav:not(.mobile-bottom-nav):not(.unified-nav){max-width:100%;flex-wrap:wrap}
+ body:not(.learning-page) nav:not(.mobile-bottom-nav):not(.unified-nav) a{min-height:42px;display:inline-flex;align-items:center}
+ body:not(.learning-page) .card{min-width:0}
+ body:not(.learning-page) h1{overflow-wrap:anywhere}
+ body:not(.learning-page) .final-goal-text{white-space:normal!important}
+ body:not(.learning-page) .month-page-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:390px){body .app .quick-start-grid a{gap:10px!important;padding:14px 10px!important;min-height:103px!important}body .app .quick-start-grid a .entry-symbol{flex-basis:57px!important;width:57px;height:57px!important}.entry-symbol svg{width:33px;height:33px}body .app .quick-start-grid a .entry-arrow{flex-basis:27px;width:27px;height:27px;font-size:23px}}
+@media(min-width:768px) and (max-width:1024px){body .app .quick-start-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}body .learning-shell{max-width:95vw!important}body .learning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.mobile-bottom-nav *{transition:none!important}}
+
+/* END mobile-stage6.css */
+
+/* BEGIN mobile-stage8-practical.css */
+/* Stage 8: practical learning usability, non-destructive styles */
+@media (max-width: 767px){
+ body.practical-hub .practical-feature{border-radius:24px;background:linear-gradient(140deg,#eff8ff,#e9faf5);border:1px solid #d6eaf6}
+ body.practical-hub .practical-feature-inside{min-width:0;flex-wrap:wrap;gap:14px}
+ body.practical-hub .practical-feature-inside .primary-action{min-height:48px;display:flex;justify-content:center;align-items:center;width:100%}
+ body.practical-hub .practical-tile{min-height:114px;border-radius:20px;padding:17px 14px;align-items:center}
+ body.practical-hub .practice-grid{grid-template-columns:minmax(0,1fr)!important;gap:12px}
+ body.practical-hub .practice-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ body.practical-hub .practice-metrics>div{min-width:0}
+ body.practical-study-page header{background:linear-gradient(120deg,#123c74,#2d85b9);padding:21px 16px}
+ body.practical-study-page header h1{font-size:24px;line-height:1.4}
+ body.practical-study-page header nav{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;overscroll-behavior-x:contain;padding-bottom:6px}
+ body.practical-study-page header nav a{flex:none;scroll-snap-align:start;white-space:nowrap;min-height:44px}
+ body.practical-study-page main{padding:12px 12px calc(105px + env(safe-area-inset-bottom))}
+ body.practical-study-page main>.card{border-radius:20px;padding:17px 14px;margin:12px 0;border-color:#dbeaf5;box-shadow:0 4px 18px #1a60900d}
+ body.practical-study-page h2{font-size:20px;line-height:1.45;color:#123b71}
+ body.practical-study-page h3{font-size:17px;line-height:1.5}
+ body.practical-study-page .grid,body.practical-study-page .state-grid,body.practical-study-page .explain-grid{grid-template-columns:minmax(0,1fr)}
+ body.practical-study-page .step,body.practical-study-page .state-card{min-width:0;border-radius:15px;background:#f8fcff}
+ body.practical-study-page .quiz button,body.practical-study-page .card button,body.practical-study-page .card a.btn,body.practical-study-page summary{min-height:44px;touch-action:manipulation}
+ body.practical-study-page .quiz button{white-space:normal;text-align:left;margin:5px 0;max-width:100%;width:100%;border-color:#bfdcf4}
+ body.practical-study-page .quiz button.selected{background:#1c67b7;color:#fff}
+ body.practical-study-page .figure,body.practical-study-page .mini-figure,body.practical-study-page .v12-diagram{max-width:100%;overscroll-behavior-x:contain}
+ body.practical-study-page .checks label,body.practical-study-page .weekcheck{display:flex;align-items:flex-start;gap:10px;min-height:48px;padding:12px 8px}
+ body.practical-study-page .checks input,body.practical-study-page .weekcheck input{flex:none;width:22px;height:22px;margin:1px 0}
+ body.practical-study-page .card p,body.practical-study-page .card li{overflow-wrap:anywhere}
+}
+body.practical-study-page [id]{scroll-margin-top:18px}
+.practical-quick-links{display:flex;gap:8px;overflow-x:auto;padding:8px 0 12px;scrollbar-width:thin}
+.practical-quick-links a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:8px 13px;border-radius:999px;background:#e8f6fb;color:#124879;font-size:14px;font-weight:700;text-decoration:none;border:1px solid #cce8f6}
+.diagram-action{display:flex;justify-content:flex-end;margin:6px 0 10px}
+.diagram-open{min-height:44px;padding:8px 14px!important;border-radius:12px!important;border:1px solid #b8dcf5!important;color:#124c88!important;background:#edf8ff!important;font-size:14px!important}
+.diagram-modal[hidden]{display:none!important}
+.diagram-modal{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;background:#f5faff;color:#173d68;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.diagram-modal-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;background:white;border-bottom:1px solid #d7e8f5;flex-wrap:wrap}
+.diagram-modal-bar strong{font-size:16px;flex:1 1 100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.diagram-modal button{min-height:44px;min-width:44px;border-radius:12px;padding:7px 12px;border:1px solid #c8dff1;background:white;color:#123c71;font-size:16px;font-weight:700}
+.diagram-modal .diagram-close{background:#14508f;color:white}
+.diagram-modal-viewport{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:16px;touch-action:pan-x pan-y}
+.diagram-modal-canvas{width:max-content;min-width:100%;display:flex;justify-content:center;align-items:flex-start}
+.diagram-modal-canvas svg{display:block;max-width:none!important;min-width:0!important;height:auto!important;background:white;border-radius:12px;box-shadow:0 4px 16px #173d681b}
+.diagram-modal-hint{padding:8px 16px;background:white;border-top:1px solid #d7e8f5;font-size:12px;color:#526b86}
+@media print{.diagram-action,.diagram-modal,.practical-quick-links{display:none!important}}
+
+/* END mobile-stage8-practical.css */
+
+/* BEGIN mobile-stage11-polish.css */
+/* Stage 11: conservative cross-page mobile UX polish. No grading or storage code. */
+:root{--s11-focus:#db8c00}
+html{box-sizing:border-box;scroll-padding-top:20px;scroll-padding-bottom:110px}
+*,*::before,*::after{box-sizing:inherit}
+body{min-width:0}
+img,svg,video,canvas,iframe{max-width:100%;height:auto}
+pre,code{overflow-wrap:anywhere}
+pre{white-space:pre-wrap}
+:where(h1,h2,h3,p,li,td,th,a,button,summary){overflow-wrap:break-word}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid var(--s11-focus)!important;outline-offset:3px}
+.s11-skip{position:fixed;top:-100px;left:12px;z-index:20000;padding:12px 18px;background:#fff;color:#10346a;border:2px solid #2479ca;border-radius:10px;font-weight:800}
+.s11-skip:focus{top:10px}
+.s11-feedback{position:fixed;bottom:calc(86px + env(safe-area-inset-bottom,0px));left:12px;right:12px;max-width:500px;margin:auto;z-index:11000;padding:12px 16px;background:#10346a;color:#fff;border-radius:12px;box-shadow:0 8px 24px #10346a40;font-size:13px;line-height:1.5}
+.s11-feedback[hidden]{display:none!important}
+@media(max-width:767px){
+  html,body{width:100%;max-width:100%}
+  :where(main,article,section,.card,.learning-shell,.app,.learning-grid,.month-page-grid,.month-grid,.overview-grid,.exam-grid,.priority-grid){min-width:0;max-width:100%}
+  :where(main,article,section,.card,.feature-card,.study-card,.record-panel) > *{max-width:100%}
+  :where(table){border-collapse:collapse}
+  :where(.table-wrap,.scroll-table,.table-responsive){max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  :where(input,textarea,select){min-height:44px;max-width:100%}
+  :where(button,.btn,[role=button],summary){min-height:44px}
+  :where(button,.btn,.primary-action,.learning-tab,summary){line-height:1.5}
+  :where(button,.btn,.primary-action){white-space:normal;overflow-wrap:anywhere}
+  .mobile-bottom-nav{isolation:isolate}
+  .mobile-bottom-nav a{position:relative;min-height:56px;line-height:1.3}
+  .mobile-bottom-nav a[aria-current=page]{font-weight:900}
+  :where([id]){scroll-margin-top:16px;scroll-margin-bottom:120px}
+  body{padding-bottom:env(safe-area-inset-bottom,0px)}
+}
+@media(max-width:380px){.mobile-bottom-nav{padding-left:2px;padding-right:2px}.mobile-bottom-nav a{font-size:10px;gap:2px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* END mobile-stage11-polish.css */

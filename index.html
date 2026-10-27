@@ -5,259 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
 <title>技能検定2級 電気製図｜合格までの全体像</title>
-<style>
-:root{
-  --bg:#f5f7fb; --card:#fff; --ink:#172033; --muted:#64748b; --line:#e5eaf1;
-  --primary:#2563eb; --primary-soft:#eaf2ff; --navy:#0f172a;
-  --ok:#15803d; --ok-soft:#eaf8ef; --warn:#b45309; --warn-soft:#fff6e8;
-  --shadow:0 12px 32px rgba(15,23,42,.08); --radius:20px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--ink);line-height:1.7;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-  -webkit-text-size-adjust:100%;
-}
-a,button{font:inherit}
-button{cursor:pointer}
-.app{max-width:1180px;margin:auto;padding-bottom:78px}
-.hero{
-  margin:0;background:linear-gradient(145deg,#0f172a,#1e3a8a);
-  color:#fff;padding:28px 18px 24px;border-radius:0 0 28px 28px;
-}
-.hero-inner{max-width:1120px;margin:auto}
-.eyebrow{font-size:12px;font-weight:900;letter-spacing:.08em;opacity:.78}
-h1{font-size:27px;line-height:1.3;margin:6px 0 8px}
-.hero p{margin:0;color:#dbeafe;font-size:14px;max-width:780px}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
-.stat{padding:11px 12px;border:1px solid rgba(255,255,255,.14);border-radius:15px;background:rgba(255,255,255,.10)}
-.stat b{display:block;font-size:16px}
-.stat span{font-size:11px;color:#dbeafe}
-.count-line{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-.count-line b{display:inline;font-size:16px}
-.count-line .count-label{font-size:11px;color:#dbeafe;font-weight:700}
-.exam-date{display:block;margin-top:3px;font-size:11px;color:#dbeafe;white-space:nowrap}
-.nav{
-  position:sticky;top:0;z-index:20;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;
-  padding:7px 8px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);
-  backdrop-filter:blur(14px)
-}
-.nav a{
-  min-width:0;text-align:center;text-decoration:none;color:#475569;font-size:11px;font-weight:850;
-  padding:7px 3px;border-radius:10px;white-space:nowrap
-}
-.nav a:hover{background:#eef2f7}
-main{padding:14px}
-.section{scroll-margin-top:64px}
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:18px;margin:12px 0;box-shadow:var(--shadow)
-}
-h2{font-size:21px;line-height:1.4;margin:0 0 12px;text-wrap:balance}
-h3{font-size:17px;margin:0 0 5px;text-wrap:balance}
-.muted{font-size:14px;color:var(--muted)}
-.small{font-size:12px;color:var(--muted)}
-.badge{
-  display:inline-flex;align-items:center;border-radius:999px;padding:4px 9px;
-  background:var(--primary-soft);color:var(--primary);font-size:12px;font-weight:900
-}
-.goal{
-  margin-top:10px;text-wrap:pretty;padding:14px;border-left:4px solid var(--primary);
-  background:var(--primary-soft);border-radius:14px;font-weight:850
-}
-.overview-grid{display:grid;gap:12px}
-.simple-flow{
-  display:grid;grid-template-columns:1fr;gap:7px;text-align:center;font-weight:900
-}
-.flow-box{padding:11px;border:1px solid var(--line);border-radius:13px;background:#f8fafc}
-.arrow{color:#94a3b8;font-size:18px;line-height:1}
-.month-grid{display:grid;grid-template-columns:1fr;gap:10px}
-.month-card{
-  position:relative;border:1px solid var(--line);border-radius:17px;padding:14px;
-  background:#fff;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
-  outline:none;min-height:175px
-}
-.month-card-link{display:block;color:inherit;text-decoration:none}
-.month-card-link:focus-visible{outline:3px solid #bfdbfe;outline-offset:3px;border-radius:17px}
-.month-card .month-num{font-size:29px;line-height:1;font-weight:950;color:#111827}
-.month-card .month-title{font-weight:950;margin:6px 0 3px;white-space:nowrap;text-wrap:pretty}
-.month-card .month-short{font-size:13px;color:#475569}
-.month-card .phase{font-size:11px;font-weight:900;color:#475569;letter-spacing:.04em}
-.month-detail{
-  max-height:0;opacity:0;overflow:hidden;transform:translateY(4px);
-  transition:max-height .24s ease,opacity .18s ease,transform .18s ease;
-  font-size:12px;color:#475569
-}
-.month-detail ul{padding-left:18px;margin:8px 0 0}
-.month-card:hover,.month-card:focus-visible,.month-card.open{
-  transform:translateY(-4px);box-shadow:0 14px 28px rgba(15,23,42,.12);border-color:#93c5fd
-}
-.month-card:hover .month-detail,.month-card:focus-visible .month-detail,.month-card.open .month-detail{
-  max-height:220px;opacity:1;transform:none
-}
-.month-card.current{
-  border:2px solid var(--primary);background:var(--primary-soft);
-  box-shadow:0 12px 30px rgba(37,99,235,.16)
-}
-.month-card.current .month-num{color:#111827}
-.month-card.current:hover,.month-card.current:focus-visible,.month-card.current.open{
-  border-color:var(--primary);box-shadow:0 14px 28px rgba(37,99,235,.20)
-}
-.month-card.current::after{
-  content:"現在の段階";position:absolute;right:10px;top:10px;
-  background:var(--primary);color:#fff;font-size:10px;font-weight:900;padding:4px 7px;border-radius:999px;white-space:nowrap
-}
-.month-card.past{opacity:.76}
-.month-card.future .phase{color:#475569}
-.month-hint{font-size:12px;color:var(--muted);margin-top:9px}
-.current-touch-hint{
-  margin:2px 0 12px;
-  font-size:14px;
-  font-weight:900;
-  color:var(--primary);
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  gap:6px;
-}
-
-.strategy{display:grid;gap:10px}
-.strategy-box{border:1px solid var(--line);border-radius:15px;padding:14px}
-.strategy-box b{display:block;font-size:16px}
-.icon{font-size:22px;margin-bottom:4px}
-.time-line{display:grid;gap:8px;margin-top:10px}
-.time-step{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
-.time-step:last-child{border-bottom:0}
-.time-pill{display:flex;align-items:center;justify-content:center;background:#eef2ff;color:#3730a3;font-weight:950;border-radius:999px;padding:5px}
-.priority-grid{display:grid;gap:10px}
-.priority{border:1px solid var(--line);border-radius:15px;padding:14px}
-.priority strong{display:block;margin-bottom:7px}.priority .small{line-height:1.8}
-.priority.a{border-left:5px solid #2563eb}
-.priority.b{border-left:5px solid #0f766e}
-.priority.c{border-left:5px solid #94a3b8}
-.steps{counter-reset:step;display:grid;gap:9px;margin-top:10px}
-.step{
-  counter-increment:step;display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start
-}
-.step::before{
-  content:counter(step);width:32px;height:32px;border-radius:10px;background:var(--primary);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-weight:950
-}
-.week-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.day{border:1px solid var(--line);border-radius:13px;padding:11px;background:#fff}
-.day b{display:block}
-.day.weekend{background:#f8fbff;border-color:#bfdbfe}
-.notice{background:var(--warn-soft);color:#7c3e05;border:1px solid #fed7aa;border-radius:14px;padding:12px;font-size:13px}
-.exam-grid{display:grid;grid-template-columns:1fr;gap:10px}
-.exam{padding:14px;border-radius:15px;border:1px solid var(--line);background:#fff}
-.exam b{display:block;font-size:16px}.exam span{white-space:nowrap}
-.final-rule{
-  padding:16px;border-radius:16px;background:var(--navy);color:#fff;font-weight:850;text-align:center
-}
-.month-page-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.month-page{
-  padding:14px;border-radius:15px;border:1px dashed #cbd5e1;background:#fafafa
-}
-.month-page b{display:block}
-.footer{padding:10px 18px 28px;text-align:center;color:var(--muted);font-size:12px}
-
-@media(min-width:680px){
-  .hero{padding:34px 26px 28px}
-  h1{font-size:31px}
-  .hero-stats{grid-template-columns:repeat(4,1fr)}
-  .nav{display:flex;justify-content:center;gap:6px;padding:8px 12px}
-  .nav a{font-size:12px;padding:8px 11px;border-radius:999px}
-  main{padding:20px}
-  .overview-grid{grid-template-columns:1.05fr .95fr}
-  .simple-flow{grid-template-columns:1fr auto 1fr auto 1fr}
-  .arrow{display:flex;align-items:center}
-  .month-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .strategy{grid-template-columns:1fr 1fr}
-  .priority-grid{grid-template-columns:repeat(3,1fr)}
-  .week-grid{grid-template-columns:repeat(4,1fr)}
-  .month-page-grid{grid-template-columns:repeat(4,1fr)}
-}
-@media(min-width:960px){
-  body{padding:24px 0}
-  .app{padding-bottom:0}
-  .hero{margin:0 20px;border-radius:28px 28px 0 0}
-  .nav{margin:0 20px;border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;justify-content:center}
-  main{padding:24px 20px}
-  .card{padding:22px}
-  .month-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .month-card{min-height:195px}
-  .week-grid{grid-template-columns:repeat(7,1fr)}
-}
-
-@media(max-width:679px){
-  .final-goal-text{font-size:20px;white-space:nowrap}
-  .month-card{min-height:auto;padding:14px 16px}
-  .month-card .month-num{font-size:27px}
-  .month-card .month-short{padding-right:2px}
-  .month-detail ul{margin-top:7px}
-  .exam{padding:13px 14px}
-  .priority .small{font-size:13px}
-}
-@media(pointer:coarse){
-  .month-card{min-height:185px}
-}
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto!important;transition:none!important}
-}
-/* ===== スマホ低速回線・省電力向け軽量化 ===== */
-@media (max-width:679px){
-  html{scroll-behavior:auto}
-  body{background:#f5f7fb}
-  .hero{background:#0f172a}
-  .card,.month-card{box-shadow:none}
-  .month-card{transition:none}
-  .month-card:hover,.month-card:focus-visible,.month-card.open{transform:none;box-shadow:none}
-  .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
-  .section,.card{content-visibility:auto;contain-intrinsic-size:1px 500px}
-}
-html.lite *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-html.lite .hero{background:#0f172a}
-html.lite .card,html.lite .month-card{box-shadow:none!important}
-html.lite .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+<link rel="stylesheet" href="assets/css/index.css">
 
 
-/* 各月の学科/実技を分離し、カード全体リンク内に別リンクを入れない */
-.month-tile{display:flex;flex-direction:column;min-width:0;gap:8px}
-.month-tile .month-card-link{display:flex;flex:1 1 auto}
-.month-tile>.month-card{flex:1 1 auto}
-.month-tile .month-card{width:100%;height:auto;flex:1 1 auto}
-.month-practical-link{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:11px 13px;border:2px solid #cbd5e1;border-radius:13px;background:#fff;color:#1e40af;font-size:13px;font-weight:900;text-decoration:none;overflow-wrap:anywhere}
-.month-practical-link.current-stage{border-color:#2563eb;background:#eff6ff}
-.month-practical-link:hover,.month-practical-link:focus-visible{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
-.month-practical-link:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
-.practical-first-reminder{padding:16px 18px;margin:12px 0;border:1px solid #bfdbfe;background:#eff6ff;border-radius:16px}
-.practical-first-heading{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-.practical-first-heading strong{font-size:17px;line-height:1.45}
-.practical-first-reminder p{font-size:13px;color:#334155;margin:8px 0 0}
-@media(max-width:679px){.month-tile .month-card-link{flex:auto}}
-</style>
-<link rel="stylesheet" href="layout-fix-v22.css">
-<link rel="stylesheet" href="practical-priority-v28.css">
+
+
+
 </head>
 <body>
 <div class="app">
 <header class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner"><div class="mobile-hero-brand"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6m-5 3h4m-5-6a7 7 0 1 1 6 0c-1 1-1 2-1 3h-4c0-1 0-2-1-3z"/><path d="M12 1v1M3 9H2m20 0h-1M4 3l2 2m14-2-2 2"/></svg><span>電気製図学習</span></div>
     <div class="eyebrow">技能検定 2級 電気製図｜配電盤・制御盤製図作業</div>
-    <h1>合格までの全体像</h1>
+    <h1>電気製図を、今日も少しずつ。</h1><p>やりたい学習を選ぶだけ。迷わず始められます。</p>
     
-    <div class="hero-stats">
+    <details class="schedule-details"><summary>学習ペースと試験日を確認する</summary><div class="hero-stats">
       <div class="stat"><b>平日 30分</b><span>短時間を継続</span></div>
       <div class="stat"><b>週末は実技</b><span>まとまった練習</span></div>
       <div class="stat"><div class="count-line"><b id="daysPractical">—日</b><span class="count-label">実技試験まで</span></div><span class="exam-date">2027年1月24日（日）</span></div>
       <div class="stat"><div class="count-line"><b id="daysWritten">—日</b><span class="count-label">学科試験まで</span></div><span class="exam-date">2027年2月7日（日）</span></div>
     </div>
+  </details>
   </div>
 </header>
 
-<main>
+<main><nav class="unified-nav" aria-label="学習メニュー"><a href="index.html" aria-current="page"><span aria-hidden="true">⌂</span><span>ホーム</span></a><a href="problems.html"><span aria-hidden="true">▤</span><span>問題</span></a><a href="practical.html"><span aria-hidden="true">✎</span><span>実技</span></a><a href="review.html"><span aria-hidden="true">↻</span><span>復習</span></a><a href="records.html"><span aria-hidden="true">▥</span><span>記録</span></a></nav>
+<div class="mobile-intro"><span>学びたい内容を選んでください</span><p>少しずつ、できることを増やしていきましょう！</p></div>
+<section class="card quick-start" aria-labelledby="quick-start-title">
+<h2 id="quick-start-title">今日は何を学ぶ？</h2><p>やりたいことを選ぶだけで、すぐに学習を始められます。</p>
+<div class="quick-start-grid">
+<a href="problems.html"><span class="entry-symbol"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-2-5-3-9-2v15c4-1 7 0 9 2 2-2 5-3 9-2V4c-4-1-7 0-9 2z"/><path d="M12 6v15"/></svg></span><span class="entry-copy"><strong>問題を解く</strong><small>基礎問題や模擬問題で理解を深めましょう</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+<a href="practical.html"><span class="entry-symbol"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 20 4-.9L20 7a2.1 2.1 0 0 0-3-3L5 16z"/><path d="m14 6 4 4M13 20h8M18 15v5"/></svg></span><span class="entry-copy"><strong>実技を練習する</strong><small>図記号・回路図を実際に描いて練習しましょう</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+<a href="review.html"><span class="entry-symbol"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12.3-2"/></svg></span><span class="entry-copy"><strong>復習する</strong><small>間違えた問題や苦手な分野をもう一度学びましょう</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+<a href="records.html"><span class="entry-symbol"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 16v-3m4 3V9m4 7V7"/></svg></span><span class="entry-copy"><strong>学習記録を見る</strong><small>これまでの学習の進み具合を確認しましょう</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+</div>
+</section>
+<details class="more-roadmap"><summary>詳しい学習計画・月別教材を見る</summary>
 <section id="goal" class="section">
   <div class="overview-grid">
     <div class="card">
@@ -334,7 +117,7 @@ html.lite .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!impor
         </ul>
       </div>
     </article>
-    <a class="month-practical-link" href="practical.html#final-assignment">12月の総合作図へ <span aria-hidden="true">→</span></a>
+    <a class="month-practical-link" href="practical-study.html#final-assignment">12月の総合作図へ <span aria-hidden="true">→</span></a>
     </div>
 
     <div class="month-tile">
@@ -353,7 +136,7 @@ html.lite .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!impor
         </ul>
       </div>
     </article>
-    <a class="month-practical-link" href="practical.html#examFocusV11">1月の時間・検図練習へ <span aria-hidden="true">→</span></a>
+    <a class="month-practical-link" href="practical-study.html#examFocusV11">1月の時間・検図練習へ <span aria-hidden="true">→</span></a>
     </div>
   </div>
 
@@ -412,6 +195,7 @@ html.lite .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!impor
   <div class="final-rule">過去問に出たことから理解する</div>
 </section>
 
+</details>
 </main>
 <div class="footer">技能検定2級 電気製図｜合格ロードマップ全体版</div>
 </div>
@@ -489,5 +273,7 @@ document.addEventListener("visibilitychange",()=>{
   else{updateExamCountdown();if(!countdownTimer)countdownTimer=setInterval(updateExamCountdown,5*60*1000);}
 });
 </script>
+<nav class="mobile-bottom-nav" aria-label="スマートフォン用学習メニュー"><a href="index.html" aria-current="page"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a><a href="problems.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-2-5-3-9-2v15c4-1 7 0 9 2 2-2 5-3 9-2V4c-4-1-7 0-9 2z"/><path d="M12 6v15"/></svg><span>問題</span></a><a href="practical.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 20 4-.9L20 7a2.1 2.1 0 0 0-3-3L5 16z"/><path d="m14 6 4 4M13 20h8M18 15v5"/></svg><span>実技</span></a><a href="review.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.7 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12.3-2"/></svg><span>復習</span></a><a href="records.html"><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 16v-3m4 3V9m4 7V7"/></svg><span>記録</span></a></nav>
+<script src="assets/js/common.js" defer></script>
 </body>
 </html>
